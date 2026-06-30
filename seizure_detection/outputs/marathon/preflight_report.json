@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-07-01T01:26:13",
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "checks": {
+    "imports": {
+      "tensorflow": "2.21.0",
+      "keras": "3.14.1",
+      "numpy": "2.4.6",
+      "pandas": "3.0.3",
+      "sklearn": "1.9.0",
+      "scipy": "1.17.1",
+      "matplotlib": "3.11.0"
+    },
+    "data_inventory": {
+      "patients": 5,
+      "sessions": 146,
+      "complete_sessions": 146,
+      "patient_label_files": 5,
+      "additional_label_files": 3,
+      "missing_patient_labels": [],
+      "label_examples": [
+        "Mayo_1110\\Empatica_Chronic\\1110.txt",
+        "Mayo_1869\\1869.txt",
+        "Mayo_1876\\1876.txt",
+        "Mayo_1904\\1904.txt",
+        "Mayo_1965\\1965.txt"
+      ],
+      "missing_examples": []
+    },
+    "strict_env": {
+      "EDGE_BENCHMARK": "1",
+      "EDGE_FAIL_ON_BENCHMARK_FAILURE": "0",
+      "EDGE_REQUIRE_INT8": "0",
+      "TSMIXER_STOP_ON_FAILURE": "1"
+    },
+    "generated_artifacts": [],
+    "optional_cli_versions": {
+      "node": "v24.17.0",
+      "npm": "11.13.0",
+      "platformio": "PlatformIO Core, version 6.1.19",
+      "edge_impulse": "1.39.2"
+    }
+  },
+  "status": "passed",
+  "failures": []
+}

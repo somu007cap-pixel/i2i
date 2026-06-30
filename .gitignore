@@ -1,0 +1,24 @@
+# Mayo Patient Data
+Mayo_*/
+[Mm]ayo_*/
+
+# Bits Submission
+Bits_Submission/
+bits_submission/
+
+# Virtual Environments and local caches
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
