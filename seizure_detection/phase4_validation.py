@@ -112,48 +112,56 @@ def get_patient_id(session_path: str) -> str:
     return "unknown"
 
 
-def split_session_paths(
+def split_patient_paths(
     session_paths: List[str],
     seizure_intervals: Dict[str, List[Tuple[float, float]]],
     test_size: float = 0.2,
     val_size: float = 0.1,
     random_state: int = 42,
 ) -> Dict[str, List[str]]:
-    """Split sessions, not windows, to avoid train/test leakage."""
+    """Split by patient first, then keep all sessions from each patient together."""
     try:
         from phase2_data_generator_fast import get_actual_session_intervals
     except ImportError:
         from .phase2_data_generator_fast import get_actual_session_intervals
     rng = np.random.default_rng(random_state)
-    seizure_sessions = [
-        path
-        for path in session_paths
-        if len(get_actual_session_intervals(path, seizure_intervals)) > 0
+    patient_sessions: Dict[str, List[str]] = {}
+    patient_has_seizure: Dict[str, bool] = {}
+    for path in session_paths:
+        patient_id = get_patient_id(path)
+        patient_sessions.setdefault(patient_id, []).append(path)
+        patient_has_seizure[patient_id] = (
+            patient_has_seizure.get(patient_id, False)
+            or len(get_actual_session_intervals(path, seizure_intervals)) > 0
+        )
+    seizure_patients = [
+        patient_id for patient_id, has_sz in patient_has_seizure.items() if has_sz
     ]
-    normal_sessions = [
-        path
-        for path in session_paths
-        if len(get_actual_session_intervals(path, seizure_intervals)) == 0
+    normal_patients = [
+        patient_id for patient_id, has_sz in patient_has_seizure.items() if not has_sz
     ]
-    rng.shuffle(seizure_sessions)
-    rng.shuffle(normal_sessions)
+    rng.shuffle(seizure_patients)
+    rng.shuffle(normal_patients)
 
-    def split_group(paths: List[str]):
-        if not paths:
+    def split_group(patient_ids: List[str]):
+        if not patient_ids:
             return [], [], []
-        n_total = len(paths)
+        n_total = len(patient_ids)
         n_test = max(1, int(round(n_total * test_size))) if n_total >= 3 else 0
         n_val = max(1, int(round(n_total * val_size))) if n_total >= 4 else 0
         if n_test + n_val >= n_total:
             n_test = 1 if n_total >= 3 else 0
             n_val = 1 if n_total >= 4 else 0
-        test = paths[:n_test]
-        val = paths[n_test : n_test + n_val]
-        train = paths[n_test + n_val :]
+        test_ids = patient_ids[:n_test]
+        val_ids = patient_ids[n_test : n_test + n_val]
+        train_ids = patient_ids[n_test + n_val :]
+        test = [session for patient_id in test_ids for session in patient_sessions[patient_id]]
+        val = [session for patient_id in val_ids for session in patient_sessions[patient_id]]
+        train = [session for patient_id in train_ids for session in patient_sessions[patient_id]]
         return train, val, test
 
-    sz_train, sz_val, sz_test = split_group(seizure_sessions)
-    normal_train, normal_val, normal_test = split_group(normal_sessions)
+    sz_train, sz_val, sz_test = split_group(seizure_patients)
+    normal_train, normal_val, normal_test = split_group(normal_patients)
 
     splits = {
         "train": sz_train + normal_train,
@@ -2198,9 +2206,9 @@ def main():
         from phase2_data_generator_fast import get_actual_session_intervals
     except ImportError:
         from .phase2_data_generator_fast import get_actual_session_intervals
-    session_splits = split_session_paths(selected_session_paths, seizure_intervals)
+    session_splits = split_patient_paths(selected_session_paths, seizure_intervals)
     split_audit = summarize_session_splits(session_splits, seizure_intervals)
-    print("\nSession-level splits:")
+    print("\nPatient-held-out splits:")
     for split_name, paths in session_splits.items():
         n_seizure_sessions = sum(
             len(get_actual_session_intervals(path, seizure_intervals)) > 0
@@ -2445,9 +2453,14 @@ def main():
         "timestamp": datetime.now().isoformat(),
         "pipeline_version": PIPELINE_VERSION,
         "status": "completed",
+        "claim_scope": (
+            "rigorous prototype and feasibility study for patient-level seizure "
+            "event detection; not a clinically validated detector or deployment "
+            "claim"
+        ),
         "evaluation_scope": (
-            "personalized/session-level generalization; splits hold out sessions "
-            "but may contain patients seen during training"
+            "patient-level generalization; held-out patients are reserved for "
+            "validation/test while train patients remain unseen in those splits"
         ),
         "run_config": {
             "max_sessions_requested": int(max_sessions),
@@ -2526,7 +2539,7 @@ def main():
         },
         "n_train_samples": len(data["labels_train"]),
         "n_test_samples": len(data["labels_test"]),
-        "split_strategy": "session-level held-out split",
+        "split_strategy": "patient-level held-out split",
         "sensor_policy": {
             "standard_mode": (
                 "Base device: ACC x/y/z plus optional sensors from "
@@ -2579,6 +2592,21 @@ def main():
                 if key not in ("validation_metrics", "selection_score")
             },
             "allocation_analysis": allocation_analysis,
+        },
+        "best_science_model": {
+            "standard_variant": best_standard_variant,
+            "pro_variant": best_pro_variant,
+            "selected_variant": best_pro_variant,
+            "selected_variant_role": "best_validation_science_candidate",
+        },
+        "best_product_model": {
+            "allocation_name": best_allocation,
+            "selected_allocation": {
+                key: value
+                for key, value in selected_allocation.items()
+                if key not in ("validation_metrics", "selection_score")
+            },
+            "selected_variant_role": "best_sensor-allocation_product_choice",
         },
         "standard_model_selection": {
             "selected_variant": best_standard_variant,

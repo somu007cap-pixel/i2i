@@ -60,7 +60,7 @@ def audit_detection(checks: list[dict[str, Any]]) -> None:
         checks,
         "split_strategy",
         "pass"
-        if results.get("split_strategy") == "session-level held-out split"
+        if results.get("split_strategy") == "patient-level held-out split"
         else "fail",
         str(results.get("split_strategy")),
     )
@@ -68,9 +68,18 @@ def audit_detection(checks: list[dict[str, Any]]) -> None:
         checks,
         "evaluation_scope",
         "pass"
-        if "personalized/session-level" in str(results.get("evaluation_scope", ""))
+        if "patient-level generalization" in str(results.get("evaluation_scope", ""))
         else "warn",
         str(results.get("evaluation_scope", "")),
+    )
+    add(
+        checks,
+        "claim_scope_disclosed",
+        "pass"
+        if "prototype" in str(results.get("claim_scope", "")).lower()
+        and "not a clinically validated detector" in str(results.get("claim_scope", "")).lower()
+        else "warn",
+        str(results.get("claim_scope", "")),
     )
 
     standard = results.get("standard_mode", {})
@@ -133,6 +142,18 @@ def audit_detection(checks: list[dict[str, Any]]) -> None:
         "allocation_selected_on_validation",
         "pass" if selection.get("selection_split") == "validation" else "fail",
         f"selection_split={selection.get('selection_split')}",
+    )
+    add(
+        checks,
+        "science_product_split_present",
+        "pass"
+        if isinstance(results.get("best_science_model"), dict)
+        and isinstance(results.get("best_product_model"), dict)
+        else "warn",
+        "best_science_model/best_product_model present"
+        if isinstance(results.get("best_science_model"), dict)
+        and isinstance(results.get("best_product_model"), dict)
+        else "missing best_science_model or best_product_model",
     )
 
 

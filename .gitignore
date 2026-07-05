@@ -22,3 +22,9 @@ __pycache__/
 *.njsproj
 *.sln
 *.swp
+
+# Model binaries and local caches
+*.keras
+*.tflite
+*.h5
+seizure_detection/outputs/cache/

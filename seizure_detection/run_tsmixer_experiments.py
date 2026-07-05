@@ -232,6 +232,14 @@ EXPERIMENTS: List[Dict] = [
     },
 ]
 
+FINAL_FOCUS_EXPERIMENT_NAMES = [
+    "patch8_base_eda_temp_boost_ppg",
+    "patch8_base_temp_boost_ppg_eda",
+    "sswce_patch8_base_eda_boost_ppg_temp",
+    "booster_tuned_patch8_base_eda_boost_ppg_temp",
+    "booster_tuned_patch8_base_temp_boost_ppg_eda",
+]
+
 
 def run_command(command: List[str], env: Dict[str, str], log_path: Path) -> int:
     with log_path.open("a", encoding="utf-8") as log:
@@ -466,6 +474,11 @@ def main() -> int:
     parser.add_argument("--list", action="store_true", help="List experiments and exit.")
     parser.add_argument("--only", default="", help="Comma-separated experiment names to run.")
     parser.add_argument(
+        "--focus-final",
+        action="store_true",
+        help="Run only the smallest set of experiments needed for the final thesis comparison.",
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         help="Skip experiments that already finished successfully and continue from the first unfinished one.",
@@ -490,6 +503,13 @@ def main() -> int:
         if missing:
             print("Unknown experiment(s): " + ", ".join(sorted(missing)))
             return 2
+    elif args.focus_final:
+        names = set(FINAL_FOCUS_EXPERIMENT_NAMES)
+        selected = [item for item in EXPERIMENTS if item["name"] in names]
+        print(
+            "Final focus mode selected: "
+            + ", ".join(item["name"] for item in selected)
+        )
 
     if args.resume:
         resumed: List[Dict] = []

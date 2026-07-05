@@ -1,0 +1,20 @@
+{
+  "pipeline_version": "edge_safe_patched_dual_stream_tsmixer_v15_dsp_session_norm",
+  "detection_exit_code": 0,
+  "status": "completed",
+  "edge_exit_code": 0,
+  "edge_status": "completed",
+  "name": "patch8_base_eda_temp_boost_ppg",
+  "description": "Default patched TSMixer: ACC+EDA+TEMP baseline stream, BVP+HR booster stream.",
+  "env": {
+    "DETECTION_PATCH_SIZE": "8",
+    "DETECTION_PATCH_EMBED_DIM": "8",
+    "DETECTION_TSMIXER_BLOCKS": "3",
+    "DETECTION_TSMIXER_HIDDEN_DIM": "48",
+    "DETECTION_BASELINE_SECONDARY_FEATURES": "EDA,TEMP",
+    "DETECTION_BOOSTER_SECONDARY_FEATURES": "BVP,HR",
+    "DETECTION_LOSS": "focal",
+    "DETECTION_NEGATIVE_RATIO": "5"
+  },
+  "archived_at": "2026-07-04T04:49:19"
+}

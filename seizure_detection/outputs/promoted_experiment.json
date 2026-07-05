@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-07-05T02:37:37.651426",
+  "promoted_folder": "C:\\I2I\\seizure_detection\\outputs\\tsmixer_experiments\\20260704_204208_booster_tuned_patch8_base_temp_boost_ppg_eda",
+  "standard_variant": "standard_acc_temp",
+  "pro_variant": "pro_full_bvp_hr_eda_temp",
+  "selection_policy": "Prefer Pro event gain, Pro recall gain, fewer false alarms, Pro event count, Pro recall, and Pro AUC. Test data is used only after the experiment sweep for final artifact promotion.",
+  "standard": {
+    "auc": 0.35348293102200645,
+    "recall": 0.05732484076433121,
+    "events": "1/6",
+    "false_alarms_per_hour": 31.724677119560972
+  },
+  "pro": {
+    "auc": 0.512160677090445,
+    "recall": 0.07218683651804671,
+    "events": "4/6",
+    "false_alarms_per_hour": 18.601544983846523
+  },
+  "score": [
+    1,
+    1,
+    3,
+    0.014861995753715496,
+    13.12313213571445,
+    4,
+    0.07218683651804671,
+    0.512160677090445,
+    0.15867774606843854,
+    -155729
+  ]
+}

@@ -28,6 +28,7 @@ if not defined MARATHON_EDGE_BENCHMARK_RUNS set MARATHON_EDGE_BENCHMARK_RUNS=50
 if not defined MARATHON_EDGE_BENCHMARK_WARMUP set MARATHON_EDGE_BENCHMARK_WARMUP=5
 if not defined MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE set MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE=0
 if not defined MARATHON_EDGE_REQUIRE_INT8 set MARATHON_EDGE_REQUIRE_INT8=0
+if not defined MARATHON_FINAL_FOCUS set MARATHON_FINAL_FOCUS=1
 if not defined MARATHON_CLEAN_OUTPUTS set MARATHON_CLEAN_OUTPUTS=1
 if not defined MARATHON_RESUME set MARATHON_RESUME=0
 if /I "%~1"=="--resume" set MARATHON_RESUME=1
@@ -57,6 +58,7 @@ if "%MARATHON_CHECK%"=="1" (
   echo MARATHON_EDGE_BENCHMARK_WARMUP=%MARATHON_EDGE_BENCHMARK_WARMUP%
   echo MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE=%MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE%
   echo MARATHON_EDGE_REQUIRE_INT8=%MARATHON_EDGE_REQUIRE_INT8%
+  echo MARATHON_FINAL_FOCUS=%MARATHON_FINAL_FOCUS%
   echo MARATHON_CLEAN_OUTPUTS=%MARATHON_CLEAN_OUTPUTS%
   echo MARATHON_RESUME=%MARATHON_RESUME%
   if not exist "%CD%\.venv\Scripts\python.exe" (
@@ -89,6 +91,7 @@ echo ===============================================================
   echo EDGE_BENCHMARK_WARMUP=%MARATHON_EDGE_BENCHMARK_WARMUP%
   echo EDGE_FAIL_ON_BENCHMARK_FAILURE=%MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE%
   echo EDGE_REQUIRE_INT8=%MARATHON_EDGE_REQUIRE_INT8%
+  echo MARATHON_FINAL_FOCUS=%MARATHON_FINAL_FOCUS%
   echo MARATHON_RESUME=%MARATHON_RESUME%
 ) > "%STATUS_FILE%"
 
@@ -105,7 +108,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "Write-Host '[1/5] Patched Dual-Stream TSMixer experiment sweep';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START TSMIXER ' + (Get-Date -Format s));" ^
-  "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\run_tsmixer_experiments.py' --max-sessions %MARATHON_MAX_SESSIONS% --epochs %MARATHON_TSMIXER_EPOCHS% --batch-size %MARATHON_TSMIXER_BATCH_SIZE% --max-train-windows %MARATHON_TSMIXER_MAX_TRAIN_WINDOWS% --patience %MARATHON_TSMIXER_PATIENCE% %MARATHON_RESUME_FLAG%;" ^
+  "if ('%MARATHON_FINAL_FOCUS%' -eq '1') { $tsmixerArgs = @('--focus-final') } else { $tsmixerArgs = @() };" ^
+  "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\run_tsmixer_experiments.py' --max-sessions %MARATHON_MAX_SESSIONS% --epochs %MARATHON_TSMIXER_EPOCHS% --batch-size %MARATHON_TSMIXER_BATCH_SIZE% --max-train-windows %MARATHON_TSMIXER_MAX_TRAIN_WINDOWS% --patience %MARATHON_TSMIXER_PATIENCE% %MARATHON_RESUME_FLAG% $tsmixerArgs;" ^
   "$tsCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END TSMIXER code=' + $tsCode + ' ' + (Get-Date -Format s)); if ($tsCode -ne 0) { exit $tsCode };" ^
   "Write-Host '===============================================================';" ^
   "Write-Host '[2/5] Promote best TSMixer experiment';" ^

@@ -19,7 +19,7 @@ ACTIVE_DIR = BASE_PATH / "seizure_detection"
 DETECTION_OUTPUT_DIR = ACTIVE_DIR / "outputs"
 PREDICTION_OUTPUT_DIR = BASE_PATH / "prediction_outputs_local"
 SHOWCASE_DIR = BASE_PATH / "showcase_outputs"
-PIPELINE_VERSION = "edge_safe_patched_dual_stream_tsmixer_v14"
+PIPELINE_VERSION = "edge_safe_patched_dual_stream_tsmixer_v15_dsp_session_norm"
 
 
 def _env_int(name: str, default: int) -> int:
@@ -114,9 +114,11 @@ def valid_detection_results(path: Path) -> bool:
     return (
         results.get("pipeline_version") == PIPELINE_VERSION
         and results.get("status") == "completed"
-        and results.get("split_strategy") == "session-level held-out split"
+        and results.get("split_strategy") == "patient-level held-out split"
         and sensor_policy.get("synthetic_signals") is False
         and isinstance(results.get("product_allocation_selection"), dict)
+        and isinstance(results.get("best_science_model"), dict)
+        and isinstance(results.get("best_product_model"), dict)
         and isinstance(results.get("matched_false_alarm_operating_point"), dict)
         and label_policy.get("seizure_duration_seconds")
         == _env_int("SEIZURE_DURATION_SECONDS", 300)
@@ -157,7 +159,7 @@ def valid_prediction_results(path: Path) -> bool:
     return (
         results.get("pipeline_version") == PIPELINE_VERSION
         and results.get("status") == "completed"
-        and results.get("split_strategy") == "session-level held-out validation"
+        and results.get("split_strategy") == "patient-level held-out split"
         and isinstance(metrics, dict)
         and len(train_sessions) + len(val_sessions) == expected_sessions
         and dataset_usage.get("final_metrics_use_full_validation") is True
@@ -507,14 +509,17 @@ def build_release_summary(
                 ),
             ]
         )
-    lines.extend(
-        [
-            "",
-            "## Validation Scope",
-            "",
-            "- The pipeline uses real Empatica signals, session-held-out splits, train-only normalization, and no synthetic label-derived features.",
-            "- The reported scope is personalized/session-level validation on the available Mayo recordings.",
-            "- Patient-independent validation, improved event-level seizure sensitivity, prospective clinical evaluation, and physical hardware deployment are outside the v1.0 scope.",
+        lines.extend(
+            [
+                "",
+                "## Validation Scope",
+                "",
+                (
+                    f"- Claim scope: {detection_results.get('claim_scope', 'n/a')}."
+                ),
+                "- The pipeline uses real Empatica signals, session-held-out splits, train-only normalization, and no synthetic label-derived features.",
+                "- The reported scope is personalized/session-level validation on the available Mayo recordings.",
+                "- Patient-independent validation, improved event-level seizure sensitivity, prospective clinical evaluation, and physical hardware deployment are outside the v1.0 scope.",
             "",
             "## Key Artifacts",
             "",

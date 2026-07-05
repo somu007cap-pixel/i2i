@@ -13,6 +13,7 @@ This script:
 import os
 import glob
 import json
+import re
 import hashlib
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
@@ -28,7 +29,7 @@ PHASE1_EXACT_DURATIONS = os.environ.get("PHASE1_EXACT_DURATIONS", "0") == "1"
 PHASE1_SESSION_DURATION_SECONDS = float(
     os.environ.get("PHASE1_SESSION_DURATION_SECONDS", "129600")
 )
-PHASE1_CACHE_VERSION = "phase1_sensor_export_quality_v6"
+PHASE1_CACHE_VERSION = "phase1_sensor_export_quality_v7"
 
 
 @dataclass
@@ -126,18 +127,34 @@ def merge_seizure_intervals(
     return merged
 
 
-def parse_seizure_label_onsets(label_file: str) -> List[float]:
-    """Read onset timestamps from a patient label file."""
-    onsets = []
+def parse_seizure_label_rows(label_file: str) -> List[Tuple[float, Optional[float]]]:
+    """
+    Read label rows from a patient label file.
+
+    Supported formats:
+    - one numeric value: onset timestamp
+    - two numeric values: onset and offset/duration-like second field
+    """
+    rows: List[Tuple[float, Optional[float]]] = []
     try:
         with open(label_file, "r") as f:
             lines = [l.strip() for l in f.readlines() if l.strip()]
         for line in lines:
+            parts = [part.strip() for part in re.split(r"[,\s]+", line) if part.strip()]
+            if not parts:
+                continue
             try:
-                onsets.append(float(line))
+                onset = float(parts[0])
             except ValueError:
                 continue
-        return sorted(onsets)
+            extra: Optional[float] = None
+            if len(parts) >= 2:
+                try:
+                    extra = float(parts[1])
+                except ValueError:
+                    extra = None
+            rows.append((onset, extra))
+        return sorted(rows, key=lambda item: item[0])
     except Exception as e:
         print(f"  [ERROR] Parsing labels {label_file}: {e}")
         return []
@@ -153,10 +170,16 @@ def parse_seizure_labels(label_file: str) -> List[Tuple[float, float]]:
     duration annotations become available.
     Returns list of (start_time, end_time) tuples.
     """
-    onsets = parse_seizure_label_onsets(label_file)
-    intervals = [
-        (onset_ts, onset_ts + DEFAULT_SEIZURE_DURATION_SECONDS) for onset_ts in onsets
-    ]
+    rows = parse_seizure_label_rows(label_file)
+    intervals: List[Tuple[float, float]] = []
+    for onset_ts, second_field in rows:
+        if second_field is None or second_field <= onset_ts:
+            end_ts = onset_ts + DEFAULT_SEIZURE_DURATION_SECONDS
+        elif second_field - onset_ts <= 24 * 3600:
+            end_ts = second_field
+        else:
+            end_ts = onset_ts + DEFAULT_SEIZURE_DURATION_SECONDS
+        intervals.append((onset_ts, end_ts))
     return merge_seizure_intervals(intervals)
 
 
@@ -254,7 +277,7 @@ def scan_patient_folder(patient_folder: str) -> PatientData:
     label_file = find_label_file(patient_folder)
     if label_file:
         print(f"\n  [LABELS] Found: {os.path.basename(label_file)}")
-        raw_onsets = parse_seizure_label_onsets(label_file)
+        raw_onsets = [item[0] for item in parse_seizure_label_rows(label_file)]
         patient_data.seizure_intervals = parse_seizure_labels(label_file)
         patient_data.raw_seizure_onsets = len(raw_onsets)
         patient_data.total_seizures = len(patient_data.seizure_intervals)
@@ -433,6 +456,7 @@ def save_phase1_cache(base_path: str, all_patients: Dict[str, PatientData]) -> N
             "merge_gap_seconds": SEIZURE_MERGE_GAP_SECONDS,
             "exact_durations": PHASE1_EXACT_DURATIONS,
             "session_duration_seconds": PHASE1_SESSION_DURATION_SECONDS,
+            "row_format": "onset or onset+offset columns when available",
         },
         "patients": {
             patient_id: patient_to_dict(patient_data)
@@ -507,6 +531,8 @@ def run_deep_analysis(base_path: str) -> Dict[str, PatientData]:
     print("=" * 70)
     print(
         "\nLabel policy: patient .txt files are parsed as seizure onsets; "
+        "if a second numeric column exists it is treated as the offset when it "
+        "looks like an absolute timestamp, otherwise "
         f"offset = onset + {DEFAULT_SEIZURE_DURATION_SECONDS}s "
         f"and overlapping intervals are merged with gap <= {SEIZURE_MERGE_GAP_SECONDS}s "
         "(override with SEIZURE_DURATION_SECONDS and SEIZURE_MERGE_GAP_SECONDS)."

@@ -38,7 +38,7 @@ from phase4_validation import (
     event_level_metrics_from_probabilities,
     get_default_base_path,
     metrics_from_probabilities,
-    split_session_paths,
+    split_patient_paths,
     summarize_session_splits,
     threshold_for_false_alarm_rate,
 )
@@ -276,7 +276,7 @@ def build_data() -> Tuple[Dict[str, np.ndarray], Dict]:
         max_sessions=max_sessions,
         prioritize_seizures=True,
     )
-    session_splits = split_session_paths(session_paths, seizure_intervals)
+    session_splits = split_patient_paths(session_paths, seizure_intervals)
     data = build_session_level_data(
         session_splits,
         seizure_intervals,

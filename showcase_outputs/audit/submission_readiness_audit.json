@@ -1,0 +1,85 @@
+{
+  "overall_status": "warn",
+  "checks": [
+    {
+      "name": "detection_status",
+      "status": "pass",
+      "detail": "status=completed"
+    },
+    {
+      "name": "split_strategy",
+      "status": "pass",
+      "detail": "patient-level held-out split"
+    },
+    {
+      "name": "evaluation_scope",
+      "status": "pass",
+      "detail": "patient-level generalization; held-out patients are reserved for validation/test while train patients remain unseen in those splits"
+    },
+    {
+      "name": "claim_scope_disclosed",
+      "status": "pass",
+      "detail": "rigorous prototype and feasibility study for patient-level seizure event detection; not a clinically validated detector or deployment claim"
+    },
+    {
+      "name": "raw_accuracy_not_primary",
+      "status": "pass",
+      "detail": "all-normal baseline=0.9988, standard_accuracy=0.9548, pro_accuracy=0.9731"
+    },
+    {
+      "name": "pro_signal_gain",
+      "status": "pass",
+      "detail": "auc_gain=0.1587, recall_gain=0.0149"
+    },
+    {
+      "name": "event_level_disclosed",
+      "status": "pass",
+      "detail": "standard=1/6, pro=4/6"
+    },
+    {
+      "name": "checkpoint_provenance_disclosed",
+      "status": "pass",
+      "detail": "all variants retrained from scratch"
+    },
+    {
+      "name": "allocation_selected_on_validation",
+      "status": "pass",
+      "detail": "selection_split=validation"
+    },
+    {
+      "name": "science_product_split_present",
+      "status": "pass",
+      "detail": "best_science_model/best_product_model present"
+    },
+    {
+      "name": "standard_tflite_size",
+      "status": "pass",
+      "detail": "278.7 KB"
+    },
+    {
+      "name": "standard_tflite_io_dtype_disclosed",
+      "status": "warn",
+      "detail": "inputs=['int8'], outputs=['int8']"
+    },
+    {
+      "name": "pro_tflite_size",
+      "status": "pass",
+      "detail": "282.1 KB"
+    },
+    {
+      "name": "pro_tflite_io_dtype_disclosed",
+      "status": "warn",
+      "detail": "inputs=['int8'], outputs=['int8']"
+    },
+    {
+      "name": "midsem_detection_scope",
+      "status": "pass",
+      "detail": "no forbidden future-work or generated-text wording in docx"
+    },
+    {
+      "name": "midsem_tflite_caveat",
+      "status": "pass",
+      "detail": "TFLite limitation caveat present"
+    }
+  ]
+}

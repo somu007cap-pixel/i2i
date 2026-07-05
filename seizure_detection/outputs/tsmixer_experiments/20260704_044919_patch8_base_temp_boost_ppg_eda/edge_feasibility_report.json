@@ -1,0 +1,521 @@
+{
+  "timestamp": "2026-07-04T12:12:50",
+  "scope": "Software-only feasibility analysis for resource-constrained wearable GTC seizure-event detection. No physical MCU deployment is claimed.",
+  "source_detection_run": {
+    "timestamp": "2026-07-04T12:11:22.278103",
+    "pipeline_version": "edge_safe_patched_dual_stream_tsmixer_v15_dsp_session_norm",
+    "status": "completed",
+    "selected_session_count": 146,
+    "max_sessions_requested": 146,
+    "window_seconds": 5.0,
+    "stride_seconds": 5.0
+  },
+  "selected_variants": {
+    "standard": "standard_acc_only",
+    "pro": "pro_full_bvp_hr_eda_temp"
+  },
+  "models": {
+    "standard": {
+      "variant": "standard_acc_only",
+      "keras": {
+        "path": "C:\\I2I\\seizure_detection\\outputs\\standard_acc_only.keras",
+        "size_bytes": 2238176,
+        "size_kb": 2185.71875,
+        "parameters": 155729,
+        "trainable_parameters": 155729,
+        "non_trainable_parameters": 0
+      },
+      "tflite": {
+        "float32": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\standard\\standard_acc_only_float32.tflite",
+          "size_bytes": 677560,
+          "size_kb": 661.6796875,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "op_count": 145,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 1011240,
+          "estimated_tensor_arena_proxy_kb": 987.5390625,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 0.43756400074926205,
+            "latency_ms_p50": 0.4139500051678624,
+            "latency_ms_p95": 0.5292049958370626,
+            "latency_ms_min": 0.4071000003023073,
+            "latency_ms_max": 0.9000999998534098,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        },
+        "dynamic_range": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\standard\\standard_acc_only_dynamic_range.tflite",
+          "size_bytes": 249984,
+          "size_kb": 244.125,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "op_count": 145,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 552168,
+          "estimated_tensor_arena_proxy_kb": 539.2265625,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 1.7755359997681808,
+            "latency_ms_p50": 1.6990500007523224,
+            "latency_ms_p95": 2.4957149991678307,
+            "latency_ms_min": 1.3268999973661266,
+            "latency_ms_max": 3.4188999998150393,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        },
+        "calibrated_existing": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\standard\\standard_acc_only_calibrated_existing.tflite",
+          "size_bytes": 285024,
+          "size_kb": 278.34375,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.08671709895133972,
+                -6.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.08671709895133972,
+                -6.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.00390625,
+                -128.0
+              ]
+            }
+          ],
+          "op_count": 150,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "DEQUANTIZE": 1,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "QUANTIZE": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 268625,
+          "estimated_tensor_arena_proxy_kb": 262.3291015625,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 9.958403998753056,
+            "latency_ms_p50": 9.561349997966317,
+            "latency_ms_p95": 12.008114997297525,
+            "latency_ms_min": 8.78069999453146,
+            "latency_ms_max": 13.573700001870748,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        }
+      },
+      "deployment_notes": [
+        "Operator set contains normalization or reshape-style ops that need TFLite Micro resolver support: MEAN, TRANSPOSE.",
+        "Flash proxy is the flatbuffer size. RAM proxy is the sum of allocated TFLite tensor buffers after allocation.",
+        "The result supports software-only edge-feasibility discussion, not a claim of measured hardware deployment."
+      ]
+    },
+    "pro": {
+      "variant": "pro_full_bvp_hr_eda_temp",
+      "keras": {
+        "path": "C:\\I2I\\seizure_detection\\outputs\\pro_full_bvp_hr_eda_temp.keras",
+        "size_bytes": 2238184,
+        "size_kb": 2185.7265625,
+        "parameters": 155729,
+        "trainable_parameters": 155729,
+        "non_trainable_parameters": 0
+      },
+      "tflite": {
+        "float32": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\pro\\pro_full_bvp_hr_eda_temp_float32.tflite",
+          "size_bytes": 679296,
+          "size_kb": 663.375,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "op_count": 145,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 1011848,
+          "estimated_tensor_arena_proxy_kb": 988.1328125,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 0.5972399993333966,
+            "latency_ms_p50": 0.5329999985406175,
+            "latency_ms_p95": 0.9003299972391686,
+            "latency_ms_min": 0.5213000040384941,
+            "latency_ms_max": 1.0550000006332994,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        },
+        "dynamic_range": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\pro\\pro_full_bvp_hr_eda_temp_dynamic_range.tflite",
+          "size_bytes": 251720,
+          "size_kb": 245.8203125,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "float32",
+              "quantization": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "op_count": 145,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 552776,
+          "estimated_tensor_arena_proxy_kb": 539.8203125,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 2.1485720004420727,
+            "latency_ms_p50": 1.9800500049313996,
+            "latency_ms_p95": 3.07716999632248,
+            "latency_ms_min": 1.7858999999589287,
+            "latency_ms_max": 3.621199997724034,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        },
+        "calibrated_existing": {
+          "path": "C:\\I2I\\seizure_detection\\outputs\\edge_feasibility\\pro\\pro_full_bvp_hr_eda_temp_calibrated_existing.tflite",
+          "size_bytes": 288872,
+          "size_kb": 282.1015625,
+          "inputs": [
+            {
+              "name": "serving_default_primary_input:0",
+              "shape": [
+                1,
+                160,
+                3
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.08671709895133972,
+                -6.0
+              ]
+            },
+            {
+              "name": "serving_default_secondary_input:0",
+              "shape": [
+                1,
+                160,
+                4
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.08671709895133972,
+                -6.0
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StatefulPartitionedCall_1:0",
+              "shape": [
+                1,
+                1
+              ],
+              "dtype": "int8",
+              "quantization": [
+                0.00390625,
+                -128.0
+              ]
+            }
+          ],
+          "op_count": 150,
+          "op_histogram": {
+            "ADD": 21,
+            "CONCATENATION": 7,
+            "DEQUANTIZE": 1,
+            "EXPAND_DIMS": 3,
+            "FULLY_CONNECTED": 48,
+            "GATHER": 2,
+            "LOGISTIC": 5,
+            "MEAN": 8,
+            "MUL": 5,
+            "PACK": 4,
+            "QUANTIZE": 4,
+            "REDUCE_MAX": 3,
+            "RESHAPE": 12,
+            "SHAPE": 5,
+            "STRIDED_SLICE": 4,
+            "TRANSPOSE": 18
+          },
+          "estimated_tensor_arena_proxy_bytes": 269233,
+          "estimated_tensor_arena_proxy_kb": 262.9228515625,
+          "latency_proxy": {
+            "runs": 50,
+            "warmup_runs": 5,
+            "latency_ms_mean": 10.435144000512082,
+            "latency_ms_p50": 9.908200001518708,
+            "latency_ms_p95": 13.002730000880545,
+            "latency_ms_min": 9.231600000930484,
+            "latency_ms_max": 18.931199992948677,
+            "benchmark_note": "Single-thread local TFLite Interpreter latency on this PC. This is a software proxy, not a Cortex-M latency measurement.",
+            "benchmark_status": "completed"
+          }
+        }
+      },
+      "deployment_notes": [
+        "Operator set contains normalization or reshape-style ops that need TFLite Micro resolver support: MEAN, TRANSPOSE.",
+        "Flash proxy is the flatbuffer size. RAM proxy is the sum of allocated TFLite tensor buffers after allocation.",
+        "The result supports software-only edge-feasibility discussion, not a claim of measured hardware deployment."
+      ]
+    }
+  }
+}
