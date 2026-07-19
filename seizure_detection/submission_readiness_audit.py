@@ -41,6 +41,38 @@ def add(checks: list[dict[str, Any]], name: str, status: str, detail: str) -> No
     checks.append({"name": name, "status": status, "detail": detail})
 
 
+def build_scientific_checklist(results: dict[str, Any]) -> dict[str, str]:
+    standard_event = (results.get("standard_mode") or {}).get("event_level") or {}
+    pro_event = (results.get("pro_mode") or {}).get("event_level") or {}
+
+    uncertainty_estimates = "pass" if (
+        standard_event.get("event_sensitivity_ci95_low") is not None
+        and standard_event.get("event_sensitivity_ci95_high") is not None
+        and pro_event.get("event_sensitivity_ci95_low") is not None
+        and pro_event.get("event_sensitivity_ci95_high") is not None
+    ) else "warn"
+
+    operating_point_documented = "pass" if (
+        results.get("matched_false_alarm_operating_point")
+        and (
+            results.get("matched_false_alarm_operating_point", {}).get("validation_alarm_budget")
+            is not None
+            or results.get("matched_false_alarm_operating_point", {}).get("fixed_validation_alarm_budgets")
+        )
+    ) else "warn"
+
+    label_policy_documented = "pass" if (
+        isinstance(results.get("label_policy"), dict)
+        and str(results.get("label_policy", {}).get("offset_policy", "")).strip()
+    ) else "warn"
+
+    return {
+        "uncertainty_estimates": uncertainty_estimates,
+        "operating_point_documented": operating_point_documented,
+        "label_policy_documented": label_policy_documented,
+    }
+
+
 def audit_detection(checks: list[dict[str, Any]]) -> None:
     results = load_json(DETECTION_RESULTS)
     if results is None:
@@ -99,11 +131,35 @@ def audit_detection(checks: list[dict[str, Any]]) -> None:
 
     pro_auc_gain = float(pro.get("auc", 0.0)) - float(standard.get("auc", 0.0))
     pro_recall_gain = float(pro.get("recall", 0.0)) - float(standard.get("recall", 0.0))
+    standard_event_sensitivity = float(
+        (standard.get("event_level") or {}).get("event_sensitivity", 0.0)
+    )
+    pro_event_sensitivity = float(
+        (pro.get("event_level") or {}).get("event_sensitivity", 0.0)
+    )
+    pro_event_sensitivity_gain = pro_event_sensitivity - standard_event_sensitivity
+    pro_false_alarm_delta = float(pro.get("false_alarms_per_hour", 0.0)) - float(
+        standard.get("false_alarms_per_hour", 0.0)
+    )
     add(
         checks,
         "pro_signal_gain",
         "pass" if pro_auc_gain >= 0 and pro_recall_gain >= 0 else "warn",
-        f"auc_gain={pro_auc_gain:.4f}, recall_gain={pro_recall_gain:.4f}",
+        (
+            f"auc_gain={pro_auc_gain:.4f}, recall_gain={pro_recall_gain:.4f}, "
+            f"event_sensitivity_gain={pro_event_sensitivity_gain:.4f}, "
+            f"false_alarm_delta={pro_false_alarm_delta:.2f}/hour"
+        ),
+    )
+    add(
+        checks,
+        "pro_event_sensitivity_gain",
+        "pass" if pro_event_sensitivity_gain >= 0 else "warn",
+        (
+            f"standard_event_sensitivity={standard_event_sensitivity:.4f}, "
+            f"pro_event_sensitivity={pro_event_sensitivity:.4f}, "
+            f"gain={pro_event_sensitivity_gain:.4f}"
+        ),
     )
 
     standard_events = standard.get("event_level", {})
@@ -155,6 +211,10 @@ def audit_detection(checks: list[dict[str, Any]]) -> None:
         and isinstance(results.get("best_product_model"), dict)
         else "missing best_science_model or best_product_model",
     )
+
+    scientific_checks = build_scientific_checklist(results)
+    for name, status in scientific_checks.items():
+        add(checks, name, status, f"status={status}")
 
 
 def audit_edge(checks: list[dict[str, Any]]) -> None:

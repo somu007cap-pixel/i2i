@@ -1,0 +1,12 @@
+@echo off
+setlocal
+
+cd /d "%~dp0"
+
+set MARATHON_ROBUSTNESS_STUDY=1
+set MARATHON_FINAL_FOCUS=0
+set MARATHON_CLEAN_OUTPUTS=1
+set MARATHON_RESUME=0
+
+call "%~dp0RUN_MARATHON_EXPERIMENTS.bat" %*
+exit /b %ERRORLEVEL%

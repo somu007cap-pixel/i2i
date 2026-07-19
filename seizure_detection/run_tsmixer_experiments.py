@@ -240,6 +240,65 @@ FINAL_FOCUS_EXPERIMENT_NAMES = [
     "booster_tuned_patch8_base_temp_boost_ppg_eda",
 ]
 
+ROBUSTNESS_BASE_EXPERIMENTS = {
+    "booster_tuned_patch8_base_eda_boost_ppg_temp": (
+        "ACC+EDA baseline with BVP+HR+TEMP add-on"
+    ),
+    "patch8_base_temp_boost_ppg_eda": (
+        "ACC+TEMP baseline with BVP+HR+EDA add-on"
+    ),
+}
+ROBUSTNESS_SEEDS = ["7", "42", "123"]
+ROBUSTNESS_LABEL_DURATIONS = ["120", "300", "600"]
+
+
+def _experiment_template(name: str) -> Dict:
+    for item in EXPERIMENTS:
+        if item["name"] == name:
+            return item
+    raise KeyError(name)
+
+
+def _append_robustness_experiments() -> List[str]:
+    names: List[str] = []
+    for base_name, base_description in ROBUSTNESS_BASE_EXPERIMENTS.items():
+        base = _experiment_template(base_name)
+        for seed in ROBUSTNESS_SEEDS:
+            experiment = {
+                "name": f"robust_seed{seed}_{base_name}",
+                "description": (
+                    f"Robustness replicate seed={seed}: {base_description}."
+                ),
+                "env": {
+                    **base["env"],
+                    "DETECTION_RANDOM_SEED": seed,
+                    "SEIZURE_DURATION_SECONDS": "300",
+                    "PHASE1_CACHE": "0",
+                },
+            }
+            EXPERIMENTS.append(experiment)
+            names.append(experiment["name"])
+        for duration in ROBUSTNESS_LABEL_DURATIONS:
+            experiment = {
+                "name": f"robust_label{duration}s_{base_name}",
+                "description": (
+                    f"Label-policy sensitivity duration={duration}s: "
+                    f"{base_description}."
+                ),
+                "env": {
+                    **base["env"],
+                    "DETECTION_RANDOM_SEED": "42",
+                    "SEIZURE_DURATION_SECONDS": duration,
+                    "PHASE1_CACHE": "0",
+                },
+            }
+            EXPERIMENTS.append(experiment)
+            names.append(experiment["name"])
+    return names
+
+
+ROBUSTNESS_EXPERIMENT_NAMES = _append_robustness_experiments()
+
 
 def run_command(command: List[str], env: Dict[str, str], log_path: Path) -> int:
     with log_path.open("a", encoding="utf-8") as log:
@@ -479,6 +538,11 @@ def main() -> int:
         help="Run only the smallest set of experiments needed for the final thesis comparison.",
     )
     parser.add_argument(
+        "--robust-final",
+        action="store_true",
+        help="Run repeated-seed and label-policy sensitivity experiments for the final study.",
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         help="Skip experiments that already finished successfully and continue from the first unfinished one.",
@@ -508,6 +572,13 @@ def main() -> int:
         selected = [item for item in EXPERIMENTS if item["name"] in names]
         print(
             "Final focus mode selected: "
+            + ", ".join(item["name"] for item in selected)
+        )
+    elif args.robust_final:
+        names = set(ROBUSTNESS_EXPERIMENT_NAMES)
+        selected = [item for item in EXPERIMENTS if item["name"] in names]
+        print(
+            "Robust final mode selected: "
             + ", ".join(item["name"] for item in selected)
         )
 

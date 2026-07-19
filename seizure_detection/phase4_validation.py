@@ -318,10 +318,27 @@ def event_level_metrics_from_probabilities(
         )
     positive_windows = predictions
     seizure_windows = labels > 0.5
+    sensitivity = float(detected_events / max(event_count, 1))
+    if event_count > 0:
+        z = 1.96
+        denominator = 1.0 + (z * z / event_count)
+        centre = sensitivity + (z * z / (2.0 * event_count))
+        margin = z * np.sqrt(
+            (sensitivity * (1.0 - sensitivity) / event_count)
+            + (z * z / (4.0 * event_count * event_count))
+        )
+        ci_low = float(max(0.0, (centre - margin) / denominator))
+        ci_high = float(min(1.0, (centre + margin) / denominator))
+    else:
+        ci_low = float("nan")
+        ci_high = float("nan")
     return {
         "event_count": int(event_count),
         "detected_events": int(detected_events),
-        "event_sensitivity": float(detected_events / max(event_count, 1)),
+        "event_sensitivity": sensitivity,
+        "event_sensitivity_ci95_low": ci_low,
+        "event_sensitivity_ci95_high": ci_high,
+        "event_sensitivity_ci95_method": "Wilson score interval",
         "positive_windows": int(np.sum(positive_windows)),
         "positive_seizure_windows": int(np.sum(positive_windows & seizure_windows)),
         "false_positive_windows": int(np.sum(positive_windows & ~seizure_windows)),
@@ -750,6 +767,8 @@ def evaluate_alarm_budget_grid(
     test_probabilities: np.ndarray,
     budgets: List[float],
     stride_seconds: float,
+    test_data: Optional[Dict[str, np.ndarray]] = None,
+    alert_refractory_minutes: float = 0.0,
 ) -> Dict[str, Dict[str, float]]:
     """Evaluate test metrics at thresholds chosen from validation alarm budgets."""
     results = {}
@@ -767,6 +786,22 @@ def evaluate_alarm_budget_grid(
             stride_seconds,
         )
         metrics["validation_false_alarm_budget_per_hour"] = float(budget)
+        if test_data is not None:
+            event_metrics = event_level_metrics_from_probabilities(
+                test_data, "test", test_probabilities, threshold
+            )
+            if event_metrics is not None:
+                metrics["event_level"] = event_metrics
+            alert_metrics = event_alert_metrics_from_probabilities(
+                test_data,
+                "test",
+                test_probabilities,
+                threshold,
+                stride_seconds,
+                alert_refractory_minutes,
+            )
+            if alert_metrics is not None:
+                metrics["event_alert_level"] = alert_metrics
         results[str(budget)] = metrics
     return results
 
@@ -782,6 +817,147 @@ def false_alarm_rate_at_threshold(
     false_positives = int(np.sum(probabilities[normal] >= threshold))
     recording_hours = max(len(labels) * stride_seconds / 3600, 1e-9)
     return float(false_positives / recording_hours)
+
+
+def alert_mask_with_refractory(
+    data: Dict[str, np.ndarray],
+    split: str,
+    probabilities: np.ndarray,
+    threshold: float,
+    refractory_windows: int,
+) -> np.ndarray:
+    """Convert window scores into first-alert windows with per-session refractory."""
+    raw = probabilities >= threshold
+    refractory_windows = max(int(refractory_windows), 0)
+    session_ids = data.get(f"window_session_ids_{split}")
+    if session_ids is None or len(session_ids) != len(probabilities):
+        if refractory_windows <= 0:
+            return raw.copy()
+        alerts = np.zeros_like(raw, dtype=bool)
+        last_alert = -refractory_windows - 1
+        for idx, is_alert in enumerate(raw):
+            if is_alert and idx - last_alert > refractory_windows:
+                alerts[idx] = True
+                last_alert = idx
+        return alerts
+    alerts = np.zeros_like(raw, dtype=bool)
+    for session_id in np.unique(session_ids):
+        idx = np.flatnonzero(session_ids == session_id)
+        last_alert = -refractory_windows - 1
+        for local_pos, global_idx in enumerate(idx):
+            if raw[global_idx] and local_pos - last_alert > refractory_windows:
+                alerts[global_idx] = True
+                last_alert = local_pos
+    return alerts
+
+
+def event_alert_metrics_from_probabilities(
+    data: Dict[str, np.ndarray],
+    split: str,
+    probabilities: np.ndarray,
+    threshold: float,
+    stride_seconds: float,
+    refractory_minutes: float,
+) -> Optional[Dict[str, Union[int, float, str]]]:
+    """Evaluate event detections using alert episodes rather than every hot window."""
+    refractory_windows = int(round(max(refractory_minutes, 0.0) * 60.0 / stride_seconds))
+    alerts = alert_mask_with_refractory(
+        data, split, probabilities, threshold, refractory_windows
+    )
+    session_ids = data.get(f"window_session_ids_{split}")
+    window_starts = data.get(f"window_starts_{split}")
+    window_ends = data.get(f"window_ends_{split}")
+    events = data.get(f"events_{split}")
+    labels = data.get(f"labels_{split}")
+    if (
+        session_ids is None
+        or window_starts is None
+        or window_ends is None
+        or events is None
+        or labels is None
+    ):
+        return None
+    event_count = len(events)
+    detected_events = 0
+    alert_in_event = np.zeros_like(alerts, dtype=bool)
+    event_rows = []
+    for event in events:
+        overlap = (
+            (session_ids == event["session_id"])
+            & (window_starts <= float(event["end"]))
+            & (window_ends >= float(event["start"]))
+        )
+        detected = bool(np.any(alerts & overlap))
+        detected_events += int(detected)
+        alert_in_event |= alerts & overlap
+        event_rows.append(
+            {
+                "session_id": event["session_id"],
+                "event_index": int(event["event_index"]),
+                "detected": detected,
+                "alert_count": int(np.sum(alerts & overlap)),
+                "max_score": (
+                    float(np.max(probabilities[overlap]))
+                    if np.any(overlap)
+                    else float("nan")
+                ),
+            }
+        )
+    recording_hours = max(len(labels) * stride_seconds / 3600.0, 1e-9)
+    false_alerts = int(np.sum(alerts & ~alert_in_event))
+    sensitivity = float(detected_events / max(event_count, 1))
+    return {
+        "post_processing": "first alert per refractory interval",
+        "refractory_minutes": float(refractory_minutes),
+        "refractory_windows": int(refractory_windows),
+        "event_count": int(event_count),
+        "detected_events": int(detected_events),
+        "event_sensitivity": sensitivity,
+        "alert_count": int(np.sum(alerts)),
+        "false_alert_count": false_alerts,
+        "false_alerts_per_hour": float(false_alerts / recording_hours),
+        "events": event_rows,
+    }
+
+
+def select_event_alert_postprocessing(
+    data: Dict[str, np.ndarray],
+    split: str,
+    probabilities: np.ndarray,
+    threshold: float,
+    stride_seconds: float,
+) -> Dict[str, Union[int, float, str]]:
+    """Select refractory post-processing on validation labels only."""
+    candidates = [
+        float(value)
+        for value in os.environ.get(
+            "DETECTION_ALERT_REFRACTORY_MINUTES", "0,1,2,5,10,15"
+        ).split(",")
+        if value.strip()
+    ]
+    best = None
+    best_score = None
+    for minutes in candidates or [0.0]:
+        metrics = event_alert_metrics_from_probabilities(
+            data, split, probabilities, threshold, stride_seconds, minutes
+        )
+        if metrics is None:
+            continue
+        score = (
+            100.0 * float(metrics.get("event_sensitivity", 0.0))
+            + float(metrics.get("detected_events", 0))
+            - 0.2 * float(metrics.get("false_alerts_per_hour", 0.0))
+        )
+        if best_score is None or score > best_score:
+            best_score = score
+            best = metrics
+    if best is None:
+        return {
+            "post_processing": "not available",
+            "refractory_minutes": 0.0,
+            "refractory_windows": 0,
+        }
+    return best
 
 
 def causal_smooth_probabilities(
@@ -1480,6 +1656,23 @@ def run_product_validation(
     )
     if standard_event_metrics is not None:
         standard_results["event_level"] = standard_event_metrics
+    standard_alert_selection = select_event_alert_postprocessing(
+        standard_data,
+        "val",
+        standard_val_prob,
+        standard_threshold,
+        stride_seconds,
+    )
+    standard_alert_metrics = event_alert_metrics_from_probabilities(
+        standard_data,
+        "test",
+        standard_test_prob,
+        standard_threshold,
+        stride_seconds,
+        float(standard_alert_selection.get("refractory_minutes", 0.0)),
+    )
+    if standard_alert_metrics is not None:
+        standard_results["event_alert_level"] = standard_alert_metrics
     print_evaluation_results(standard_mode_name, standard_results)
     standard_results["threshold_policy"] = (
         f"validation false-alarm budget <= {default_alarm_budget:g}/hour"
@@ -1492,6 +1685,9 @@ def run_product_validation(
     standard_results["post_processing"] = {
         "score_smoothing": "causal rolling mean",
         "selected_windows": int(standard_smoothing_windows),
+        "alert_refractory_minutes": float(
+            standard_alert_selection.get("refractory_minutes", 0.0)
+        ),
         "selected_on": "validation split",
     }
     pro_results = metrics_from_probabilities(
@@ -1505,6 +1701,23 @@ def run_product_validation(
     )
     if pro_event_metrics is not None:
         pro_results["event_level"] = pro_event_metrics
+    pro_alert_selection = select_event_alert_postprocessing(
+        pro_data,
+        "val",
+        pro_val_prob,
+        pro_threshold,
+        stride_seconds,
+    )
+    pro_alert_metrics = event_alert_metrics_from_probabilities(
+        pro_data,
+        "test",
+        pro_test_prob,
+        pro_threshold,
+        stride_seconds,
+        float(pro_alert_selection.get("refractory_minutes", 0.0)),
+    )
+    if pro_alert_metrics is not None:
+        pro_results["event_alert_level"] = pro_alert_metrics
     print_evaluation_results(f"Pro Product ({pro_variant_name})", pro_results)
     pro_results["threshold_policy"] = (
         f"validation false-alarm budget <= {default_alarm_budget:g}/hour"
@@ -1524,6 +1737,9 @@ def run_product_validation(
     pro_results["post_processing"] = {
         "score_smoothing": "causal rolling mean",
         "selected_windows": int(pro_smoothing_windows),
+        "alert_refractory_minutes": float(
+            pro_alert_selection.get("refractory_minutes", 0.0)
+        ),
         "selected_on": "validation split",
     }
     matched_alarm_results = {
@@ -1547,6 +1763,16 @@ def run_product_validation(
         matched_alarm_results["standard"]["event_level"] = (
             matched_standard_event_metrics
         )
+    matched_standard_alert = event_alert_metrics_from_probabilities(
+        standard_data,
+        "test",
+        standard_test_prob,
+        standard_threshold,
+        stride_seconds,
+        float(standard_alert_selection.get("refractory_minutes", 0.0)),
+    )
+    if matched_standard_alert is not None:
+        matched_alarm_results["standard"]["event_alert_level"] = matched_standard_alert
     matched_alarm_results["standard"]["post_processing"] = standard_results[
         "post_processing"
     ]
@@ -1561,6 +1787,16 @@ def run_product_validation(
     )
     if matched_pro_event_metrics is not None:
         matched_alarm_results["pro"]["event_level"] = matched_pro_event_metrics
+    matched_pro_alert = event_alert_metrics_from_probabilities(
+        pro_data,
+        "test",
+        pro_test_prob,
+        pro_matched_threshold,
+        stride_seconds,
+        float(pro_alert_selection.get("refractory_minutes", 0.0)),
+    )
+    if matched_pro_alert is not None:
+        matched_alarm_results["pro"]["event_alert_level"] = matched_pro_alert
     matched_alarm_results["pro"]["variant_name"] = pro_variant_name
     matched_alarm_results["pro"]["enabled_secondary_features"] = pro_data.get(
         "enabled_secondary_features", []
@@ -1592,6 +1828,8 @@ def run_product_validation(
             standard_test_prob,
             alarm_budgets,
             stride_seconds,
+            standard_data,
+            float(standard_alert_selection.get("refractory_minutes", 0.0)),
         ),
         "pro": evaluate_alarm_budget_grid(
             pro_data["labels_val"],
@@ -1600,6 +1838,8 @@ def run_product_validation(
             pro_test_prob,
             alarm_budgets,
             stride_seconds,
+            pro_data,
+            float(pro_alert_selection.get("refractory_minutes", 0.0)),
         ),
     }
 
@@ -1625,6 +1865,19 @@ def run_product_validation(
             "  Event sensitivity: "
             f"{standard_events.get('detected_events', 0)}/{standard_events.get('event_count', 0)} -> "
             f"{pro_events.get('detected_events', 0)}/{pro_events.get('event_count', 0)}"
+        )
+    standard_alerts = standard_results.get("event_alert_level", {})
+    pro_alerts = pro_results.get("event_alert_level", {})
+    if standard_alerts and pro_alerts:
+        print(
+            "  Alert-level event sensitivity: "
+            f"{standard_alerts.get('detected_events', 0)}/{standard_alerts.get('event_count', 0)} -> "
+            f"{pro_alerts.get('detected_events', 0)}/{pro_alerts.get('event_count', 0)}"
+        )
+        print(
+            "  Alert-level false alerts/hour: "
+            f"{standard_alerts.get('false_alerts_per_hour', 0.0):.2f} -> "
+            f"{pro_alerts.get('false_alerts_per_hour', 0.0):.2f}"
         )
     print(
         f"  False alarms/hour: {standard_results['false_alarms_per_hour']:.2f} -> "
@@ -1656,6 +1909,16 @@ def run_product_validation(
             "standard"
         ][key]
         pro_budget = matched_alarm_results["fixed_validation_alarm_budgets"]["pro"][key]
+        standard_budget_event = standard_budget.get("event_level", {})
+        pro_budget_event = pro_budget.get("event_level", {})
+        event_text = ""
+        if standard_budget_event and pro_budget_event:
+            event_text = (
+                f"; events {standard_budget_event.get('detected_events', 0)}/"
+                f"{standard_budget_event.get('event_count', 0)} -> "
+                f"{pro_budget_event.get('detected_events', 0)}/"
+                f"{pro_budget_event.get('event_count', 0)}"
+            )
         print(
             f"  {budget:g} fa/h budget | recall "
             f"{standard_budget['recall']:.4f} -> {pro_budget['recall']:.4f}; "
@@ -1663,6 +1926,7 @@ def run_product_validation(
             f"{pro_budget['false_alarms_per_hour']:.2f}; "
             f"balanced acc {standard_budget['balanced_accuracy']:.4f} -> "
             f"{pro_budget['balanced_accuracy']:.4f}"
+            f"{event_text}"
         )
     return standard_results, pro_results, matched_alarm_results
 
@@ -2523,8 +2787,12 @@ def main():
             "variants": checkpoint_provenance,
         },
         "label_policy": {
-            "source": "patient .txt onset timestamps",
-            "offset_policy": "onset plus configured fixed duration, then merge overlapping/nearby intervals",
+            "source": "patient .txt seizure timestamp rows",
+            "offset_policy": (
+                "use a second numeric column as offset when it is present and "
+                "timestamp-like; otherwise use onset plus configured fixed duration; "
+                "then merge overlapping/nearby intervals"
+            ),
             "seizure_duration_seconds": int(
                 os.environ.get("SEIZURE_DURATION_SECONDS", "300")
             ),

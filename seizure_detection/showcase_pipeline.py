@@ -420,13 +420,23 @@ def build_release_summary(
                         continue
                     std_budget = standard_grid[key]
                     pro_budget = pro_grid[key]
+                    std_event = std_budget.get("event_level", {})
+                    pro_event = pro_budget.get("event_level", {})
+                    event_text = ""
+                    if std_event and pro_event:
+                        event_text = (
+                            f"; event sensitivity "
+                            f"{_fmt_metric(std_event.get('event_sensitivity'))} -> "
+                            f"{_fmt_metric(pro_event.get('event_sensitivity'))}"
+                        )
                     budget_lines.append(
                         f"- {float(budget):g} false alarms/hour validation budget: "
                         f"recall {_fmt_metric(std_budget.get('recall'))} -> "
                         f"{_fmt_metric(pro_budget.get('recall'))}; "
                         f"test false alarms/hour "
                         f"{_fmt_metric(std_budget.get('false_alarms_per_hour'), 2)} -> "
-                        f"{_fmt_metric(pro_budget.get('false_alarms_per_hour'), 2)}."
+                        f"{_fmt_metric(pro_budget.get('false_alarms_per_hour'), 2)}"
+                        f"{event_text}."
                     )
                 if budget_lines:
                     lines.extend(

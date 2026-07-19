@@ -43,6 +43,10 @@ def product_score(results: dict[str, Any], edge: dict[str, Any] | None) -> tuple
     recall_gain = float(pro.get("recall", 0.0)) - float(standard.get("recall", 0.0))
     auc_gain = float(pro.get("auc", 0.0)) - float(standard.get("auc", 0.0))
     fa_delta = false_alarm_delta(standard, pro)
+    standard_recall = float(standard.get("recall", 0.0))
+    standard_fa = float(standard.get("false_alarms_per_hour", 0.0))
+    standard_viable = std_events >= 3 and standard_recall > 0.0 and standard_fa <= 30.0
+    pro_not_worse_events = pro_events >= std_events
     params = 10**9
     if edge:
         params = int(
@@ -52,13 +56,17 @@ def product_score(results: dict[str, Any], edge: dict[str, Any] | None) -> tuple
             .get("parameters", params)
         )
     return (
+        1 if standard_viable else 0,
+        1 if pro_not_worse_events else 0,
         1 if event_gain > 0 else 0,
         1 if recall_gain > 0 else 0,
         event_gain,
+        pro_events,
+        std_events,
         recall_gain,
         fa_delta,
-        pro_events,
         float(pro.get("recall", 0.0)),
+        standard_recall,
         float(pro.get("auc", 0.0)),
         auc_gain,
         -params,
@@ -170,9 +178,10 @@ def promote(folder: Path) -> dict[str, Any]:
         "standard_variant": standard_variant,
         "pro_variant": pro_variant,
         "selection_policy": (
-            "Prefer Pro event gain, Pro recall gain, fewer false alarms, Pro event "
-            "count, Pro recall, and Pro AUC. Test data is used only after the "
-            "experiment sweep for final artifact promotion."
+            "Prefer a viable Standard tier first, then Pro event non-regression, "
+            "Pro event gain, Pro recall gain, false-alarm reduction, event count, "
+            "recall, and AUC. Test data is used only after the experiment sweep "
+            "for final artifact promotion."
         ),
         "standard": {
             "auc": standard.get("auc"),

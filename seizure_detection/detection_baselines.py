@@ -35,9 +35,12 @@ from phase4_validation import (
     build_balanced_training_view,
     build_session_level_data,
     compute_class_weights,
+    evaluate_alarm_budget_grid,
+    event_alert_metrics_from_probabilities,
     event_level_metrics_from_probabilities,
     get_default_base_path,
     metrics_from_probabilities,
+    select_event_alert_postprocessing,
     split_patient_paths,
     summarize_session_splits,
     threshold_for_false_alarm_rate,
@@ -257,9 +260,49 @@ def evaluate_probabilities(
         probabilities_test,
         threshold,
     )
+    alert_selection = select_event_alert_postprocessing(
+        data,
+        "val",
+        probabilities_val,
+        threshold,
+        stride_seconds,
+    )
+    alert_metrics = event_alert_metrics_from_probabilities(
+        data,
+        "test",
+        probabilities_test,
+        threshold,
+        stride_seconds,
+        float(alert_selection.get("refractory_minutes", 0.0)),
+    )
+    if alert_metrics is not None:
+        metrics["event_alert_level"] = alert_metrics
+    budgets = [
+        float(value)
+        for value in os.environ.get(
+            "DETECTION_ALARM_BUDGETS_PER_HOUR", "1,5,10,25,50"
+        ).split(",")
+        if value.strip()
+    ]
+    metrics["fixed_validation_alarm_budgets"] = evaluate_alarm_budget_grid(
+        labels_val,
+        probabilities_val,
+        labels_test,
+        probabilities_test,
+        budgets,
+        stride_seconds,
+        data,
+        float(alert_selection.get("refractory_minutes", 0.0)),
+    )
     metrics["threshold_policy"] = (
         f"validation false-alarm budget <= {alarm_budget:g}/hour"
     )
+    metrics["post_processing"] = {
+        "alert_refractory_minutes": float(
+            alert_selection.get("refractory_minutes", 0.0)
+        ),
+        "selected_on": "validation split",
+    }
     return metrics
 
 
@@ -391,18 +434,19 @@ def write_summary(report: Dict) -> None:
     lines: List[str] = [
         "# Baseline Comparison Summary",
         "",
-        "Scope: same session-level data split as the detection pipeline. Metrics are "
-        "computed on held-out test sessions using thresholds selected on validation.",
+        "Scope: same patient-level held-out split as the detection pipeline. Metrics "
+        "are computed on held-out test sessions using thresholds selected on validation.",
         "",
-        "| Baseline | Parameters | ROC-AUC | PR-AUC | Recall | Event sensitivity | False alarms/hour |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| Baseline | Parameters | ROC-AUC | PR-AUC | Recall | Event sensitivity | Alert event sensitivity | False alerts/hour | Window false alarms/hour |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for name, item in report["baselines"].items():
         metrics = item["metrics"]
         event = metrics.get("event_level", {})
+        alert = metrics.get("event_alert_level", {})
         lines.append(
             "| {name} | {params:,} | {auc:.4f} | {pr_auc:.4f} | {recall:.4f} | "
-            "{detected}/{events} | {fa:.2f} |".format(
+            "{detected}/{events} | {alert_detected}/{alert_events} | {alert_fa:.2f} | {fa:.2f} |".format(
                 name=name,
                 params=item["parameters"],
                 auc=metrics["auc"],
@@ -410,9 +454,38 @@ def write_summary(report: Dict) -> None:
                 recall=metrics["recall"],
                 detected=event.get("detected_events", 0),
                 events=event.get("event_count", 0),
+                alert_detected=alert.get("detected_events", 0),
+                alert_events=alert.get("event_count", event.get("event_count", 0)),
+                alert_fa=float(alert.get("false_alerts_per_hour", 0.0)),
                 fa=metrics["false_alarms_per_hour"],
             )
         )
+    lines += [
+        "",
+        "## Same Operating-Point Grid",
+        "",
+        "Each baseline uses thresholds selected only on validation for the listed "
+        "false-alarm/hour budget and is then evaluated on held-out test sessions.",
+        "",
+        "| Baseline | Budget FA/hr | ROC-AUC | Recall | Events | Alert false alerts/hour |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for name, item in report["baselines"].items():
+        grid = item["metrics"].get("fixed_validation_alarm_budgets", {})
+        for budget, metrics in grid.items():
+            event = metrics.get("event_level", {})
+            alert = metrics.get("event_alert_level", {})
+            lines.append(
+                "| {name} | {budget} | {auc:.4f} | {recall:.4f} | {detected}/{events} | {alert_fa:.2f} |".format(
+                    name=name,
+                    budget=budget,
+                    auc=metrics.get("auc", float("nan")),
+                    recall=metrics.get("recall", float("nan")),
+                    detected=event.get("detected_events", 0),
+                    events=event.get("event_count", 0),
+                    alert_fa=float(alert.get("false_alerts_per_hour", 0.0)),
+                )
+            )
     lines += [
         "",
         "These baselines are comparison references, not product claims. Raw accuracy is "

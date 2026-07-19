@@ -126,12 +126,22 @@ def product_score(row):
     )
     recall_gain = float(row["pro_recall"] or 0.0) - float(row["standard_recall"] or 0.0)
     auc_gain = float(row["pro_auc"] or 0.0) - float(row["standard_auc"] or 0.0)
-    false_alarm_delta = float(row["pro_false_alarms"] or 0.0)
+    standard_events = parse_event_count(row["standard_events"])
+    pro_events = parse_event_count(row["pro_events"])
+    standard_recall = float(row["standard_recall"] or 0.0)
+    standard_fa = float(row.get("standard_false_alarms") or 0.0)
+    standard_viable = standard_events >= 3 and standard_recall > 0.0 and standard_fa <= 30.0
+    pro_not_worse_events = pro_events >= standard_events
+    false_alarm_delta = float(row["standard_false_alarms"] or 0.0) - float(
+        row["pro_false_alarms"] or 0.0
+    )
     return (
+        1 if standard_viable else 0,
+        1 if pro_not_worse_events else 0,
         event_gain,
         recall_gain,
         auc_gain,
-        -false_alarm_delta,
+        false_alarm_delta,
         float(row["pro_auc"] or 0.0),
     )
 
@@ -216,7 +226,7 @@ def main():
         "",
         "## Latest Marathon Run",
         "",
-        "Ranking in this section favors the product claim: event gain, recall gain, AUC gain, and lower Pro false alarms.",
+        "Ranking in this section first requires a credible Standard tier, then favors Pro event non-regression, event gain, recall gain, AUC gain, and lower Pro false alarms.",
         "",
     ]
     append_rows(lines, latest)
