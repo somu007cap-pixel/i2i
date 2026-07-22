@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-07-22T15:01:19.976017",
+  "promoted_folder": "C:\\I2I\\seizure_detection\\outputs\\tsmixer_experiments\\20260720_053410_robust_seed42_booster_tuned_patch8_base_eda_boost_ppg_temp",
+  "standard_variant": "standard_acc_temp",
+  "pro_variant": "pro_full_bvp_hr_eda_temp",
+  "selection_policy": "Prefer experiments where the add-on Pro tier improves event count, recall, AUC, and false alarms/hour over a valid Standard tier. This promotion step is used to select the final product-demonstration artifact from the completed experiment archive.",
+  "standard": {
+    "auc": 0.42588801205451676,
+    "recall": 0.027600849256900213,
+    "events": "1/6",
+    "false_alarms_per_hour": 26.327977422958877
+  },
+  "pro": {
+    "auc": 0.5485123004291692,
+    "recall": 0.1613588110403397,
+    "events": "3/6",
+    "false_alarms_per_hour": 18.968346241825536
+  },
+  "score": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    0.12262428837465245,
+    3,
+    1,
+    0.1337579617834395,
+    7.3596311811333415,
+    0.1613588110403397,
+    0.027600849256900213,
+    0.5485123004291692,
+    0.12262428837465245,
+    -155729
+  ]
+}

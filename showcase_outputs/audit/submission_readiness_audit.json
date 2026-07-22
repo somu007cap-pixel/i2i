@@ -1,0 +1,105 @@
+{
+  "overall_status": "pass",
+  "checks": [
+    {
+      "name": "detection_status",
+      "status": "pass",
+      "detail": "status=completed"
+    },
+    {
+      "name": "split_strategy",
+      "status": "pass",
+      "detail": "patient-level held-out split"
+    },
+    {
+      "name": "evaluation_scope",
+      "status": "pass",
+      "detail": "patient-level generalization; held-out patients are reserved for validation/test while train patients remain unseen in those splits"
+    },
+    {
+      "name": "claim_scope_disclosed",
+      "status": "pass",
+      "detail": "rigorous prototype and feasibility study for patient-level seizure event detection; not a clinically validated detector or deployment claim"
+    },
+    {
+      "name": "raw_accuracy_not_primary",
+      "status": "pass",
+      "detail": "all-normal baseline=0.9988, standard_accuracy=0.9623, pro_accuracy=0.9727"
+    },
+    {
+      "name": "pro_signal_gain",
+      "status": "pass",
+      "detail": "auc_gain=0.1226, recall_gain=0.1338, event_sensitivity_gain=0.3333, false_alarm_delta=-7.36/hour"
+    },
+    {
+      "name": "pro_event_sensitivity_gain",
+      "status": "pass",
+      "detail": "standard_event_sensitivity=0.1667, pro_event_sensitivity=0.5000, gain=0.3333"
+    },
+    {
+      "name": "event_level_disclosed",
+      "status": "pass",
+      "detail": "standard=1/6, pro=3/6"
+    },
+    {
+      "name": "checkpoint_provenance_disclosed",
+      "status": "pass",
+      "detail": "all variants retrained from scratch"
+    },
+    {
+      "name": "allocation_selected_on_validation",
+      "status": "pass",
+      "detail": "selection_split=validation"
+    },
+    {
+      "name": "science_product_split_present",
+      "status": "pass",
+      "detail": "best_science_model/best_product_model present"
+    },
+    {
+      "name": "uncertainty_estimates",
+      "status": "pass",
+      "detail": "status=pass"
+    },
+    {
+      "name": "operating_point_documented",
+      "status": "pass",
+      "detail": "status=pass"
+    },
+    {
+      "name": "label_policy_documented",
+      "status": "pass",
+      "detail": "status=pass"
+    },
+    {
+      "name": "standard_tflite_size",
+      "status": "pass",
+      "detail": "281.9 KB"
+    },
+    {
+      "name": "standard_tflite_io_dtype_disclosed",
+      "status": "pass",
+      "detail": "inputs=['int8'], outputs=['int8']"
+    },
+    {
+      "name": "pro_tflite_size",
+      "status": "pass",
+      "detail": "282.1 KB"
+    },
+    {
+      "name": "pro_tflite_io_dtype_disclosed",
+      "status": "pass",
+      "detail": "inputs=['int8'], outputs=['int8']"
+    },
+    {
+      "name": "midsem_detection_scope",
+      "status": "pass",
+      "detail": "no forbidden future-work or generated-text wording in pdf"
+    },
+    {
+      "name": "midsem_tflite_caveat",
+      "status": "pass",
+      "detail": "TFLite limitation caveat present"
+    }
+  ]
+}

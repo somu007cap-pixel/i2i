@@ -1,0 +1,1640 @@
+{
+  "active_timestamp": "2026-07-20T09:17:00.184894",
+  "claim_scope": "rigorous prototype and feasibility study for patient-level seizure event detection; not a clinically validated detector or deployment claim",
+  "promoted": {
+    "timestamp": "2026-07-22T15:01:19.976017",
+    "promoted_folder": "C:\\I2I\\seizure_detection\\outputs\\tsmixer_experiments\\20260720_053410_robust_seed42_booster_tuned_patch8_base_eda_boost_ppg_temp",
+    "standard_variant": "standard_acc_temp",
+    "pro_variant": "pro_full_bvp_hr_eda_temp",
+    "selection_policy": "Prefer experiments where the add-on Pro tier improves event count, recall, AUC, and false alarms/hour over a valid Standard tier. This promotion step is used to select the final product-demonstration artifact from the completed experiment archive.",
+    "standard": {
+      "auc": 0.42588801205451676,
+      "recall": 0.027600849256900213,
+      "events": "1/6",
+      "false_alarms_per_hour": 26.327977422958877
+    },
+    "pro": {
+      "auc": 0.5485123004291692,
+      "recall": 0.1613588110403397,
+      "events": "3/6",
+      "false_alarms_per_hour": 18.968346241825536
+    },
+    "score": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      0.12262428837465245,
+      3,
+      1,
+      0.1337579617834395,
+      7.3596311811333415,
+      0.1613588110403397,
+      0.027600849256900213,
+      0.5485123004291692,
+      0.12262428837465245,
+      -155729
+    ]
+  },
+  "active_standard": {
+    "loss": 0.671408474445343,
+    "accuracy": 0.9622782837211765,
+    "auc": 0.42588801205451676,
+    "pr_auc": 0.0009582001260323501,
+    "precision": 0.0008958103638368247,
+    "recall": 0.027600849256900213,
+    "f1": 0.001735300006674231,
+    "specificity": 0.9633898767290008,
+    "balanced_accuracy": 0.4954953629929505,
+    "positive_rate": 0.0011878671102043081,
+    "all_normal_baseline_accuracy": 0.9988121328897956,
+    "true_negatives": 381539,
+    "false_positives": 14499,
+    "false_negatives": 458,
+    "true_positives": 13,
+    "false_alarms_per_hour": 26.327977422958877,
+    "decision_threshold": 0.5246241688728333,
+    "event_level": {
+      "event_count": 6,
+      "detected_events": 1,
+      "event_sensitivity": 0.16666666666666666,
+      "event_sensitivity_ci95_low": 0.030052585871730285,
+      "event_sensitivity_ci95_high": 0.563509436563646,
+      "event_sensitivity_ci95_method": "Wilson score interval",
+      "positive_windows": 14512,
+      "positive_seizure_windows": 13,
+      "false_positive_windows": 14499,
+      "events": [
+        {
+          "session_id": "1610296047_A01EEC",
+          "event_index": 0,
+          "start": 1610360368.0,
+          "end": 1610360668.0,
+          "overlap_windows": 61,
+          "detected": false,
+          "max_score": 0.41185262799263
+        },
+        {
+          "session_id": "1598624269_A01EE3",
+          "event_index": 0,
+          "start": 1598704011.0,
+          "end": 1598704613.0,
+          "overlap_windows": 121,
+          "detected": false,
+          "max_score": 0.5168781876564026
+        },
+        {
+          "session_id": "1617460460_A01EEC",
+          "event_index": 0,
+          "start": 1617538609.0,
+          "end": 1617538909.0,
+          "overlap_windows": 61,
+          "detected": false,
+          "max_score": 0.5169865489006042
+        },
+        {
+          "session_id": "1601509460_A02294",
+          "event_index": 0,
+          "start": 1601544713.0,
+          "end": 1601545194.0,
+          "overlap_windows": 97,
+          "detected": false,
+          "max_score": 0.5161088705062866
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 0,
+          "start": 1604574602.0,
+          "end": 1604574946.0,
+          "overlap_windows": 70,
+          "detected": false,
+          "max_score": 0.5239298343658447
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 1,
+          "start": 1604585557.0,
+          "end": 1604585857.0,
+          "overlap_windows": 61,
+          "detected": true,
+          "max_score": 0.5262786149978638
+        }
+      ]
+    },
+    "event_alert_level": {
+      "post_processing": "first alert per refractory interval",
+      "refractory_minutes": 15.0,
+      "refractory_windows": 180,
+      "event_count": 6,
+      "detected_events": 0,
+      "event_sensitivity": 0.0,
+      "alert_count": 451,
+      "false_alert_count": 451,
+      "false_alerts_per_hour": 0.8189473631115561,
+      "events": [
+        {
+          "session_id": "1610296047_A01EEC",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.41185262799263
+        },
+        {
+          "session_id": "1598624269_A01EE3",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5168781876564026
+        },
+        {
+          "session_id": "1617460460_A01EEC",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5169865489006042
+        },
+        {
+          "session_id": "1601509460_A02294",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5161088705062866
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5239298343658447
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 1,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5262786149978638
+        }
+      ]
+    },
+    "threshold_policy": "validation false-alarm budget <= 10/hour",
+    "f1_calibrated_threshold": 0.5305182337760925,
+    "variant_name": "standard_acc_temp",
+    "enabled_secondary_features": [
+      "TEMP"
+    ],
+    "post_processing": {
+      "score_smoothing": "causal rolling mean",
+      "selected_windows": 1,
+      "alert_refractory_minutes": 15.0,
+      "selected_on": "validation split"
+    }
+  },
+  "active_pro": {
+    "loss": 0.6460546851158142,
+    "accuracy": 0.9726588803785033,
+    "auc": 0.5485123004291692,
+    "pr_auc": 0.00717111399015109,
+    "precision": 0.007222961414179814,
+    "recall": 0.1613588110403397,
+    "f1": 0.013826980805967436,
+    "specificity": 0.9736237431761599,
+    "balanced_accuracy": 0.5674912771082498,
+    "positive_rate": 0.0011878671102043081,
+    "all_normal_baseline_accuracy": 0.9988121328897956,
+    "true_negatives": 385592,
+    "false_positives": 10446,
+    "false_negatives": 395,
+    "true_positives": 76,
+    "false_alarms_per_hour": 18.968346241825536,
+    "decision_threshold": 0.5251152515411377,
+    "event_level": {
+      "event_count": 6,
+      "detected_events": 3,
+      "event_sensitivity": 0.5,
+      "event_sensitivity_ci95_low": 0.1876128068994087,
+      "event_sensitivity_ci95_high": 0.8123871931005913,
+      "event_sensitivity_ci95_method": "Wilson score interval",
+      "positive_windows": 10522,
+      "positive_seizure_windows": 76,
+      "false_positive_windows": 10446,
+      "events": [
+        {
+          "session_id": "1610296047_A01EEC",
+          "event_index": 0,
+          "start": 1610360368.0,
+          "end": 1610360668.0,
+          "overlap_windows": 61,
+          "detected": false,
+          "max_score": 0.47666454315185547
+        },
+        {
+          "session_id": "1598624269_A01EE3",
+          "event_index": 0,
+          "start": 1598704011.0,
+          "end": 1598704613.0,
+          "overlap_windows": 121,
+          "detected": true,
+          "max_score": 0.5613356232643127
+        },
+        {
+          "session_id": "1617460460_A01EEC",
+          "event_index": 0,
+          "start": 1617538609.0,
+          "end": 1617538909.0,
+          "overlap_windows": 61,
+          "detected": false,
+          "max_score": 0.524025559425354
+        },
+        {
+          "session_id": "1601509460_A02294",
+          "event_index": 0,
+          "start": 1601544713.0,
+          "end": 1601545194.0,
+          "overlap_windows": 97,
+          "detected": false,
+          "max_score": 0.519871711730957
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 0,
+          "start": 1604574602.0,
+          "end": 1604574946.0,
+          "overlap_windows": 70,
+          "detected": true,
+          "max_score": 0.566906213760376
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 1,
+          "start": 1604585557.0,
+          "end": 1604585857.0,
+          "overlap_windows": 61,
+          "detected": true,
+          "max_score": 0.5765987634658813
+        }
+      ]
+    },
+    "event_alert_level": {
+      "post_processing": "first alert per refractory interval",
+      "refractory_minutes": 15.0,
+      "refractory_windows": 180,
+      "event_count": 6,
+      "detected_events": 2,
+      "event_sensitivity": 0.3333333333333333,
+      "alert_count": 502,
+      "false_alert_count": 500,
+      "false_alerts_per_hour": 0.9079239058886432,
+      "events": [
+        {
+          "session_id": "1610296047_A01EEC",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.47666454315185547
+        },
+        {
+          "session_id": "1598624269_A01EE3",
+          "event_index": 0,
+          "detected": true,
+          "alert_count": 1,
+          "max_score": 0.5613356232643127
+        },
+        {
+          "session_id": "1617460460_A01EEC",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.524025559425354
+        },
+        {
+          "session_id": "1601509460_A02294",
+          "event_index": 0,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.519871711730957
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 0,
+          "detected": true,
+          "alert_count": 1,
+          "max_score": 0.566906213760376
+        },
+        {
+          "session_id": "1604525961_A02294",
+          "event_index": 1,
+          "detected": false,
+          "alert_count": 0,
+          "max_score": 0.5765987634658813
+        }
+      ]
+    },
+    "threshold_policy": "validation false-alarm budget <= 10/hour",
+    "f1_calibrated_threshold": 0.5339837074279785,
+    "variant_name": "pro_full_bvp_hr_eda_temp",
+    "enabled_secondary_features": [
+      "BVP",
+      "HR",
+      "EDA",
+      "TEMP"
+    ],
+    "score_fusion": {
+      "policy": "Pro combines the Standard detector score with the add-on detector score; the blend weight is selected on validation only.",
+      "pro_model_weight": 0.35
+    },
+    "post_processing": {
+      "score_smoothing": "causal rolling mean",
+      "selected_windows": 3,
+      "alert_refractory_minutes": 15.0,
+      "selected_on": "validation split"
+    }
+  },
+  "robustness_groups": {
+    "seed_variability::booster_tuned_patch8_base_eda_boost_ppg_temp": {
+      "count": 3,
+      "standard_auc": {
+        "mean": 0.4416473880438253,
+        "std": 0.018169346451784318,
+        "n": 3
+      },
+      "pro_auc": {
+        "mean": 0.5460658550115111,
+        "std": 0.015007808118915634,
+        "n": 3
+      },
+      "standard_recall": {
+        "mean": 0.016985138004246284,
+        "std": 0.010615711252653929,
+        "n": 3
+      },
+      "pro_recall": {
+        "mean": 0.10261854210898796,
+        "std": 0.06176604819153181,
+        "n": 3
+      },
+      "standard_false_alarms_per_hour": {
+        "mean": 22.837312646119006,
+        "std": 13.892728749849107,
+        "n": 3
+      },
+      "pro_false_alarms_per_hour": {
+        "mean": 20.396813187090334,
+        "std": 13.913655533577105,
+        "n": 3
+      },
+      "standard_events_mean": {
+        "mean": 2.0,
+        "std": 1.7320508075688772,
+        "n": 3
+      },
+      "pro_events_mean": {
+        "mean": 3.0,
+        "std": 0.0,
+        "n": 3
+      },
+      "standard_event_sensitivity": {
+        "mean": 0.3333333333333333,
+        "std": 0.28867513459481287,
+        "n": 3
+      },
+      "pro_event_sensitivity": {
+        "mean": 0.5,
+        "std": 0.0,
+        "n": 3
+      },
+      "pro_auc_gain": {
+        "mean": 0.10441846696768577,
+        "std": 0.031138301372218603,
+        "n": 3
+      },
+      "pro_recall_gain": {
+        "mean": 0.08563340410474168,
+        "std": 0.05119077514515251,
+        "n": 3
+      },
+      "pro_event_sensitivity_gain": {
+        "mean": 0.1666666666666667,
+        "std": 0.28867513459481287,
+        "n": 3
+      }
+    },
+    "label_policy::booster_tuned_patch8_base_eda_boost_ppg_temp": {
+      "count": 3,
+      "standard_auc": {
+        "mean": 0.6111854152523838,
+        "std": 0.048719440308506064,
+        "n": 3
+      },
+      "pro_auc": {
+        "mean": 0.5995837433761793,
+        "std": 0.07007326913679476,
+        "n": 3
+      },
+      "standard_recall": {
+        "mean": 0.15976617593118317,
+        "std": 0.11287822708631826,
+        "n": 3
+      },
+      "pro_recall": {
+        "mean": 0.1600406992920042,
+        "std": 0.10907677836930901,
+        "n": 3
+      },
+      "standard_false_alarms_per_hour": {
+        "mean": 18.08039666186644,
+        "std": 18.931787629641512,
+        "n": 3
+      },
+      "pro_false_alarms_per_hour": {
+        "mean": 18.436908115578717,
+        "std": 19.480594177938965,
+        "n": 3
+      },
+      "standard_events_mean": {
+        "mean": 4.333333333333333,
+        "std": 1.5275252316519468,
+        "n": 3
+      },
+      "pro_events_mean": {
+        "mean": 4.333333333333333,
+        "std": 1.5275252316519468,
+        "n": 3
+      },
+      "standard_event_sensitivity": {
+        "mean": 0.611111111111111,
+        "std": 0.0962250448649376,
+        "n": 3
+      },
+      "pro_event_sensitivity": {
+        "mean": 0.611111111111111,
+        "std": 0.0962250448649376,
+        "n": 3
+      },
+      "pro_auc_gain": {
+        "mean": -0.011601671876204608,
+        "std": 0.021435715269159154,
+        "n": 3
+      },
+      "pro_recall_gain": {
+        "mean": 0.0002745233608210408,
+        "std": 0.006110483221869248,
+        "n": 3
+      },
+      "pro_event_sensitivity_gain": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 3
+      }
+    },
+    "seed_variability::patch8_base_temp_boost_ppg_eda": {
+      "count": 3,
+      "standard_auc": {
+        "mean": 0.5686713182108416,
+        "std": 0.049245301929324165,
+        "n": 3
+      },
+      "pro_auc": {
+        "mean": 0.5789672207461188,
+        "std": 0.053628958021029516,
+        "n": 3
+      },
+      "standard_recall": {
+        "mean": 0.19179051663128097,
+        "std": 0.11559594818618506,
+        "n": 3
+      },
+      "pro_recall": {
+        "mean": 0.18259023354564755,
+        "std": 0.15047372840237724,
+        "n": 3
+      },
+      "standard_false_alarms_per_hour": {
+        "mean": 18.10097627039992,
+        "std": 17.19525705640294,
+        "n": 3
+      },
+      "pro_false_alarms_per_hour": {
+        "mean": 7.960676806831623,
+        "std": 2.814945410466867,
+        "n": 3
+      },
+      "standard_events_mean": {
+        "mean": 4.0,
+        "std": 1.0,
+        "n": 3
+      },
+      "pro_events_mean": {
+        "mean": 4.0,
+        "std": 1.0,
+        "n": 3
+      },
+      "standard_event_sensitivity": {
+        "mean": 0.6666666666666666,
+        "std": 0.16666666666666669,
+        "n": 3
+      },
+      "pro_event_sensitivity": {
+        "mean": 0.6666666666666666,
+        "std": 0.16666666666666669,
+        "n": 3
+      },
+      "pro_auc_gain": {
+        "mean": 0.010295902535277198,
+        "std": 0.010591078451277991,
+        "n": 3
+      },
+      "pro_recall_gain": {
+        "mean": -0.009200283085633407,
+        "std": 0.03617658292747929,
+        "n": 3
+      },
+      "pro_event_sensitivity_gain": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 3
+      }
+    },
+    "label_policy::patch8_base_temp_boost_ppg_eda": {
+      "count": 3,
+      "standard_auc": {
+        "mean": 0.5461805034523926,
+        "std": 0.04870275234381776,
+        "n": 3
+      },
+      "pro_auc": {
+        "mean": 0.5479724022604082,
+        "std": 0.049495525548132364,
+        "n": 3
+      },
+      "standard_recall": {
+        "mean": 0.1354273756490409,
+        "std": 0.09800606089812818,
+        "n": 3
+      },
+      "pro_recall": {
+        "mean": 0.13768619094103698,
+        "std": 0.09086676372013337,
+        "n": 3
+      },
+      "standard_false_alarms_per_hour": {
+        "mean": 18.367300616127253,
+        "std": 9.837316764822727,
+        "n": 3
+      },
+      "pro_false_alarms_per_hour": {
+        "mean": 16.233074154685013,
+        "std": 7.75447328360216,
+        "n": 3
+      },
+      "standard_events_mean": {
+        "mean": 4.0,
+        "std": 1.0,
+        "n": 3
+      },
+      "pro_events_mean": {
+        "mean": 4.0,
+        "std": 1.0,
+        "n": 3
+      },
+      "standard_event_sensitivity": {
+        "mean": 0.5740740740740741,
+        "std": 0.08486251286955257,
+        "n": 3
+      },
+      "pro_event_sensitivity": {
+        "mean": 0.5740740740740741,
+        "std": 0.08486251286955257,
+        "n": 3
+      },
+      "pro_auc_gain": {
+        "mean": 0.0017918988080157239,
+        "std": 0.0026829396046582003,
+        "n": 3
+      },
+      "pro_recall_gain": {
+        "mean": 0.0022588152919960913,
+        "std": 0.007482579685132524,
+        "n": 3
+      },
+      "pro_event_sensitivity_gain": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 3
+      }
+    }
+  },
+  "best_baseline": {
+    "name": "cnn_lstm",
+    "model_name": "CNNLSTMBaseline",
+    "parameters": 13521,
+    "training_seconds": 1115.3710438999988,
+    "history": {
+      "auc": [
+        0.5698875784873962,
+        0.6116856336593628,
+        0.6336888074874878,
+        0.6397005319595337,
+        0.6044913530349731,
+        0.6400209665298462,
+        0.6587631106376648,
+        0.6769366264343262,
+        0.6870635151863098,
+        0.6935589909553528,
+        0.7054483294487,
+        0.7138373851776123
+      ],
+      "loss": [
+        0.6828287243843079,
+        0.6685731410980225,
+        0.6574480533599854,
+        0.655562698841095,
+        0.6736651659011841,
+        0.6553527116775513,
+        0.6461393237113953,
+        0.634384274482727,
+        0.6271178722381592,
+        0.6221020221710205,
+        0.6142358183860779,
+        0.6077417731285095
+      ],
+      "pr_auc": [
+        0.19822967052459717,
+        0.22710368037223816,
+        0.242145836353302,
+        0.2482999563217163,
+        0.21941983699798584,
+        0.24042293429374695,
+        0.2614889442920685,
+        0.2744483947753906,
+        0.2855355441570282,
+        0.2895691394805908,
+        0.30460649728775024,
+        0.31242090463638306
+      ],
+      "precision": [
+        0.19089573621749878,
+        0.2090798020362854,
+        0.22126689553260803,
+        0.22056050598621368,
+        0.2070232629776001,
+        0.21742358803749084,
+        0.22738482058048248,
+        0.23394590616226196,
+        0.23832976818084717,
+        0.24368758499622345,
+        0.24970309436321259,
+        0.2534637749195099
+      ],
+      "recall": [
+        0.6505003571510315,
+        0.6588401198387146,
+        0.6471644639968872,
+        0.6452399492263794,
+        0.6361303329467773,
+        0.7137541770935059,
+        0.6743649244308472,
+        0.7202976942062378,
+        0.7140107750892639,
+        0.7169617414474487,
+        0.7283807992935181,
+        0.7346677184104919
+      ],
+      "val_auc": [
+        0.32416725158691406,
+        0.32046449184417725,
+        0.3739852011203766,
+        0.36995917558670044,
+        0.41689398884773254,
+        0.44876164197921753,
+        0.3283897936344147,
+        0.49968308210372925,
+        0.35788291692733765,
+        0.4554084539413452,
+        0.3538907766342163,
+        0.38765841722488403
+      ],
+      "val_loss": [
+        0.6886031031608582,
+        0.6904022693634033,
+        0.6242772936820984,
+        0.6233293414115906,
+        0.6338115930557251,
+        0.6277729868888855,
+        0.6496792435646057,
+        0.6028906106948853,
+        0.5936974883079529,
+        0.5714898109436035,
+        0.5209080576896667,
+        0.5802301168441772
+      ],
+      "val_pr_auc": [
+        0.001232697512023151,
+        0.0012419604463502765,
+        0.0013382190372794867,
+        0.0014009099686518312,
+        0.0014908353332430124,
+        0.0016238430980592966,
+        0.001244021812453866,
+        0.002066729124635458,
+        0.001304266625083983,
+        0.001650112448260188,
+        0.0012880120193585753,
+        0.001431175391189754
+      ],
+      "val_precision": [
+        0.0006980884936638176,
+        0.000751774525269866,
+        0.0006935119745321572,
+        0.0012484596809372306,
+        0.0015820781700313091,
+        0.001677940832450986,
+        0.0008896280778571963,
+        0.0019833503756672144,
+        0.0008106355671770871,
+        0.0017637211130931973,
+        0.0007629575557075441,
+        0.0011818083003163338
+      ],
+      "val_recall": [
+        0.2084309160709381,
+        0.20140515267848969,
+        0.11007025837898254,
+        0.1803278625011444,
+        0.4098360538482666,
+        0.3723653256893158,
+        0.21545667946338654,
+        0.35597190260887146,
+        0.1522248238325119,
+        0.2763465940952301,
+        0.1053864136338234,
+        0.20374707877635956
+      ]
+    },
+    "metrics": {
+      "loss": 0.5552060008049011,
+      "accuracy": 0.9857758588077445,
+      "auc": 0.606390172042617,
+      "pr_auc": 0.002973740544063595,
+      "precision": 0.007432818753573471,
+      "recall": 0.08280254777070063,
+      "f1": 0.013641133263378805,
+      "specificity": 0.9868497467414743,
+      "balanced_accuracy": 0.5348261472560875,
+      "positive_rate": 0.0011878671102043081,
+      "all_normal_baseline_accuracy": 0.9988121328897956,
+      "true_negatives": 390830,
+      "false_positives": 5208,
+      "false_negatives": 432,
+      "true_positives": 39,
+      "false_alarms_per_hour": 9.456935403736107,
+      "decision_threshold": 0.7147079110145569,
+      "event_level": {
+        "event_count": 6,
+        "detected_events": 5,
+        "event_sensitivity": 0.8333333333333334,
+        "event_sensitivity_ci95_low": 0.4364905634363539,
+        "event_sensitivity_ci95_high": 0.9699474141282696,
+        "event_sensitivity_ci95_method": "Wilson score interval",
+        "positive_windows": 5247,
+        "positive_seizure_windows": 39,
+        "false_positive_windows": 5208,
+        "events": [
+          {
+            "session_id": "1610296047_A01EEC",
+            "event_index": 0,
+            "start": 1610360368.0,
+            "end": 1610360668.0,
+            "overlap_windows": 61,
+            "detected": false,
+            "max_score": 0.38464686274528503
+          },
+          {
+            "session_id": "1598624269_A01EE3",
+            "event_index": 0,
+            "start": 1598704011.0,
+            "end": 1598704613.0,
+            "overlap_windows": 121,
+            "detected": true,
+            "max_score": 0.8213594555854797
+          },
+          {
+            "session_id": "1617460460_A01EEC",
+            "event_index": 0,
+            "start": 1617538609.0,
+            "end": 1617538909.0,
+            "overlap_windows": 61,
+            "detected": true,
+            "max_score": 0.7704082727432251
+          },
+          {
+            "session_id": "1601509460_A02294",
+            "event_index": 0,
+            "start": 1601544713.0,
+            "end": 1601545194.0,
+            "overlap_windows": 97,
+            "detected": true,
+            "max_score": 0.7244338393211365
+          },
+          {
+            "session_id": "1604525961_A02294",
+            "event_index": 0,
+            "start": 1604574602.0,
+            "end": 1604574946.0,
+            "overlap_windows": 70,
+            "detected": true,
+            "max_score": 0.8169665336608887
+          },
+          {
+            "session_id": "1604525961_A02294",
+            "event_index": 1,
+            "start": 1604585557.0,
+            "end": 1604585857.0,
+            "overlap_windows": 61,
+            "detected": true,
+            "max_score": 0.7832170724868774
+          }
+        ]
+      },
+      "event_alert_level": {
+        "post_processing": "first alert per refractory interval",
+        "refractory_minutes": 15.0,
+        "refractory_windows": 180,
+        "event_count": 6,
+        "detected_events": 2,
+        "event_sensitivity": 0.3333333333333333,
+        "alert_count": 603,
+        "false_alert_count": 601,
+        "false_alerts_per_hour": 1.091324534878149,
+        "events": [
+          {
+            "session_id": "1610296047_A01EEC",
+            "event_index": 0,
+            "detected": false,
+            "alert_count": 0,
+            "max_score": 0.38464686274528503
+          },
+          {
+            "session_id": "1598624269_A01EE3",
+            "event_index": 0,
+            "detected": true,
+            "alert_count": 1,
+            "max_score": 0.8213594555854797
+          },
+          {
+            "session_id": "1617460460_A01EEC",
+            "event_index": 0,
+            "detected": false,
+            "alert_count": 0,
+            "max_score": 0.7704082727432251
+          },
+          {
+            "session_id": "1601509460_A02294",
+            "event_index": 0,
+            "detected": true,
+            "alert_count": 1,
+            "max_score": 0.7244338393211365
+          },
+          {
+            "session_id": "1604525961_A02294",
+            "event_index": 0,
+            "detected": false,
+            "alert_count": 0,
+            "max_score": 0.8169665336608887
+          },
+          {
+            "session_id": "1604525961_A02294",
+            "event_index": 1,
+            "detected": false,
+            "alert_count": 0,
+            "max_score": 0.7832170724868774
+          }
+        ]
+      },
+      "fixed_validation_alarm_budgets": {
+        "1.0": {
+          "loss": 0.5552060008049011,
+          "accuracy": 0.9963430842679485,
+          "auc": 0.606390172042617,
+          "pr_auc": 0.002973740544063595,
+          "precision": 0.007049345417925478,
+          "recall": 0.014861995753715499,
+          "f1": 0.009562841530054645,
+          "specificity": 0.9975103399168767,
+          "balanced_accuracy": 0.5061861678352961,
+          "positive_rate": 0.0011878671102043081,
+          "all_normal_baseline_accuracy": 0.9988121328897956,
+          "true_negatives": 395052,
+          "false_positives": 986,
+          "false_negatives": 464,
+          "true_positives": 7,
+          "false_alarms_per_hour": 1.7904259424124045,
+          "decision_threshold": 0.7826692461967468,
+          "validation_false_alarm_budget_per_hour": 1.0,
+          "event_level": {
+            "event_count": 6,
+            "detected_events": 3,
+            "event_sensitivity": 0.5,
+            "event_sensitivity_ci95_low": 0.1876128068994087,
+            "event_sensitivity_ci95_high": 0.8123871931005913,
+            "event_sensitivity_ci95_method": "Wilson score interval",
+            "positive_windows": 993,
+            "positive_seizure_windows": 7,
+            "false_positive_windows": 986,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "start": 1610360368.0,
+                "end": 1610360668.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "start": 1598704011.0,
+                "end": 1598704613.0,
+                "overlap_windows": 121,
+                "detected": true,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "start": 1617538609.0,
+                "end": 1617538909.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "start": 1601544713.0,
+                "end": 1601545194.0,
+                "overlap_windows": 97,
+                "detected": false,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "start": 1604574602.0,
+                "end": 1604574946.0,
+                "overlap_windows": 70,
+                "detected": true,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "start": 1604585557.0,
+                "end": 1604585857.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          },
+          "event_alert_level": {
+            "post_processing": "first alert per refractory interval",
+            "refractory_minutes": 15.0,
+            "refractory_windows": 180,
+            "event_count": 6,
+            "detected_events": 3,
+            "event_sensitivity": 0.5,
+            "alert_count": 232,
+            "false_alert_count": 229,
+            "false_alerts_per_hour": 0.4158291488969986,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          }
+        },
+        "5.0": {
+          "loss": 0.5552060008049011,
+          "accuracy": 0.9905702014330066,
+          "auc": 0.606390172042617,
+          "pr_auc": 0.002973740544063595,
+          "precision": 0.007237635705669481,
+          "recall": 0.050955414012738856,
+          "f1": 0.012674940586216002,
+          "specificity": 0.9916876663350487,
+          "balanced_accuracy": 0.5213215401738938,
+          "positive_rate": 0.0011878671102043081,
+          "all_normal_baseline_accuracy": 0.9988121328897956,
+          "true_negatives": 392746,
+          "false_positives": 3292,
+          "false_negatives": 447,
+          "true_positives": 24,
+          "false_alarms_per_hour": 5.977770996370827,
+          "decision_threshold": 0.7419245839118958,
+          "validation_false_alarm_budget_per_hour": 5.0,
+          "event_level": {
+            "event_count": 6,
+            "detected_events": 4,
+            "event_sensitivity": 0.6666666666666666,
+            "event_sensitivity_ci95_low": 0.2999883213415286,
+            "event_sensitivity_ci95_high": 0.903230667440783,
+            "event_sensitivity_ci95_method": "Wilson score interval",
+            "positive_windows": 3316,
+            "positive_seizure_windows": 24,
+            "false_positive_windows": 3292,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "start": 1610360368.0,
+                "end": 1610360668.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "start": 1598704011.0,
+                "end": 1598704613.0,
+                "overlap_windows": 121,
+                "detected": true,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "start": 1617538609.0,
+                "end": 1617538909.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "start": 1601544713.0,
+                "end": 1601545194.0,
+                "overlap_windows": 97,
+                "detected": false,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "start": 1604574602.0,
+                "end": 1604574946.0,
+                "overlap_windows": 70,
+                "detected": true,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "start": 1604585557.0,
+                "end": 1604585857.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          },
+          "event_alert_level": {
+            "post_processing": "first alert per refractory interval",
+            "refractory_minutes": 15.0,
+            "refractory_windows": 180,
+            "event_count": 6,
+            "detected_events": 1,
+            "event_sensitivity": 0.16666666666666666,
+            "alert_count": 454,
+            "false_alert_count": 453,
+            "false_alerts_per_hour": 0.8225790587351107,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          }
+        },
+        "10.0": {
+          "loss": 0.5552060008049011,
+          "accuracy": 0.9857758588077445,
+          "auc": 0.606390172042617,
+          "pr_auc": 0.002973740544063595,
+          "precision": 0.007432818753573471,
+          "recall": 0.08280254777070063,
+          "f1": 0.013641133263378805,
+          "specificity": 0.9868497467414743,
+          "balanced_accuracy": 0.5348261472560875,
+          "positive_rate": 0.0011878671102043081,
+          "all_normal_baseline_accuracy": 0.9988121328897956,
+          "true_negatives": 390830,
+          "false_positives": 5208,
+          "false_negatives": 432,
+          "true_positives": 39,
+          "false_alarms_per_hour": 9.456935403736107,
+          "decision_threshold": 0.7147079110145569,
+          "validation_false_alarm_budget_per_hour": 10.0,
+          "event_level": {
+            "event_count": 6,
+            "detected_events": 5,
+            "event_sensitivity": 0.8333333333333334,
+            "event_sensitivity_ci95_low": 0.4364905634363539,
+            "event_sensitivity_ci95_high": 0.9699474141282696,
+            "event_sensitivity_ci95_method": "Wilson score interval",
+            "positive_windows": 5247,
+            "positive_seizure_windows": 39,
+            "false_positive_windows": 5208,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "start": 1610360368.0,
+                "end": 1610360668.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "start": 1598704011.0,
+                "end": 1598704613.0,
+                "overlap_windows": 121,
+                "detected": true,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "start": 1617538609.0,
+                "end": 1617538909.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "start": 1601544713.0,
+                "end": 1601545194.0,
+                "overlap_windows": 97,
+                "detected": true,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "start": 1604574602.0,
+                "end": 1604574946.0,
+                "overlap_windows": 70,
+                "detected": true,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "start": 1604585557.0,
+                "end": 1604585857.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          },
+          "event_alert_level": {
+            "post_processing": "first alert per refractory interval",
+            "refractory_minutes": 15.0,
+            "refractory_windows": 180,
+            "event_count": 6,
+            "detected_events": 2,
+            "event_sensitivity": 0.3333333333333333,
+            "alert_count": 603,
+            "false_alert_count": 601,
+            "false_alerts_per_hour": 1.091324534878149,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          }
+        },
+        "25.0": {
+          "loss": 0.5552060008049011,
+          "accuracy": 0.971569371691437,
+          "auc": 0.606390172042617,
+          "pr_auc": 0.002973740544063595,
+          "precision": 0.006577745295084963,
+          "recall": 0.15286624203821655,
+          "f1": 0.012612770430060437,
+          "specificity": 0.9725430387993071,
+          "balanced_accuracy": 0.5627046404187619,
+          "positive_rate": 0.0011878671102043081,
+          "all_normal_baseline_accuracy": 0.9988121328897956,
+          "true_negatives": 385164,
+          "false_positives": 10874,
+          "false_negatives": 399,
+          "true_positives": 72,
+          "false_alarms_per_hour": 19.74552910526621,
+          "decision_threshold": 0.6646711230278015,
+          "validation_false_alarm_budget_per_hour": 25.0,
+          "event_level": {
+            "event_count": 6,
+            "detected_events": 5,
+            "event_sensitivity": 0.8333333333333334,
+            "event_sensitivity_ci95_low": 0.4364905634363539,
+            "event_sensitivity_ci95_high": 0.9699474141282696,
+            "event_sensitivity_ci95_method": "Wilson score interval",
+            "positive_windows": 10946,
+            "positive_seizure_windows": 72,
+            "false_positive_windows": 10874,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "start": 1610360368.0,
+                "end": 1610360668.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "start": 1598704011.0,
+                "end": 1598704613.0,
+                "overlap_windows": 121,
+                "detected": true,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "start": 1617538609.0,
+                "end": 1617538909.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "start": 1601544713.0,
+                "end": 1601545194.0,
+                "overlap_windows": 97,
+                "detected": true,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "start": 1604574602.0,
+                "end": 1604574946.0,
+                "overlap_windows": 70,
+                "detected": true,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "start": 1604585557.0,
+                "end": 1604585857.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          },
+          "event_alert_level": {
+            "post_processing": "first alert per refractory interval",
+            "refractory_minutes": 15.0,
+            "refractory_windows": 180,
+            "event_count": 6,
+            "detected_events": 2,
+            "event_sensitivity": 0.3333333333333333,
+            "alert_count": 902,
+            "false_alert_count": 900,
+            "false_alerts_per_hour": 1.6342630305995578,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          }
+        },
+        "50.0": {
+          "loss": 0.5552060008049011,
+          "accuracy": 0.94447540913321,
+          "auc": 0.606390172042617,
+          "pr_auc": 0.002973740544063595,
+          "precision": 0.004416432810415421,
+          "recall": 0.20382165605095542,
+          "f1": 0.008645533141210375,
+          "specificity": 0.9453562536928275,
+          "balanced_accuracy": 0.5745889548718914,
+          "positive_rate": 0.0011878671102043081,
+          "all_normal_baseline_accuracy": 0.9988121328897956,
+          "true_negatives": 374397,
+          "false_positives": 21641,
+          "false_negatives": 375,
+          "true_positives": 96,
+          "false_alarms_per_hour": 39.29676249467226,
+          "decision_threshold": 0.6258429884910583,
+          "validation_false_alarm_budget_per_hour": 50.0,
+          "event_level": {
+            "event_count": 6,
+            "detected_events": 5,
+            "event_sensitivity": 0.8333333333333334,
+            "event_sensitivity_ci95_low": 0.4364905634363539,
+            "event_sensitivity_ci95_high": 0.9699474141282696,
+            "event_sensitivity_ci95_method": "Wilson score interval",
+            "positive_windows": 21737,
+            "positive_seizure_windows": 96,
+            "false_positive_windows": 21641,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "start": 1610360368.0,
+                "end": 1610360668.0,
+                "overlap_windows": 61,
+                "detected": false,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "start": 1598704011.0,
+                "end": 1598704613.0,
+                "overlap_windows": 121,
+                "detected": true,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "start": 1617538609.0,
+                "end": 1617538909.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "start": 1601544713.0,
+                "end": 1601545194.0,
+                "overlap_windows": 97,
+                "detected": true,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "start": 1604574602.0,
+                "end": 1604574946.0,
+                "overlap_windows": 70,
+                "detected": true,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "start": 1604585557.0,
+                "end": 1604585857.0,
+                "overlap_windows": 61,
+                "detected": true,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          },
+          "event_alert_level": {
+            "post_processing": "first alert per refractory interval",
+            "refractory_minutes": 15.0,
+            "refractory_windows": 180,
+            "event_count": 6,
+            "detected_events": 1,
+            "event_sensitivity": 0.16666666666666666,
+            "alert_count": 1191,
+            "false_alert_count": 1190,
+            "false_alerts_per_hour": 2.160858896014971,
+            "events": [
+              {
+                "session_id": "1610296047_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.38464686274528503
+              },
+              {
+                "session_id": "1598624269_A01EE3",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.8213594555854797
+              },
+              {
+                "session_id": "1617460460_A01EEC",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7704082727432251
+              },
+              {
+                "session_id": "1601509460_A02294",
+                "event_index": 0,
+                "detected": true,
+                "alert_count": 1,
+                "max_score": 0.7244338393211365
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 0,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.8169665336608887
+              },
+              {
+                "session_id": "1604525961_A02294",
+                "event_index": 1,
+                "detected": false,
+                "alert_count": 0,
+                "max_score": 0.7832170724868774
+              }
+            ]
+          }
+        }
+      },
+      "threshold_policy": "validation false-alarm budget <= 10/hour",
+      "post_processing": {
+        "alert_refractory_minutes": 15.0,
+        "selected_on": "validation split"
+      }
+    }
+  },
+  "failure_notes": [
+    "Standard missed 5 event(s), across sessions: 1598624269_A01EE3, 1601509460_A02294, 1604525961_A02294, 1610296047_A01EEC, 1617460460_A01EEC",
+    "Pro missed 3 event(s), across sessions: 1601509460_A02294, 1610296047_A01EEC, 1617460460_A01EEC"
+  ]
+}

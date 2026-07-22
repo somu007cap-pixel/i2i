@@ -102,66 +102,72 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "& { $ErrorActionPreference='Continue';" ^
   "$env:PYTHONUTF8='1'; $env:TF_CPP_MIN_LOG_LEVEL='3'; $env:TF_ENABLE_ONEDNN_OPTS='0'; $env:EDGE_BENCHMARK='%MARATHON_EDGE_BENCHMARK%'; $env:EDGE_BENCHMARK_RUNS='%MARATHON_EDGE_BENCHMARK_RUNS%'; $env:EDGE_BENCHMARK_WARMUP='%MARATHON_EDGE_BENCHMARK_WARMUP%'; $env:EDGE_FAIL_ON_BENCHMARK_FAILURE='%MARATHON_EDGE_FAIL_ON_BENCHMARK_FAILURE%'; $env:EDGE_REQUIRE_INT8='%MARATHON_EDGE_REQUIRE_INT8%'; $env:TSMIXER_STOP_ON_FAILURE='1';" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[0/9] Preflight checks';" ^
+  "Write-Host '[0/10] Preflight checks';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START PREFLIGHT ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\preflight_check.py';" ^
   "$preCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END PREFLIGHT code=' + $preCode + ' ' + (Get-Date -Format s)); if ($preCode -ne 0) { exit $preCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[1/9] Label metadata audit';" ^
+  "Write-Host '[1/10] Label metadata audit';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START LABEL AUDIT ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\label_metadata_audit.py';" ^
   "$labelCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END LABEL AUDIT code=' + $labelCode + ' ' + (Get-Date -Format s)); if ($labelCode -ne 0) { exit $labelCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[2/9] Patched Dual-Stream TSMixer experiment sweep';" ^
+  "Write-Host '[2/10] Patched Dual-Stream TSMixer experiment sweep';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START TSMIXER ' + (Get-Date -Format s));" ^
   "if ('%MARATHON_ROBUSTNESS_STUDY%' -eq '1') { $tsmixerArgs = @('--robust-final') } elseif ('%MARATHON_FINAL_FOCUS%' -eq '1') { $tsmixerArgs = @('--focus-final') } else { $tsmixerArgs = @() };" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\run_tsmixer_experiments.py' --max-sessions %MARATHON_MAX_SESSIONS% --epochs %MARATHON_TSMIXER_EPOCHS% --batch-size %MARATHON_TSMIXER_BATCH_SIZE% --max-train-windows %MARATHON_TSMIXER_MAX_TRAIN_WINDOWS% --patience %MARATHON_TSMIXER_PATIENCE% %MARATHON_RESUME_FLAG% $tsmixerArgs;" ^
   "$tsCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END TSMIXER code=' + $tsCode + ' ' + (Get-Date -Format s)); if ($tsCode -ne 0) { exit $tsCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[3/9] Promote best TSMixer experiment';" ^
+  "Write-Host '[3/10] Promote best TSMixer experiment';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START PROMOTE ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\promote_best_tsmixer_experiment.py';" ^
   "$promoteCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END PROMOTE code=' + $promoteCode + ' ' + (Get-Date -Format s)); if ($promoteCode -ne 0) { exit $promoteCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[4/9] Refresh TSMixer experiment summary';" ^
+  "Write-Host '[4/10] Refresh TSMixer experiment summary';" ^
   "Write-Host '===============================================================';" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\summarize_tsmixer_experiments.py';" ^
   "$sumCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END TSMIXER SUMMARY code=' + $sumCode + ' ' + (Get-Date -Format s)); if ($sumCode -ne 0) { exit $sumCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[5/9] Baseline comparison suite';" ^
+  "Write-Host '[5/10] Baseline comparison suite';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START BASELINES ' + (Get-Date -Format s));" ^
   "$env:DETECTION_MAX_SESSIONS='%MARATHON_MAX_SESSIONS%'; $env:BASELINE_EPOCHS='%MARATHON_BASELINE_EPOCHS%'; $env:BASELINE_BATCH_SIZE='%MARATHON_BASELINE_BATCH_SIZE%'; $env:BASELINE_MAX_TRAIN_WINDOWS='%MARATHON_BASELINE_MAX_TRAIN_WINDOWS%'; $env:BASELINE_AE_MAX_NORMAL_WINDOWS='%MARATHON_BASELINE_AE_MAX_NORMAL_WINDOWS%';" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\detection_baselines.py';" ^
   "$baseCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END BASELINES code=' + $baseCode + ' ' + (Get-Date -Format s)); if ($baseCode -ne 0) { exit $baseCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[6/9] Modern method coverage report';" ^
-  "Write-Host '===============================================================';" ^
-  "Add-Content -Path '%STATUS_FILE%' -Value ('START METHOD COVERAGE ' + (Get-Date -Format s));" ^
-  "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\method_coverage_report.py';" ^
-  "$methodCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END METHOD COVERAGE code=' + $methodCode + ' ' + (Get-Date -Format s)); if ($methodCode -ne 0) { exit $methodCode };" ^
-  "Write-Host '===============================================================';" ^
-  "Write-Host '[7/9] Final edge feasibility refresh';" ^
+  "Write-Host '[6/10] Final edge feasibility refresh';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START EDGE ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\edge_feasibility.py';" ^
   "$edgeCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END EDGE code=' + $edgeCode + ' ' + (Get-Date -Format s)); if ($edgeCode -ne 0) { exit $edgeCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[8/9] Final study report';" ^
+  "Write-Host '[7/10] Final study report';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START FINAL STUDY REPORT ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\final_study_report.py';" ^
   "$reportCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END FINAL STUDY REPORT code=' + $reportCode + ' ' + (Get-Date -Format s)); if ($reportCode -ne 0) { exit $reportCode };" ^
   "Write-Host '===============================================================';" ^
-  "Write-Host '[9/9] Dissertation figures';" ^
+  "Write-Host '[8/10] Modern method coverage report';" ^
+  "Write-Host '===============================================================';" ^
+  "Add-Content -Path '%STATUS_FILE%' -Value ('START METHOD COVERAGE ' + (Get-Date -Format s));" ^
+  "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\method_coverage_report.py';" ^
+  "$methodCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END METHOD COVERAGE code=' + $methodCode + ' ' + (Get-Date -Format s)); if ($methodCode -ne 0) { exit $methodCode };" ^
+  "Write-Host '===============================================================';" ^
+  "Write-Host '[9/10] Dissertation figures';" ^
   "Write-Host '===============================================================';" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('START DISSERTATION FIGURES ' + (Get-Date -Format s));" ^
   "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\dissertation_visuals.py';" ^
   "$figureCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END DISSERTATION FIGURES code=' + $figureCode + ' ' + (Get-Date -Format s)); if ($figureCode -ne 0) { exit $figureCode };" ^
+  "Write-Host '===============================================================';" ^
+  "Write-Host '[10/10] Submission readiness audit';" ^
+  "Write-Host '===============================================================';" ^
+  "Add-Content -Path '%STATUS_FILE%' -Value ('START SUBMISSION AUDIT ' + (Get-Date -Format s));" ^
+  "& '%CD%\.venv\Scripts\python.exe' '%CD%\seizure_detection\submission_readiness_audit.py';" ^
+  "$auditCode=$LASTEXITCODE; Add-Content -Path '%STATUS_FILE%' -Value ('END SUBMISSION AUDIT code=' + $auditCode + ' ' + (Get-Date -Format s)); if ($auditCode -ne 0) { exit $auditCode };" ^
   "Add-Content -Path '%STATUS_FILE%' -Value ('MARATHON COMPLETE ' + (Get-Date -Format s));" ^
   "exit 0 }" ^
   2^>^&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOG_FILE%'"
@@ -181,6 +187,7 @@ echo   seizure_detection\outputs\SOTA_METHOD_COVERAGE.md
 echo   seizure_detection\outputs\edge_feasibility\EDGE_FEASIBILITY_SUMMARY.md
 echo   seizure_detection\outputs\FINAL_STUDY_REPORT.md
 echo   seizure_detection\outputs\dissertation_figures\README_FIGURES.md
+echo   showcase_outputs\audit\SUBMISSION_READINESS_AUDIT.md
 echo ===============================================================
 
 pause

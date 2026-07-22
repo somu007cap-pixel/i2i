@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-07-20T01:13:47.333433",
+  "base_path": "C:\\I2I",
+  "label_policy_conclusion": "onset_only_labels_detected",
+  "totals": {
+    "patients": 5,
+    "label_files": 5,
+    "rows": 373,
+    "onset_only_rows": 373,
+    "usable_offset_rows": 0,
+    "duration_or_invalid_rows": 0,
+    "implausible_offset_rows": 0
+  },
+  "patients": [
+    {
+      "patient_id": "Mayo_1110",
+      "label_file": "Mayo_1110\\Empatica_Chronic\\1110.txt",
+      "rows": 31,
+      "usable_offset_rows": 0,
+      "onset_only_rows": 31,
+      "duration_or_invalid_rows": 0,
+      "implausible_offset_rows": 0,
+      "examples": [
+        {
+          "onset": 1597832069.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1598704011.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1598704188.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1598704313.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1599476269.0,
+          "second_field": null,
+          "classification": "onset_only"
+        }
+      ]
+    },
+    {
+      "patient_id": "Mayo_1869",
+      "label_file": "Mayo_1869\\1869.txt",
+      "rows": 26,
+      "usable_offset_rows": 0,
+      "onset_only_rows": 26,
+      "duration_or_invalid_rows": 0,
+      "implausible_offset_rows": 0,
+      "examples": [
+        {
+          "onset": 1579649633.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1579649832.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1580865542.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1582952241.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1584143198.0,
+          "second_field": null,
+          "classification": "onset_only"
+        }
+      ]
+    },
+    {
+      "patient_id": "Mayo_1876",
+      "label_file": "Mayo_1876\\1876.txt",
+      "rows": 44,
+      "usable_offset_rows": 0,
+      "onset_only_rows": 44,
+      "duration_or_invalid_rows": 0,
+      "implausible_offset_rows": 0,
+      "examples": [
+        {
+          "onset": 1577918917.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1577922947.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1578007853.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1579214507.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1580085690.0,
+          "second_field": null,
+          "classification": "onset_only"
+        }
+      ]
+    },
+    {
+      "patient_id": "Mayo_1904",
+      "label_file": "Mayo_1904\\1904.txt",
+      "rows": 31,
+      "usable_offset_rows": 0,
+      "onset_only_rows": 31,
+      "duration_or_invalid_rows": 0,
+      "implausible_offset_rows": 0,
+      "examples": [
+        {
+          "onset": 1581493812.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1582173232.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1582173283.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1582173324.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1582183328.0,
+          "second_field": null,
+          "classification": "onset_only"
+        }
+      ]
+    },
+    {
+      "patient_id": "Mayo_1965",
+      "label_file": "Mayo_1965\\1965.txt",
+      "rows": 241,
+      "usable_offset_rows": 0,
+      "onset_only_rows": 241,
+      "duration_or_invalid_rows": 0,
+      "implausible_offset_rows": 0,
+      "examples": [
+        {
+          "onset": 1577952857.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1577980842.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1578349691.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1578468812.0,
+          "second_field": null,
+          "classification": "onset_only"
+        },
+        {
+          "onset": 1578555524.0,
+          "second_field": null,
+          "classification": "onset_only"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1810 @@
+Experiment: robust_label300s_booster_tuned_patch8_base_eda_boost_ppg_temp
+Description: Label-policy sensitivity duration=300s: ACC+EDA baseline with BVP+HR+TEMP add-on.
+Started: 2026-07-20T17:39:09
+Max sessions: 146
+Epochs: 24
+Batch size: 64
+======================================================================
+SEIZURE DETECTION PIPELINE - Full Training Run
+======================================================================
+Timestamp: 2026-07-20T17:39:18.093242
+Base path: C:\I2I
+Output directory: C:\I2I\seizure_detection\outputs
+GPU available: False
+
+======================================================================
+PHASE 1: Data Health Check
+======================================================================
+======================================================================
+DEEP DATA ANALYSIS - Empatica E4 Seizure Detection Dataset
+======================================================================
+
+Label policy: patient .txt files are parsed as seizure onsets; if a second numeric column exists it is treated as the offset when it looks like an absolute timestamp, otherwise offset = onset + 300s and overlapping intervals are merged with gap <= 0s (override with SEIZURE_DURATION_SECONDS and SEIZURE_MERGE_GAP_SECONDS).
+Phase 1 duration policy: fast header-only scan using 129600s conservative session span; Phase 2 uses actual selected-session samples.
+
+Found 5 patient folders
+
+[INFO] Found SeizureTimesOnly folder with additional labels
+  - 1219: 31 seizure events
+  - 1675: 11 seizure events
+  - 1942: 73 seizure events
+
+======================================================================
+PATIENT: Mayo_1110
+======================================================================
+
+  [LABELS] Found: 1110.txt
+  First 5 rows of 1110.txt:
+    1597832069
+    1598704011
+    1598704188
+    1598704313
+    1599476269
+  [SESSIONS] Found 147 session folders
+  [VALID] 146/147 sessions are model-usable
+  [COMPLETE EXPORT] 146/147 sessions have ACC + PPG(BVP/HR/IBI) + EDA + TEMP
+  [METADATA] 146/147 sessions have tags.csv/info.txt
+
+  [SAMPLING RATE VERIFICATION]
+    ACC: {32.0} Hz (expected: 32.0 Hz) OK
+    BVP: {64.0} Hz (expected: 64.0 Hz) OK
+    HR: {1.0} Hz (expected: 1.0 Hz) OK
+    EDA: {4.0} Hz (expected: 4.0 Hz) OK
+    TEMP: {4.0} Hz (expected: 4.0 Hz) OK
+
+  [SUMMARY]
+    Total sessions: 147
+    Valid sessions: 146
+    Estimated recording: 5256.0 hours
+    Raw seizure onset rows: 31
+    Merged seizure episodes: 21
+    Sample intervals (first 3):
+      [1] 1597832069 -> 1597832369 (300s)
+      [2] 1598704011 -> 1598704613 (602s)
+      [3] 1599476269 -> 1599476569 (300s)
+
+======================================================================
+PATIENT: Mayo_1869
+======================================================================
+
+  [LABELS] Found: 1869.txt
+  First 5 rows of 1869.txt:
+    1579649633
+    1579649832
+    1580865542
+    1582952241
+    1584143198
+  [SESSIONS] Found 182 session folders
+  [VALID] 182/182 sessions are model-usable
+  [COMPLETE EXPORT] 182/182 sessions have ACC + PPG(BVP/HR/IBI) + EDA + TEMP
+  [METADATA] 182/182 sessions have tags.csv/info.txt
+
+  [SAMPLING RATE VERIFICATION]
+    ACC: {32.0} Hz (expected: 32.0 Hz) OK
+    BVP: {64.0} Hz (expected: 64.0 Hz) OK
+    HR: {1.0} Hz (expected: 1.0 Hz) OK
+    EDA: {4.0} Hz (expected: 4.0 Hz) OK
+    TEMP: {4.0} Hz (expected: 4.0 Hz) OK
+
+  [SUMMARY]
+    Total sessions: 182
+    Valid sessions: 182
+    Estimated recording: 6552.0 hours
+    Raw seizure onset rows: 26
+    Merged seizure episodes: 24
+    Sample intervals (first 3):
+      [1] 1579649633 -> 1579650132 (499s)
+      [2] 1580865542 -> 1580865842 (300s)
+      [3] 1582952241 -> 1582952541 (300s)
+
+======================================================================
+PATIENT: Mayo_1876
+======================================================================
+
+  [LABELS] Found: 1876.txt
+  First 5 rows of 1876.txt:
+    1577918917
+    1577922947
+    1578007853
+    1579214507
+    1580085690
+  [SESSIONS] Found 204 session folders
+  [VALID] 204/204 sessions are model-usable
+  [COMPLETE EXPORT] 204/204 sessions have ACC + PPG(BVP/HR/IBI) + EDA + TEMP
+  [METADATA] 204/204 sessions have tags.csv/info.txt
+
+  [SAMPLING RATE VERIFICATION]
+    ACC: {32.0} Hz (expected: 32.0 Hz) OK
+    BVP: {64.0} Hz (expected: 64.0 Hz) OK
+    HR: {1.0} Hz (expected: 1.0 Hz) OK
+    EDA: {4.0} Hz (expected: 4.0 Hz) OK
+    TEMP: {4.0} Hz (expected: 4.0 Hz) OK
+
+  [SUMMARY]
+    Total sessions: 204
+    Valid sessions: 204
+    Estimated recording: 7344.0 hours
+    Raw seizure onset rows: 44
+    Merged seizure episodes: 43
+    Sample intervals (first 3):
+      [1] 1577918917 -> 1577919217 (300s)
+      [2] 1577922947 -> 1577923247 (300s)
+      [3] 1578007853 -> 1578008153 (300s)
+
+======================================================================
+PATIENT: Mayo_1904
+======================================================================
+
+  [LABELS] Found: 1904.txt
+  First 5 rows of 1904.txt:
+    1581493812
+    1582173232
+    1582173283
+    1582173324
+    1582183328
+  [SESSIONS] Found 220 session folders
+  [VALID] 220/220 sessions are model-usable
+  [COMPLETE EXPORT] 219/220 sessions have ACC + PPG(BVP/HR/IBI) + EDA + TEMP
+  [METADATA] 219/220 sessions have tags.csv/info.txt
+
+  [SAMPLING RATE VERIFICATION]
+    ACC: {32.0} Hz (expected: 32.0 Hz) OK
+    BVP: {64.0} Hz (expected: 64.0 Hz) OK
+    HR: {1.0} Hz (expected: 1.0 Hz) OK
+    EDA: {4.0} Hz (expected: 4.0 Hz) OK
+    TEMP: {4.0} Hz (expected: 4.0 Hz) OK
+
+  [SUMMARY]
+    Total sessions: 220
+    Valid sessions: 220
+    Estimated recording: 7920.0 hours
+    Raw seizure onset rows: 31
+    Merged seizure episodes: 23
+    Sample intervals (first 3):
+      [1] 1581493812 -> 1581494112 (300s)
+      [2] 1582173232 -> 1582173624 (392s)
+      [3] 1582183328 -> 1582183695 (367s)
+
+======================================================================
+PATIENT: Mayo_1965
+======================================================================
+
+  [LABELS] Found: 1965.txt
+  First 5 rows of 1965.txt:
+    1577952857
+    1577980842
+    1578349691
+    1578468812
+    1578555524
+  [SESSIONS] Found 366 session folders
+  [VALID] 366/366 sessions are model-usable
+  [COMPLETE EXPORT] 366/366 sessions have ACC + PPG(BVP/HR/IBI) + EDA + TEMP
+  [METADATA] 366/366 sessions have tags.csv/info.txt
+
+  [SAMPLING RATE VERIFICATION]
+    ACC: {32.0} Hz (expected: 32.0 Hz) OK
+    BVP: {64.0} Hz (expected: 64.0 Hz) OK
+    HR: {1.0} Hz (expected: 1.0 Hz) OK
+    EDA: {4.0} Hz (expected: 4.0 Hz) OK
+    TEMP: {4.0} Hz (expected: 4.0 Hz) OK
+
+  [SUMMARY]
+    Total sessions: 366
+    Valid sessions: 366
+    Estimated recording: 13176.0 hours
+    Raw seizure onset rows: 241
+    Merged seizure episodes: 239
+    Sample intervals (first 3):
+      [1] 1577952857 -> 1577953157 (300s)
+      [2] 1577980842 -> 1577981142 (300s)
+      [3] 1578349691 -> 1578349991 (300s)
+
+======================================================================
+GLOBAL SUMMARY
+======================================================================
+  Patients: 5
+  Total sessions: 1119
+  Valid sessions: 1118
+  Estimated recording: 40248.0 hours
+  Total raw seizure onset rows: 373
+  Total merged seizure episodes: 350
+
+  Sessions with possible seizure overlap: 283
+
+======================================================================
+PHASE 2: Data Generator
+======================================================================
+
+Smart session selection:
+  Total sessions: 1118
+  Sessions with actual seizure overlap: 214
+  Sessions without actual seizure overlap: 904
+  Selected: 146 sessions
+Found 146 selected valid sessions
+Using 146 sessions (max: 146)
+Batch size: 64, Epochs: 24, Window: 160 samples (5.0s), Stride: 160 samples (5.0s)
+
+Patient-held-out splits:
+  Train: 121 sessions (91 with seizures)
+  Val: 11 sessions (6 with seizures)
+  Test: 14 sessions (5 with seizures)
+
+Split audit:
+  Train: 121 sessions, 91 seizure sessions, 127 seizure episodes | patients: Mayo_1876:23, Mayo_1904:19, Mayo_1965:79
+  Val: 11 sessions, 6 seizure sessions, 7 seizure episodes | patients: Mayo_1869:11
+  Test: 14 sessions, 5 seizure sessions, 6 seizure episodes | patients: Mayo_1110:14
+
+Building train split from 121 held-out sessions...
+
+Preparing dataset from 121 sessions...
+  Using 7 CPU cores for parallel processing
+  Window size: 160, Stride: 160
+  [1/121] 1590830169_A025A1: 16324 windows, 61 seizure | ETA: 87.0 min
+  [2/121] 1596347269_A025A1: 17558 windows, 61 seizure | ETA: 44.6 min
+  [3/121] 1595998432_A025A1: 17750 windows, 122 seizure | ETA: 29.8 min
+  [4/121] 1604152715_A02848: 21802 windows, 61 seizure | ETA: 24.6 min
+  [5/121] 1608125010_A01BFB: 24396 windows, 122 seizure | ETA: 20.4 min
+  [6/121] 1588477070_A02848: 25836 windows, 122 seizure | ETA: 17.4 min
+  [7/121] 1601017833_A025F0: 17153 windows, 61 seizure | ETA: 16.8 min
+  [8/121] 1591753553_A029FA: 33956 windows, 61 seizure | ETA: 14.7 min
+  [9/121] 1603258954_A025F0: 15844 windows, 61 seizure | ETA: 13.0 min
+  [10/121] 1599900171_A025F0: 14622 windows, 0 seizure | ETA: 12.4 min
+  [11/121] 1598076920_A025A1: 18428 windows, 183 seizure | ETA: 11.6 min
+  [12/121] 1607843408_A025E5: 16804 windows, 0 seizure | ETA: 10.8 min
+  [13/121] 1578665811_A029FA: 9164 windows, 0 seizure | ETA: 9.9 min
+  [14/121] 1596988315_A01BFB: 27732 windows, 133 seizure | ETA: 9.4 min
+  [15/121] 1583216644_A025F0: 15385 windows, 61 seizure | ETA: 9.1 min
+  [16/121] 1580626517_A025F0: 17580 windows, 61 seizure | ETA: 8.7 min
+  [17/121] 1606201290_A025F0: 17711 windows, 61 seizure | ETA: 8.6 min
+  [18/121] 1587088014_A02535: 17941 windows, 126 seizure | ETA: 8.4 min
+  [19/121] 1595314316_A025A1: 15662 windows, 61 seizure | ETA: 7.9 min
+  [20/121] 1581213160_A029FA: 17436 windows, 0 seizure | ETA: 7.5 min
+  [21/121] 1593683074_A025F0: 15261 windows, 0 seizure | ETA: 7.1 min
+  [22/121] 1594541122_A025F0: 15843 windows, 61 seizure | ETA: 7.1 min
+  [23/121] 1585031716_A025A1: 16794 windows, 61 seizure | ETA: 6.9 min
+  [24/121] 1583467594_A029FA: 17907 windows, 0 seizure | ETA: 7.0 min
+  [25/121] 1583473469_A025A1: 15001 windows, 0 seizure | ETA: 6.7 min
+  [26/121] 1593761527_A025A1: 17852 windows, 61 seizure | ETA: 6.5 min
+  [27/121] 1597378534_A02535: 17553 windows, 0 seizure | ETA: 6.3 min
+  [28/121] 1582008418_A025F0: 16510 windows, 122 seizure | ETA: 6.2 min
+  [29/121] 1581171517_A02535: 8192 windows, 61 seizure | ETA: 6.0 min
+  [30/121] 1587195314_A025F0: 17481 windows, 137 seizure | ETA: 5.8 min
+  [31/121] 1590674273_A01BFB: 28212 windows, 0 seizure | ETA: 5.8 min
+  [32/121] 1589007474_A025A1: 17316 windows, 61 seizure | ETA: 5.6 min
+  [33/121] 1592299268_A025F0: 14799 windows, 61 seizure | ETA: 5.6 min
+  [34/121] 1589789830_A025A1: 17711 windows, 61 seizure | ETA: 5.4 min
+  [35/121] 1593881410_A025F0: 10196 windows, 61 seizure | ETA: 5.3 min
+  [36/121] 1589880109_A025F0: 17069 windows, 61 seizure | ETA: 5.2 min
+  [37/121] 1594886822_A025F0: 16636 windows, 122 seizure | ETA: 5.0 min
+  [38/121] 1600990297_A01BFB: 25396 windows, 0 seizure | ETA: 4.9 min
+  [39/121] 1584605731_A025F0: 16653 windows, 61 seizure | ETA: 4.9 min
+  [40/121] 1586229192_A02535: 17033 windows, 61 seizure | ETA: 4.9 min
+  [41/121] 1606805633_A025E5: 17584 windows, 61 seizure | ETA: 4.8 min
+  [42/121] 1582780944_A025A1: 17111 windows, 183 seizure | ETA: 4.7 min
+  [43/121] 1595663031_A025A1: 17537 windows, 61 seizure | ETA: 4.5 min
+  [44/121] 1581391207_A029FA: 16869 windows, 61 seizure | ETA: 4.4 min
+  [45/121] 1604412736_A02848: 21690 windows, 0 seizure | ETA: 4.4 min
+  [46/121] 1583776231_A025F0: 8000 windows, 61 seizure | ETA: 4.3 min
+  [47/121] 1582441279_A025A1: 16958 windows, 122 seizure | ETA: 4.1 min
+  [48/121] 1585992602_A025F0: 17250 windows, 61 seizure | ETA: 4.2 min
+  [49/121] 1590309745_A025A1: 17264 windows, 183 seizure | ETA: 4.2 min
+  [50/121] 1582682579_A02535: 18335 windows, 61 seizure | ETA: 4.0 min
+  [51/121] 1595875340_A02848: 24912 windows, 61 seizure | ETA: 4.0 min
+  [52/121] 1582349882_A025F0: 17777 windows, 61 seizure | ETA: 3.9 min
+  [53/121] 1579484980_A029FA: 17550 windows, 0 seizure | ETA: 3.8 min
+  [54/121] 1598423827_A025A1: 16974 windows, 61 seizure | ETA: 3.8 min
+  [55/121] 1595236110_A025F0: 14912 windows, 183 seizure | ETA: 3.8 min
+  [56/121] 1579181856_A02848: 30568 windows, 0 seizure | ETA: 3.7 min
+  [57/121] 1591771304_A025F0: 19209 windows, 122 seizure | ETA: 3.6 min
+  [58/121] 1592981638_A025F0: 17996 windows, 183 seizure | ETA: 3.5 min
+  [59/121] 1581489441_A025F0: 16789 windows, 61 seizure | ETA: 3.4 min
+  [60/121] 1598169432_A025F0: 16690 windows, 183 seizure | ETA: 3.3 min
+  [61/121] 1603685342_A025E5: 18154 windows, 0 seizure | ETA: 3.3 min
+  [62/121] 1596091429_A025F0: 15767 windows, 61 seizure | ETA: 3.3 min
+  [63/121] 1581997924_A02535: 16041 windows, 61 seizure | ETA: 3.2 min
+  [64/121] 1583636745_A029FA: 17377 windows, 0 seizure | ETA: 3.2 min
+  [65/121] 1583044016_A025F0: 16931 windows, 61 seizure | ETA: 3.1 min
+  [66/121] 1603432975_A025F0: 18237 windows, 61 seizure | ETA: 3.0 min
+  [67/121] 1581123746_A02848: 28844 windows, 0 seizure | ETA: 3.0 min
+  [68/121] 1583392379_A025F0: 15535 windows, 61 seizure | ETA: 2.9 min
+  [69/121] 1579243712_A025F0: 17901 windows, 61 seizure | ETA: 2.9 min
+  [70/121] 1582703193_A025F0: 15110 windows, 61 seizure | ETA: 2.8 min
+  [71/121] 1582864260_A02535: 17195 windows, 61 seizure | ETA: 2.8 min
+  [72/121] 1585279099_A029FA: 15806 windows, 0 seizure | ETA: 2.7 min
+  [73/121] 1584710698_A01BFB: 28408 windows, 78 seizure | ETA: 2.6 min
+  [74/121] 1588658891_A025A1: 18303 windows, 122 seizure | ETA: 2.6 min
+  [75/121] 1592087235_A025F0: 26940 windows, 122 seizure | ETA: 2.5 min
+  [76/121] 1599199817_A025F0: 16828 windows, 0 seizure | ETA: 2.5 min
+  [77/121] 1583905710_A025F0: 18178 windows, 61 seizure | ETA: 2.4 min
+  [78/121] 1590658026_A025A1: 15591 windows, 61 seizure | ETA: 2.3 min
+  [79/121] 1582616485_A025A1: 16963 windows, 122 seizure | ETA: 2.3 min
+  [80/121] 1582966919_A025A1: 15070 windows, 61 seizure | ETA: 2.2 min
+  [81/121] 1594972279_A025A1: 17489 windows, 61 seizure | ETA: 2.1 min
+  [82/121] 1582166589_A02535: 16605 windows, 0 seizure | ETA: 2.1 min
+  [83/121] 1578466440_A025F0: 16866 windows, 61 seizure | ETA: 2.0 min
+  [84/121] 1584953835_A025F0: 15223 windows, 61 seizure | ETA: 2.0 min
+  [85/121] 1579502836_A025A1: 16213 windows, 122 seizure | ETA: 1.9 min
+  [86/121] 1606660855_A01BFB: 23172 windows, 0 seizure | ETA: 1.9 min
+  [87/121] 1588579608_A025F0: 15591 windows, 183 seizure | ETA: 1.8 min
+  [88/121] 1583818582_A025A1: 17114 windows, 61 seizure | ETA: 1.7 min
+  [89/121] 1607584153_A025F0: 17880 windows, 0 seizure | ETA: 1.7 min
+  [90/121] 1592962342_A01BFB: 28136 windows, 0 seizure | ETA: 1.7 min
+  [91/121] 1588434973_A025F0: 10664 windows, 61 seizure | ETA: 1.6 min
+  [92/121] 1597734739_A025A1: 16124 windows, 61 seizure | ETA: 1.5 min
+  [93/121] 1609218461_A02848: 20468 windows, 0 seizure | ETA: 1.5 min
+  [94/121] 1584931760_A029FA: 16067 windows, 122 seizure | ETA: 1.4 min
+  [95/121] 1606114780_A025E5: 16767 windows, 61 seizure | ETA: 1.4 min
+  [96/121] 1585331854_A025F0: 8937 windows, 61 seizure | ETA: 1.3 min
+  [97/121] 1589525188_A025F0: 17681 windows, 61 seizure | ETA: 1.3 min
+  [98/121] 1590398471_A025F0: 17320 windows, 122 seizure | ETA: 1.2 min
+  [99/121] 1578902515_A025F0: 15102 windows, 122 seizure | ETA: 1.2 min
+  [100/121] 1579837199_A029FA: 17923 windows, 0 seizure | ETA: 1.1 min
+  [101/121] 1597897617_A025A1: 17806 windows, 61 seizure | ETA: 1.0 min
+  [102/121] 1582264212_A025A1: 16669 windows, 122 seizure | ETA: 1.0 min
+  [103/121] 1581048106_A029FA: 16970 windows, 122 seizure | ETA: 1.0 min
+  [104/121] 1592791652_A029FA: 17297 windows, 0 seizure | ETA: 0.9 min
+  [105/121] 1591586847_A029FA: 16274 windows, 0 seizure | ETA: 0.8 min
+  [106/121] 1602343565_A025F0: 11161 windows, 61 seizure | ETA: 0.8 min
+  [107/121] 1581427108_A02848: 28712 windows, 61 seizure | ETA: 0.7 min
+  [108/121] 1588490285_A025A1: 17507 windows, 122 seizure | ETA: 0.7 min
+  [109/121] 1586987656_A02848: 26580 windows, 0 seizure | ETA: 0.6 min
+  [110/121] 1608886766_A025E5: 14279 windows, 61 seizure | ETA: 0.6 min
+  [111/121] 1585819645_A025F0: 16723 windows, 61 seizure | ETA: 0.5 min
+  [112/121] 1601790363_A025F0: 17180 windows, 61 seizure | ETA: 0.5 min
+  [113/121] 1588391039_A029FA: 16506 windows, 61 seizure | ETA: 0.4 min
+  [114/121] 1586850331_A025F0: 17854 windows, 122 seizure | ETA: 0.4 min
+  [115/121] 1592814741_A025F0: 15972 windows, 61 seizure | ETA: 0.3 min
+  [116/121] 1597414021_A02848: 23932 windows, 0 seizure | ETA: 0.3 min
+  [117/121] 1584237620_A02535: 18328 windows, 61 seizure | ETA: 0.2 min
+  [118/121] 1580371528_A025A1: 15968 windows, 61 seizure | ETA: 0.2 min
+  [119/121] 1585560788_A025A1: 15194 windows, 122 seizure | ETA: 0.1 min
+  [120/121] 1589661694_A02848: 25940 windows, 0 seizure | ETA: 0.1 min
+  [121/121] 1577894446_A01BFB: 33097 windows, 0 seizure | ETA: 0.0 min
+
+  Completed in 7.9 minutes
+  Processed: 121/121 sessions
+  Total windows: 2,190,944
+  Seizure windows: 7,794
+  Normal windows: 2,183,150
+  Primary shape: (2190944, 160, 3)
+  Secondary shape: (2190944, 160, 4)
+
+Building val split from 11 held-out sessions...
+
+Preparing dataset from 11 sessions...
+  Using 7 CPU cores for parallel processing
+  Window size: 160, Stride: 160
+  [1/11] 1586226157_A025CF: 16290 windows, 61 seizure | ETA: 8.0 min
+  [2/11] 1584067531_A029E3: 16892 windows, 122 seizure | ETA: 3.7 min
+  [3/11] 1592528418_A029B4: 17274 windows, 0 seizure | ETA: 2.2 min
+  [4/11] 1578970949_A025CF: 17231 windows, 0 seizure | ETA: 1.5 min
+  [5/11] 1578193212_A029E3: 17288 windows, 0 seizure | ETA: 1.0 min
+  [6/11] 1585100579_A029E3: 18114 windows, 61 seizure | ETA: 0.7 min
+  [7/11] 1580864123_A029E3: 32484 windows, 61 seizure | ETA: 0.6 min
+  [8/11] 1578106829_A025CF: 17278 windows, 0 seizure | ETA: 0.4 min
+  [9/11] 1594945673_A029B4: 17406 windows, 61 seizure | ETA: 0.2 min
+  [10/11] 1582857784_A025CF: 27720 windows, 61 seizure | ETA: 0.1 min
+  [11/11] 1581131208_A029E3: 33184 windows, 0 seizure | ETA: 0.0 min
+
+  Completed in 1.2 minutes
+  Processed: 11/11 sessions
+  Total windows: 231,161
+  Seizure windows: 427
+  Normal windows: 230,734
+  Primary shape: (231161, 160, 3)
+  Secondary shape: (231161, 160, 4)
+
+Building test split from 14 held-out sessions...
+
+Preparing dataset from 14 sessions...
+  Using 7 CPU cores for parallel processing
+  Window size: 160, Stride: 160
+  [1/14] 1598624269_A01EE3: 25165 windows, 121 seizure | ETA: 11.1 min
+  [2/14] 1618071211_A01EEC: 26160 windows, 0 seizure | ETA: 5.2 min
+  [3/14] 1617311424_A02294: 25800 windows, 0 seizure | ETA: 3.2 min
+  [4/14] 1615118361_A01EEC: 26848 windows, 0 seizure | ETA: 2.2 min
+  [5/14] 1617460460_A01EEC: 27536 windows, 61 seizure | ETA: 1.6 min
+  [6/14] 1610296047_A01EEC: 28864 windows, 61 seizure | ETA: 1.2 min
+  [7/14] 1606744372_A02294: 29264 windows, 0 seizure | ETA: 0.9 min
+  [8/14] 1616859842_A01EEC: 26288 windows, 0 seizure | ETA: 1.0 min
+  [9/14] 1617627705_A02294: 25744 windows, 0 seizure | ETA: 0.7 min
+  [10/14] 1601509460_A02294: 31456 windows, 97 seizure | ETA: 0.6 min
+  [11/14] 1604525961_A02294: 30252 windows, 131 seizure | ETA: 0.4 min
+  [12/14] 1607346169_A01EEC: 29616 windows, 0 seizure | ETA: 0.2 min
+  [13/14] 1603474555_A02294: 30552 windows, 0 seizure | ETA: 0.1 min
+  [14/14] 1599842819_A02294: 32964 windows, 0 seizure | ETA: 0.0 min
+
+  Completed in 1.5 minutes
+  Processed: 14/14 sessions
+  Total windows: 396,509
+  Seizure windows: 471
+  Normal windows: 396,038
+  Primary shape: (396509, 160, 3)
+  Secondary shape: (396509, 160, 4)
+
+Data splits:
+  Train: 2190944 samples (7794 seizure, 2183150 normal, 0.36% seizure)
+  Val: 231161 samples (427 seizure, 230734 normal, 0.18% seizure)
+  Test: 396509 samples (471 seizure, 396038 normal, 0.12% seizure)
+
+======================================================================
+PHASE 3: Build Standard and Pro TSMixer Models
+======================================================================
+
+======================================================================
+TRAINING VARIANT: standard_acc_only
+Secondary features: none (ACC-only standard)
+======================================================================
+Existing checkpoint ignored because FORCE_RERUN/DETECTION_FORCE_RETRAIN_VARIANTS is set: C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+
+Built model for standard_acc_only
+Model footprint: 155,729 parameters (under 100k: False)
+
+Balanced training view:
+  Original train: 2,190,944 windows, 7,794 seizure
+  Sampled train: 38,970 windows, 7,794 seizure
+Class weights: {0: 0.625, 1: 2.5}
+Checkpoint/early stopping monitor: val_pr_auc
+
+Training for up to 24 epochs...
+==================================================
+  Epoch 1: loss=0.1747, pr_auc=0.2032, val_loss=0.1733, val_pr_auc=0.0017, val_auc=0.4042
+
+Epoch 1: val_pr_auc improved from None to 0.00168, saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+
+Epoch 1: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+  Epoch 2: loss=0.1735, pr_auc=0.2011, val_loss=0.1777, val_pr_auc=0.0019, val_auc=0.4559
+
+Epoch 2: val_pr_auc improved from 0.00168 to 0.00190, saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+
+Epoch 2: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+  Epoch 3: loss=0.1733, pr_auc=0.2037, val_loss=0.1745, val_pr_auc=0.0021, val_auc=0.5040
+
+Epoch 3: val_pr_auc improved from 0.00190 to 0.00206, saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+
+Epoch 3: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_only.keras
+  Epoch 4: loss=0.1731, pr_auc=0.2093, val_loss=0.1775, val_pr_auc=0.0015, val_auc=0.3964
+
+Epoch 4: val_pr_auc did not improve from 0.00206
+  Epoch 5: loss=0.1728, pr_auc=0.2124, val_loss=0.1769, val_pr_auc=0.0015, val_auc=0.4343
+
+Epoch 5: val_pr_auc did not improve from 0.00206
+  Epoch 6: loss=0.1727, pr_auc=0.2115, val_loss=0.1752, val_pr_auc=0.0015, val_auc=0.4148
+
+Epoch 6: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 6: val_pr_auc did not improve from 0.00206
+  Epoch 7: loss=0.1720, pr_auc=0.2204, val_loss=0.1778, val_pr_auc=0.0015, val_auc=0.4196
+
+Epoch 7: val_pr_auc did not improve from 0.00206
+  Epoch 8: loss=0.1716, pr_auc=0.2274, val_loss=0.1811, val_pr_auc=0.0015, val_auc=0.4215
+
+Epoch 8: val_pr_auc did not improve from 0.00206
+  Epoch 9: loss=0.1711, pr_auc=0.2298, val_loss=0.1753, val_pr_auc=0.0016, val_auc=0.4491
+
+Epoch 9: val_pr_auc did not improve from 0.00206
+  Epoch 10: loss=0.1709, pr_auc=0.2298, val_loss=0.1738, val_pr_auc=0.0017, val_auc=0.4726
+
+Epoch 10: val_pr_auc did not improve from 0.00206
+Epoch 10: early stopping
+Restoring model weights from the end of the best epoch: 3.
+Validation PR-AUC for standard_acc_only: 0.002296
+
+======================================================================
+TRAINING VARIANT: standard_acc_eda
+Secondary features: ['EDA']
+======================================================================
+Existing checkpoint ignored because FORCE_RERUN/DETECTION_FORCE_RETRAIN_VARIANTS is set: C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Built model for standard_acc_eda
+Model footprint: 155,729 parameters (under 100k: False)
+
+Balanced training view:
+  Original train: 2,190,944 windows, 7,794 seizure
+  Sampled train: 38,970 windows, 7,794 seizure
+Class weights: {0: 0.625, 1: 2.5}
+Checkpoint/early stopping monitor: val_pr_auc
+
+Training for up to 24 epochs...
+==================================================
+  Epoch 1: loss=0.1762, pr_auc=0.2034, val_loss=0.1699, val_pr_auc=0.0018, val_auc=0.4443
+
+Epoch 1: val_pr_auc improved from None to 0.00176, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 1: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 2: loss=0.1730, pr_auc=0.2187, val_loss=0.1786, val_pr_auc=0.0013, val_auc=0.3671
+
+Epoch 2: val_pr_auc did not improve from 0.00176
+  Epoch 3: loss=0.1727, pr_auc=0.2222, val_loss=0.1752, val_pr_auc=0.0018, val_auc=0.4613
+
+Epoch 3: val_pr_auc improved from 0.00176 to 0.00178, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 3: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 4: loss=0.1724, pr_auc=0.2269, val_loss=0.1730, val_pr_auc=0.0013, val_auc=0.3343
+
+Epoch 4: val_pr_auc did not improve from 0.00178
+  Epoch 5: loss=0.1723, pr_auc=0.2307, val_loss=0.1713, val_pr_auc=0.0013, val_auc=0.3542
+
+Epoch 5: val_pr_auc did not improve from 0.00178
+  Epoch 6: loss=0.1719, pr_auc=0.2357, val_loss=0.1662, val_pr_auc=0.0016, val_auc=0.4393
+
+Epoch 6: val_pr_auc did not improve from 0.00178
+  Epoch 7: loss=0.1716, pr_auc=0.2411, val_loss=0.1363, val_pr_auc=0.0019, val_auc=0.5314
+
+Epoch 7: val_pr_auc improved from 0.00178 to 0.00189, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 7: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 8: loss=0.1710, pr_auc=0.2476, val_loss=0.1221, val_pr_auc=0.0020, val_auc=0.5314
+
+Epoch 8: val_pr_auc improved from 0.00189 to 0.00195, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 8: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 9: loss=0.1707, pr_auc=0.2489, val_loss=0.1462, val_pr_auc=0.0018, val_auc=0.5036
+
+Epoch 9: val_pr_auc did not improve from 0.00195
+  Epoch 10: loss=0.1698, pr_auc=0.2616, val_loss=0.1126, val_pr_auc=0.0020, val_auc=0.5416
+
+Epoch 10: val_pr_auc improved from 0.00195 to 0.00196, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 10: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 11: loss=0.1693, pr_auc=0.2651, val_loss=0.0974, val_pr_auc=0.0022, val_auc=0.5566
+
+Epoch 11: val_pr_auc improved from 0.00196 to 0.00216, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 11: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 12: loss=0.1689, pr_auc=0.2705, val_loss=0.1152, val_pr_auc=0.0025, val_auc=0.5808
+
+Epoch 12: val_pr_auc improved from 0.00216 to 0.00252, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 12: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 13: loss=0.1674, pr_auc=0.2841, val_loss=0.0883, val_pr_auc=0.0024, val_auc=0.5663
+
+Epoch 13: val_pr_auc did not improve from 0.00252
+  Epoch 14: loss=0.1672, pr_auc=0.2868, val_loss=0.0800, val_pr_auc=0.0021, val_auc=0.5502
+
+Epoch 14: val_pr_auc did not improve from 0.00252
+  Epoch 15: loss=0.1660, pr_auc=0.2982, val_loss=0.0702, val_pr_auc=0.0023, val_auc=0.5602
+
+Epoch 15: val_pr_auc did not improve from 0.00252
+  Epoch 16: loss=0.1649, pr_auc=0.3094, val_loss=0.0937, val_pr_auc=0.0021, val_auc=0.5362
+
+Epoch 16: val_pr_auc did not improve from 0.00252
+  Epoch 17: loss=0.1652, pr_auc=0.3052, val_loss=0.1232, val_pr_auc=0.0022, val_auc=0.5095
+
+Epoch 17: val_pr_auc did not improve from 0.00252
+  Epoch 18: loss=0.1639, pr_auc=0.3162, val_loss=0.1073, val_pr_auc=0.0025, val_auc=0.5343
+
+Epoch 18: val_pr_auc did not improve from 0.00252
+  Epoch 19: loss=0.1638, pr_auc=0.3161, val_loss=0.0944, val_pr_auc=0.0029, val_auc=0.5845
+
+Epoch 19: val_pr_auc improved from 0.00252 to 0.00289, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+
+Epoch 19: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda.keras
+  Epoch 20: loss=0.1623, pr_auc=0.3291, val_loss=0.0901, val_pr_auc=0.0026, val_auc=0.5738
+
+Epoch 20: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 20: val_pr_auc did not improve from 0.00289
+  Epoch 21: loss=0.1587, pr_auc=0.3576, val_loss=0.0717, val_pr_auc=0.0026, val_auc=0.5766
+
+Epoch 21: val_pr_auc did not improve from 0.00289
+  Epoch 22: loss=0.1571, pr_auc=0.3679, val_loss=0.0574, val_pr_auc=0.0025, val_auc=0.5643
+
+Epoch 22: val_pr_auc did not improve from 0.00289
+  Epoch 23: loss=0.1553, pr_auc=0.3794, val_loss=0.0671, val_pr_auc=0.0026, val_auc=0.5681
+
+Epoch 23: val_pr_auc did not improve from 0.00289
+  Epoch 24: loss=0.1542, pr_auc=0.3879, val_loss=0.0602, val_pr_auc=0.0025, val_auc=0.5692
+
+Epoch 24: val_pr_auc did not improve from 0.00289
+Restoring model weights from the end of the best epoch: 19.
+Validation PR-AUC for standard_acc_eda: 0.002933
+
+======================================================================
+TRAINING VARIANT: standard_acc_temp
+Secondary features: ['TEMP']
+======================================================================
+Existing checkpoint ignored because FORCE_RERUN/DETECTION_FORCE_RETRAIN_VARIANTS is set: C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Built model for standard_acc_temp
+Model footprint: 155,729 parameters (under 100k: False)
+
+Balanced training view:
+  Original train: 2,190,944 windows, 7,794 seizure
+  Sampled train: 38,970 windows, 7,794 seizure
+Class weights: {0: 0.625, 1: 2.5}
+Checkpoint/early stopping monitor: val_pr_auc
+
+Training for up to 24 epochs...
+==================================================
+  Epoch 1: loss=0.1743, pr_auc=0.2058, val_loss=0.1619, val_pr_auc=0.0023, val_auc=0.4707
+
+Epoch 1: val_pr_auc improved from None to 0.00233, saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Epoch 1: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+  Epoch 2: loss=0.1727, pr_auc=0.2206, val_loss=0.1677, val_pr_auc=0.0015, val_auc=0.4450
+
+Epoch 2: val_pr_auc did not improve from 0.00233
+  Epoch 3: loss=0.1718, pr_auc=0.2266, val_loss=0.1632, val_pr_auc=0.0026, val_auc=0.5390
+
+Epoch 3: val_pr_auc improved from 0.00233 to 0.00263, saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Epoch 3: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+  Epoch 4: loss=0.1709, pr_auc=0.2340, val_loss=0.1656, val_pr_auc=0.0061, val_auc=0.5131
+
+Epoch 4: val_pr_auc improved from 0.00263 to 0.00607, saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Epoch 4: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+  Epoch 5: loss=0.1701, pr_auc=0.2435, val_loss=0.1681, val_pr_auc=0.0073, val_auc=0.5493
+
+Epoch 5: val_pr_auc improved from 0.00607 to 0.00730, saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Epoch 5: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+  Epoch 6: loss=0.1693, pr_auc=0.2492, val_loss=0.1363, val_pr_auc=0.0044, val_auc=0.5989
+
+Epoch 6: val_pr_auc did not improve from 0.00730
+  Epoch 7: loss=0.1685, pr_auc=0.2530, val_loss=0.1392, val_pr_auc=0.0102, val_auc=0.6545
+
+Epoch 7: val_pr_auc improved from 0.00730 to 0.01018, saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+
+Epoch 7: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_temp.keras
+  Epoch 8: loss=0.1675, pr_auc=0.2643, val_loss=0.1299, val_pr_auc=0.0082, val_auc=0.6004
+
+Epoch 8: val_pr_auc did not improve from 0.01018
+  Epoch 9: loss=0.1657, pr_auc=0.2785, val_loss=0.0975, val_pr_auc=0.0025, val_auc=0.6167
+
+Epoch 9: val_pr_auc did not improve from 0.01018
+  Epoch 10: loss=0.1641, pr_auc=0.2918, val_loss=0.1071, val_pr_auc=0.0021, val_auc=0.5344
+
+Epoch 10: val_pr_auc did not improve from 0.01018
+  Epoch 11: loss=0.1639, pr_auc=0.2961, val_loss=0.1290, val_pr_auc=0.0034, val_auc=0.5479
+
+Epoch 11: val_pr_auc did not improve from 0.01018
+  Epoch 12: loss=0.1621, pr_auc=0.3175, val_loss=0.1082, val_pr_auc=0.0032, val_auc=0.5530
+
+Epoch 12: val_pr_auc did not improve from 0.01018
+  Epoch 13: loss=0.1601, pr_auc=0.3330, val_loss=0.0976, val_pr_auc=0.0031, val_auc=0.6140
+
+Epoch 13: val_pr_auc did not improve from 0.01018
+  Epoch 14: loss=0.1581, pr_auc=0.3464, val_loss=0.1235, val_pr_auc=0.0024, val_auc=0.5374
+
+Epoch 14: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 14: val_pr_auc did not improve from 0.01018
+Epoch 14: early stopping
+Restoring model weights from the end of the best epoch: 7.
+Validation PR-AUC for standard_acc_temp: 0.010337
+
+======================================================================
+TRAINING VARIANT: standard_acc_eda_temp
+Secondary features: ['EDA', 'TEMP']
+======================================================================
+Existing checkpoint ignored because FORCE_RERUN/DETECTION_FORCE_RETRAIN_VARIANTS is set: C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Built model for standard_acc_eda_temp
+Model footprint: 155,729 parameters (under 100k: False)
+
+Balanced training view:
+  Original train: 2,190,944 windows, 7,794 seizure
+  Sampled train: 38,970 windows, 7,794 seizure
+Class weights: {0: 0.625, 1: 2.5}
+Checkpoint/early stopping monitor: val_pr_auc
+
+Training for up to 24 epochs...
+==================================================
+  Epoch 1: loss=0.1751, pr_auc=0.2075, val_loss=0.1707, val_pr_auc=0.0018, val_auc=0.4616
+
+Epoch 1: val_pr_auc improved from None to 0.00182, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Epoch 1: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+  Epoch 2: loss=0.1722, pr_auc=0.2261, val_loss=0.1627, val_pr_auc=0.0017, val_auc=0.4803
+
+Epoch 2: val_pr_auc did not improve from 0.00182
+  Epoch 3: loss=0.1706, pr_auc=0.2384, val_loss=0.1660, val_pr_auc=0.0029, val_auc=0.5367
+
+Epoch 3: val_pr_auc improved from 0.00182 to 0.00294, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Epoch 3: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+  Epoch 4: loss=0.1698, pr_auc=0.2474, val_loss=0.1664, val_pr_auc=0.0023, val_auc=0.5206
+
+Epoch 4: val_pr_auc did not improve from 0.00294
+  Epoch 5: loss=0.1687, pr_auc=0.2597, val_loss=0.1745, val_pr_auc=0.0032, val_auc=0.5628
+
+Epoch 5: val_pr_auc improved from 0.00294 to 0.00316, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Epoch 5: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+  Epoch 6: loss=0.1678, pr_auc=0.2635, val_loss=0.1344, val_pr_auc=0.0032, val_auc=0.6213
+
+Epoch 6: val_pr_auc improved from 0.00316 to 0.00317, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Epoch 6: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+  Epoch 7: loss=0.1666, pr_auc=0.2732, val_loss=0.1305, val_pr_auc=0.0030, val_auc=0.6656
+
+Epoch 7: val_pr_auc did not improve from 0.00317
+  Epoch 8: loss=0.1654, pr_auc=0.2752, val_loss=0.1544, val_pr_auc=0.0036, val_auc=0.6285
+
+Epoch 8: val_pr_auc improved from 0.00317 to 0.00362, saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+
+Epoch 8: finished saving model to C:\I2I\seizure_detection\outputs\standard_acc_eda_temp.keras
+  Epoch 9: loss=0.1640, pr_auc=0.2843, val_loss=0.1572, val_pr_auc=0.0021, val_auc=0.5749
+
+Epoch 9: val_pr_auc did not improve from 0.00362
+  Epoch 10: loss=0.1628, pr_auc=0.2963, val_loss=0.1275, val_pr_auc=0.0023, val_auc=0.5745
+
+Epoch 10: val_pr_auc did not improve from 0.00362
+  Epoch 11: loss=0.1608, pr_auc=0.3113, val_loss=0.1309, val_pr_auc=0.0021, val_auc=0.5465
+
+Epoch 11: val_pr_auc did not improve from 0.00362
+  Epoch 12: loss=0.1596, pr_auc=0.3231, val_loss=0.0930, val_pr_auc=0.0022, val_auc=0.5947
+
+Epoch 12: val_pr_auc did not improve from 0.00362
+  Epoch 13: loss=0.1577, pr_auc=0.3348, val_loss=0.1031, val_pr_auc=0.0029, val_auc=0.6241
+
+Epoch 13: val_pr_auc did not improve from 0.00362
+  Epoch 14: loss=0.1563, pr_auc=0.3534, val_loss=0.0738, val_pr_auc=0.0022, val_auc=0.5655
+
+Epoch 14: val_pr_auc did not improve from 0.00362
+  Epoch 15: loss=0.1543, pr_auc=0.3722, val_loss=0.0720, val_pr_auc=0.0022, val_auc=0.5752
+
+Epoch 15: val_pr_auc did not improve from 0.00362
+Epoch 15: early stopping
+Restoring model weights from the end of the best epoch: 8.
+Validation PR-AUC for standard_acc_eda_temp: 0.003690
+Inactive Pro candidate not trained for the current product allocation: pro_ppg_bvp_hr
+Inactive Pro candidate not trained for the current product allocation: pro_ppg_bvp_hr_eda
+Inactive Pro candidate not trained for the current product allocation: pro_ppg_bvp_hr_temp
+
+======================================================================
+TRAINING VARIANT: pro_full_bvp_hr_eda_temp
+Secondary features: ['BVP', 'HR', 'EDA', 'TEMP']
+======================================================================
+Existing checkpoint ignored because FORCE_RERUN/DETECTION_FORCE_RETRAIN_VARIANTS is set: C:\I2I\seizure_detection\outputs\pro_full_bvp_hr_eda_temp.keras
+
+Built model for pro_full_bvp_hr_eda_temp
+Model footprint: 155,729 parameters (under 100k: False)
+
+Balanced training view:
+  Original train: 2,190,944 windows, 7,794 seizure
+  Sampled train: 38,970 windows, 7,794 seizure
+Class weights: {0: 0.625, 1: 2.5}
+Checkpoint/early stopping monitor: val_pr_auc
+
+Training for up to 24 epochs...
+==================================================
+  Epoch 1: loss=0.1767, pr_auc=0.2075, val_loss=0.1678, val_pr_auc=0.0015, val_auc=0.4486
+
+Epoch 1: val_pr_auc improved from None to 0.00150, saving model to C:\I2I\seizure_detection\outputs\pro_full_bvp_hr_eda_temp.keras
+
+Epoch 1: finished saving model to C:\I2I\seizure_detection\outputs\pro_full_bvp_hr_eda_temp.keras
+  Epoch 2: loss=0.1720, pr_auc=0.2228, val_loss=0.1666, val_pr_auc=0.0017, val_auc=0.4823
+
+Epoch 2: val_pr_auc improved from 0.00150 to 0.00165, saving model to C:\I2I\seizure_detection\outputs\pro_full_bvp_hr_eda_temp.keras
+
+Epoch 2: finished saving model to C:\I2I\seizure_detection\outputs\pro_full_bvp_hr_eda_temp.keras
+  Epoch 3: loss=0.1693, pr_auc=0.2343, val_loss=0.1747, val_pr_auc=0.0012, val_auc=0.2749
+
+Epoch 3: val_pr_auc did not improve from 0.00165
+  Epoch 4: loss=0.1675, pr_auc=0.2473, val_loss=0.1610, val_pr_auc=0.0011, val_auc=0.2806
+
+Epoch 4: val_pr_auc did not improve from 0.00165
+  Epoch 5: loss=0.1656, pr_auc=0.2571, val_loss=0.1515, val_pr_auc=0.0012, val_auc=0.3035
+
+Epoch 5: val_pr_auc did not improve from 0.00165
+  Epoch 6: loss=0.1653, pr_auc=0.2597, val_loss=0.1503, val_pr_auc=0.0016, val_auc=0.3989
+
+Epoch 6: val_pr_auc did not improve from 0.00165
+  Epoch 7: loss=0.1631, pr_auc=0.2794, val_loss=0.1593, val_pr_auc=0.0013, val_auc=0.3346
+
+Epoch 7: val_pr_auc did not improve from 0.00165
+  Epoch 8: loss=0.1604, pr_auc=0.2941, val_loss=0.1496, val_pr_auc=0.0014, val_auc=0.3533
+
+Epoch 8: val_pr_auc did not improve from 0.00165
+  Epoch 9: loss=0.1588, pr_auc=0.3093, val_loss=0.1539, val_pr_auc=0.0012, val_auc=0.2927
+
+Epoch 9: val_pr_auc did not improve from 0.00165
+Epoch 9: early stopping
+Restoring model weights from the end of the best epoch: 2.
+Validation PR-AUC for pro_full_bvp_hr_eda_temp: 0.001651
+Scoring allocation base_acc__addon_ppg_eda_temp: standard_acc_only -> pro_full_bvp_hr_eda_temp
+Scoring allocation base_acc_eda__addon_ppg_temp: standard_acc_eda -> pro_full_bvp_hr_eda_temp
+Scoring allocation base_acc_temp__addon_ppg_eda: standard_acc_temp -> pro_full_bvp_hr_eda_temp
+Scoring allocation base_acc_eda_temp__addon_ppg: standard_acc_eda_temp -> pro_full_bvp_hr_eda_temp
+
+Product allocation analysis:
+  base_acc__addon_ppg_eda_temp: base optional=[], addon optional=['EDA', 'TEMP'] | val events 5/7 -> 4/7, val recall 0.0304 -> 0.0281, AUC 0.5249 -> 0.5324, PR-AUC 0.0023 -> 0.0022, balanced acc 0.5083 -> 0.5071
+  base_acc_eda__addon_ppg_temp: base optional=['EDA'], addon optional=['TEMP'] | val events 5/7 -> 5/7, val recall 0.0422 -> 0.0398, AUC 0.5841 -> 0.5862, PR-AUC 0.0029 -> 0.0029, balanced acc 0.5141 -> 0.5130
+  base_acc_temp__addon_ppg_eda: base optional=['TEMP'], addon optional=['EDA'] | val events 2/7 -> 2/7, val recall 0.1710 -> 0.1663, AUC 0.6549 -> 0.6549, PR-AUC 0.0103 -> 0.0103, balanced acc 0.5785 -> 0.5762
+  base_acc_eda_temp__addon_ppg: base optional=['EDA', 'TEMP'], addon optional=[] | val events 2/7 -> 2/7, val recall 0.0070 -> 0.0070, AUC 0.6278 -> 0.6281, PR-AUC 0.0037 -> 0.0037, balanced acc 0.4966 -> 0.4966
+
+Selected product allocation from validation only: base_acc_eda_temp__addon_ppg
+
+Held-out test allocation check:
+
+======================================================================
+VALIDATION: Standard Product vs Pro Product
+======================================================================
+Calibrated Standard Product (standard_acc_only; features=['ACC only']) threshold on validation: 0.5066 (precision=0.0043, recall=0.0398, f1=0.0077)
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp) threshold on validation: 0.4702 (precision=0.0021, recall=0.9906, f1=0.0042)
+Selected Standard Product causal score smoothing: 1 window(s), threshold=0.5068
+Selected Pro Product causal score smoothing: 1 window(s), threshold=0.5066
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp; fused score) threshold on validation: 0.5064 (precision=0.0043, recall=0.0398, f1=0.0078)
+
+Standard Product (standard_acc_only; features=['ACC only']) Mode Results:
+------------------------------
+  loss: 0.6932
+  accuracy_diagnostic: 0.9865 (not a success metric for this imbalanced split)
+  auc: 0.4873
+  pr_auc: 0.0011
+  precision: 0.0004
+  recall: 0.0042
+  f1: 0.0007
+  specificity: 0.9876
+  balanced_accuracy: 0.4959
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 391137
+  false_positives: 4901
+  false_negatives: 469
+  true_positives: 2
+  false_alarms_per_hour: 8.8995
+  decision_threshold: 0.5068
+  event_level: 2/6 events, sensitivity=0.3333
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 2.0, 'refractory_windows': 24, 'event_count': 6, 'detected_events': 2, 'event_sensitivity': 0.3333333333333333, 'alert_count': 2822, 'false_alert_count': 2820, 'false_alerts_per_hour': 5.120690829211948, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.49745315313339233}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.507064700126648}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.506514310836792}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5059148073196411}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5066927671432495}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 1, 'max_score': 0.5070953369140625}]}
+
+Pro Product (pro_full_bvp_hr_eda_temp) Mode Results:
+------------------------------
+  loss: 0.6921
+  accuracy_diagnostic: 0.9863 (not a success metric for this imbalanced split)
+  auc: 0.4941
+  pr_auc: 0.0019
+  precision: 0.0014
+  recall: 0.0149
+  f1: 0.0026
+  specificity: 0.9875
+  balanced_accuracy: 0.5012
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 391072
+  false_positives: 4966
+  false_negatives: 464
+  true_positives: 7
+  false_alarms_per_hour: 9.0175
+  decision_threshold: 0.5066
+  event_level: 2/6 events, sensitivity=0.3333
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 2.0, 'refractory_windows': 24, 'event_count': 6, 'detected_events': 2, 'event_sensitivity': 0.3333333333333333, 'alert_count': 2812, 'false_alert_count': 2809, 'false_alerts_per_hour': 5.100716503282397, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.497568815946579}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.5097063183784485}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5063774585723877}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5059438347816467}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5063534379005432}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 2, 'max_score': 0.5111197829246521}]}
+
+======================================================================
+COMPARISON: Standard vs Pro Product
+======================================================================
+  AUC: 0.4873 -> 0.4941 (+0.0068)
+  PR-AUC: 0.0011 -> 0.0019 (+0.0007)
+  Recall: 0.0042 -> 0.0149 (+0.0106)
+  Event sensitivity: 2/6 -> 2/6
+  Alert-level event sensitivity: 2/6 -> 2/6
+  Alert-level false alerts/hour: 5.12 -> 5.10
+  False alarms/hour: 8.90 -> 9.02
+  Raw accuracy is diagnostic only under severe class imbalance; see all_normal_baseline_accuracy in results.json.
+
+Matched false-alarm operating point:
+  Validation alarm budget: 10.00 false alarms/hour
+  Test recall: 0.0042 -> 0.0149
+  Test false alarms/hour: 8.90 -> 9.02
+
+Fixed validation alarm-budget grid:
+  1 fa/h budget | recall 0.0000 -> 0.0042; test fa/h 0.83 -> 0.89; balanced acc 0.4994 -> 0.5015; events 0/6 -> 2/6
+  5 fa/h budget | recall 0.0000 -> 0.0042; test fa/h 4.37 -> 4.41; balanced acc 0.4970 -> 0.4991; events 0/6 -> 2/6
+  10 fa/h budget | recall 0.0042 -> 0.0149; test fa/h 8.90 -> 9.02; balanced acc 0.4959 -> 0.5012; events 2/6 -> 2/6
+  15 fa/h budget | recall 0.0106 -> 0.0234; test fa/h 13.87 -> 13.70; balanced acc 0.4957 -> 0.5022; events 4/6 -> 4/6
+  25 fa/h budget | recall 0.0191 -> 0.0446; test fa/h 24.02 -> 23.64; balanced acc 0.4929 -> 0.5059; events 4/6 -> 5/6
+  50 fa/h budget | recall 0.0425 -> 0.0658; test fa/h 52.32 -> 50.73; balanced acc 0.4849 -> 0.4976; events 5/6 -> 5/6
+  100 fa/h budget | recall 0.1104 -> 0.1104; test fa/h 106.30 -> 102.99; balanced acc 0.4813 -> 0.4836; events 5/6 -> 5/6
+  base_acc__addon_ppg_eda_temp: test recall 0.0042 -> 0.0149
+
+======================================================================
+VALIDATION: Standard Product vs Pro Product
+======================================================================
+Calibrated Standard Product (standard_acc_eda; features=['EDA']) threshold on validation: 0.5376 (precision=0.0060, recall=0.0492, f1=0.0107)
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp) threshold on validation: 0.4702 (precision=0.0021, recall=0.9906, f1=0.0042)
+Selected Standard Product causal score smoothing: 1 window(s), threshold=0.5386
+Selected Pro Product causal score smoothing: 1 window(s), threshold=0.5345
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp; fused score) threshold on validation: 0.5328 (precision=0.0057, recall=0.0492, f1=0.0103)
+
+Standard Product (standard_acc_eda; features=['EDA']) Mode Results:
+------------------------------
+  loss: 0.6132
+  accuracy_diagnostic: 0.9831 (not a success metric for this imbalanced split)
+  auc: 0.5678
+  pr_auc: 0.0181
+  precision: 0.0181
+  recall: 0.2484
+  f1: 0.0338
+  specificity: 0.9840
+  balanced_accuracy: 0.6162
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 389704
+  false_positives: 6334
+  false_negatives: 354
+  true_positives: 117
+  false_alarms_per_hour: 11.5016
+  decision_threshold: 0.5386
+  event_level: 5/6 events, sensitivity=0.8333
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 1.0, 'refractory_windows': 12, 'event_count': 6, 'detected_events': 5, 'event_sensitivity': 0.8333333333333334, 'alert_count': 3724, 'false_alert_count': 3707, 'false_alerts_per_hour': 6.731347838258401, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5272570252418518}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 8, 'max_score': 0.7544487714767456}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.563561201095581}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.6271026134490967}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': True, 'alert_count': 3, 'max_score': 0.7158114314079285}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 4, 'max_score': 0.795048177242279}]}
+
+Pro Product (pro_full_bvp_hr_eda_temp) Mode Results:
+------------------------------
+  loss: 0.6171
+  accuracy_diagnostic: 0.9829 (not a success metric for this imbalanced split)
+  auc: 0.5674
+  pr_auc: 0.0183
+  precision: 0.0180
+  recall: 0.2505
+  f1: 0.0337
+  specificity: 0.9838
+  balanced_accuracy: 0.6172
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 389615
+  false_positives: 6423
+  false_negatives: 353
+  true_positives: 118
+  false_alarms_per_hour: 11.6632
+  decision_threshold: 0.5345
+  event_level: 5/6 events, sensitivity=0.8333
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 0.0, 'refractory_windows': 0, 'event_count': 6, 'detected_events': 5, 'event_sensitivity': 0.8333333333333334, 'alert_count': 6541, 'false_alert_count': 6423, 'false_alerts_per_hour': 11.66319049504551, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5244163274765015}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 55, 'max_score': 0.7298792004585266}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': True, 'alert_count': 2, 'max_score': 0.5561222434043884}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.6136645078659058}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': True, 'alert_count': 28, 'max_score': 0.6951558589935303}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 32, 'max_score': 0.7644714713096619}]}
+
+======================================================================
+COMPARISON: Standard vs Pro Product
+======================================================================
+  AUC: 0.5678 -> 0.5674 (+-0.0004)
+  PR-AUC: 0.0181 -> 0.0183 (+0.0002)
+  Recall: 0.2484 -> 0.2505 (+0.0021)
+  Event sensitivity: 5/6 -> 5/6
+  Alert-level event sensitivity: 5/6 -> 5/6
+  Alert-level false alerts/hour: 6.73 -> 11.66
+  False alarms/hour: 11.50 -> 11.66
+  Raw accuracy is diagnostic only under severe class imbalance; see all_normal_baseline_accuracy in results.json.
+
+Matched false-alarm operating point:
+  Validation alarm budget: 10.00 false alarms/hour
+  Test recall: 0.2484 -> 0.2505
+  Test false alarms/hour: 11.50 -> 11.66
+
+Fixed validation alarm-budget grid:
+  1 fa/h budget | recall 0.1040 -> 0.1062; test fa/h 1.19 -> 1.20; balanced acc 0.5512 -> 0.5522; events 4/6 -> 4/6
+  5 fa/h budget | recall 0.1996 -> 0.1996; test fa/h 5.55 -> 5.46; balanced acc 0.5959 -> 0.5960; events 5/6 -> 5/6
+  10 fa/h budget | recall 0.2484 -> 0.2505; test fa/h 11.50 -> 11.66; balanced acc 0.6162 -> 0.6172; events 5/6 -> 5/6
+  15 fa/h budget | recall 0.2803 -> 0.2824; test fa/h 24.72 -> 27.81; balanced acc 0.6229 -> 0.6219; events 5/6 -> 5/6
+  25 fa/h budget | recall 0.3142 -> 0.3185; test fa/h 87.87 -> 89.70; balanced acc 0.5960 -> 0.5969; events 6/6 -> 6/6
+  50 fa/h budget | recall 0.3800 -> 0.3652; test fa/h 180.24 -> 176.78; balanced acc 0.5647 -> 0.5597; events 6/6 -> 6/6
+  100 fa/h budget | recall 0.4671 -> 0.4671; test fa/h 278.02 -> 275.41; balanced acc 0.5402 -> 0.5421; events 6/6 -> 6/6
+  base_acc_eda__addon_ppg_temp: test recall 0.2484 -> 0.2505
+
+======================================================================
+VALIDATION: Standard Product vs Pro Product
+======================================================================
+Calibrated Standard Product (standard_acc_temp; features=['TEMP']) threshold on validation: 0.5683 (precision=0.0760, recall=0.1429, f1=0.0992)
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp) threshold on validation: 0.4702 (precision=0.0021, recall=0.9906, f1=0.0042)
+Selected Standard Product causal score smoothing: 1 window(s), threshold=0.5313
+Selected Pro Product causal score smoothing: 1 window(s), threshold=0.5303
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp; fused score) threshold on validation: 0.5665 (precision=0.0760, recall=0.1429, f1=0.0992)
+
+Standard Product (standard_acc_temp; features=['TEMP']) Mode Results:
+------------------------------
+  loss: 0.6388
+  accuracy_diagnostic: 0.9693 (not a success metric for this imbalanced split)
+  auc: 0.5442
+  pr_auc: 0.0013
+  precision: 0.0016
+  recall: 0.0403
+  f1: 0.0031
+  specificity: 0.9704
+  balanced_accuracy: 0.5054
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 384304
+  false_positives: 11734
+  false_negatives: 452
+  true_positives: 19
+  false_alarms_per_hour: 21.3072
+  decision_threshold: 0.5313
+  event_level: 1/6 events, sensitivity=0.1667
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 2.0, 'refractory_windows': 24, 'event_count': 6, 'detected_events': 1, 'event_sensitivity': 0.16666666666666666, 'alert_count': 1573, 'false_alert_count': 1571, 'false_alerts_per_hour': 2.852696912302117, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.3885486125946045}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5163558721542358}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5153838396072388}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5130520462989807}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5302028656005859}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 2, 'max_score': 0.5421938896179199}]}
+
+Pro Product (pro_full_bvp_hr_eda_temp) Mode Results:
+------------------------------
+  loss: 0.6393
+  accuracy_diagnostic: 0.9687 (not a success metric for this imbalanced split)
+  auc: 0.5444
+  pr_auc: 0.0013
+  precision: 0.0016
+  recall: 0.0403
+  f1: 0.0031
+  specificity: 0.9698
+  balanced_accuracy: 0.5051
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 384075
+  false_positives: 11963
+  false_negatives: 452
+  true_positives: 19
+  false_alarms_per_hour: 21.7230
+  decision_threshold: 0.5303
+  event_level: 1/6 events, sensitivity=0.1667
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 2.0, 'refractory_windows': 24, 'event_count': 6, 'detected_events': 1, 'event_sensitivity': 0.16666666666666666, 'alert_count': 1570, 'false_alert_count': 1568, 'false_alerts_per_hour': 2.8472493688667853, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.38847172260284424}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.515282154083252}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5147328972816467}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5106213092803955}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5294076204299927}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': True, 'alert_count': 2, 'max_score': 0.5410192012786865}]}
+
+======================================================================
+COMPARISON: Standard vs Pro Product
+======================================================================
+  AUC: 0.5442 -> 0.5444 (+0.0003)
+  PR-AUC: 0.0013 -> 0.0013 (+0.0000)
+  Recall: 0.0403 -> 0.0403 (+0.0000)
+  Event sensitivity: 1/6 -> 1/6
+  Alert-level event sensitivity: 1/6 -> 1/6
+  Alert-level false alerts/hour: 2.85 -> 2.85
+  False alarms/hour: 21.31 -> 21.72
+  Raw accuracy is diagnostic only under severe class imbalance; see all_normal_baseline_accuracy in results.json.
+
+Matched false-alarm operating point:
+  Validation alarm budget: 10.00 false alarms/hour
+  Test recall: 0.0403 -> 0.0403
+  Test false alarms/hour: 21.31 -> 21.72
+
+Fixed validation alarm-budget grid:
+  1 fa/h budget | recall 0.0000 -> 0.0000; test fa/h 0.00 -> 0.00; balanced acc 0.5000 -> 0.5000; events 0/6 -> 0/6
+  5 fa/h budget | recall 0.0021 -> 0.0021; test fa/h 5.93 -> 5.91; balanced acc 0.4969 -> 0.4970; events 1/6 -> 1/6
+  10 fa/h budget | recall 0.0403 -> 0.0403; test fa/h 21.31 -> 21.72; balanced acc 0.5054 -> 0.5051; events 1/6 -> 1/6
+  15 fa/h budget | recall 0.0510 -> 0.0510; test fa/h 39.85 -> 40.00; balanced acc 0.4978 -> 0.4977; events 2/6 -> 2/6
+  25 fa/h budget | recall 0.0786 -> 0.0786; test fa/h 68.64 -> 68.98; balanced acc 0.4916 -> 0.4913; events 2/6 -> 2/6
+  50 fa/h budget | recall 0.1571 -> 0.1529; test fa/h 126.19 -> 126.42; balanced acc 0.4908 -> 0.4885; events 5/6 -> 4/6
+  100 fa/h budget | recall 0.2951 -> 0.3015; test fa/h 182.92 -> 184.32; balanced acc 0.5204 -> 0.5226; events 5/6 -> 5/6
+  base_acc_temp__addon_ppg_eda: test recall 0.0403 -> 0.0403
+
+======================================================================
+VALIDATION: Standard Product vs Pro Product
+======================================================================
+Calibrated Standard Product (standard_acc_eda_temp; features=['EDA', 'TEMP']) threshold on validation: 0.5501 (precision=0.0147, recall=0.1499, f1=0.0268)
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp) threshold on validation: 0.4702 (precision=0.0021, recall=0.9906, f1=0.0042)
+Selected Standard Product causal score smoothing: 1 window(s), threshold=0.5568
+Selected Pro Product causal score smoothing: 1 window(s), threshold=0.5529
+Calibrated Pro Product (pro_full_bvp_hr_eda_temp; fused score) threshold on validation: 0.5468 (precision=0.0148, recall=0.1499, f1=0.0270)
+
+Standard Product (standard_acc_eda_temp; features=['EDA', 'TEMP']) Mode Results:
+------------------------------
+  loss: 0.6591
+  accuracy_diagnostic: 0.9887 (not a success metric for this imbalanced split)
+  auc: 0.6370
+  pr_auc: 0.0213
+  precision: 0.0310
+  recall: 0.2824
+  f1: 0.0558
+  specificity: 0.9895
+  balanced_accuracy: 0.6359
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 391876
+  false_positives: 4162
+  false_negatives: 338
+  true_positives: 133
+  false_alarms_per_hour: 7.5576
+  decision_threshold: 0.5568
+  event_level: 3/6 events, sensitivity=0.5000
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 15.0, 'refractory_windows': 180, 'event_count': 6, 'detected_events': 1, 'event_sensitivity': 0.16666666666666666, 'alert_count': 522, 'false_alert_count': 521, 'false_alerts_per_hour': 0.9460567099359662, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.4074355363845825}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.7960547208786011}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5381399989128113}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5546517372131348}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.8050865530967712}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': False, 'alert_count': 0, 'max_score': 0.8175390362739563}]}
+
+Pro Product (pro_full_bvp_hr_eda_temp) Mode Results:
+------------------------------
+  loss: 0.6589
+  accuracy_diagnostic: 0.9886 (not a success metric for this imbalanced split)
+  auc: 0.6389
+  pr_auc: 0.0208
+  precision: 0.0305
+  recall: 0.2803
+  f1: 0.0550
+  specificity: 0.9894
+  balanced_accuracy: 0.6348
+  positive_rate: 0.0012
+  all_normal_baseline_accuracy_diagnostic: 0.9988 (all-negative baseline)
+  true_negatives: 391838
+  false_positives: 4200
+  false_negatives: 339
+  true_positives: 132
+  false_alarms_per_hour: 7.6266
+  decision_threshold: 0.5529
+  event_level: 3/6 events, sensitivity=0.5000
+  event_alert_level: {'post_processing': 'first alert per refractory interval', 'refractory_minutes': 15.0, 'refractory_windows': 180, 'event_count': 6, 'detected_events': 1, 'event_sensitivity': 0.16666666666666666, 'alert_count': 519, 'false_alert_count': 518, 'false_alerts_per_hour': 0.9406091665006344, 'events': [{'session_id': '1610296047_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.4108436107635498}, {'session_id': '1598624269_A01EE3', 'event_index': 0, 'detected': True, 'alert_count': 1, 'max_score': 0.7731184959411621}, {'session_id': '1617460460_A01EEC', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5354025363922119}, {'session_id': '1601509460_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.5496973395347595}, {'session_id': '1604525961_A02294', 'event_index': 0, 'detected': False, 'alert_count': 0, 'max_score': 0.7833183407783508}, {'session_id': '1604525961_A02294', 'event_index': 1, 'detected': False, 'alert_count': 0, 'max_score': 0.8034353256225586}]}
+
+======================================================================
+COMPARISON: Standard vs Pro Product
+======================================================================
+  AUC: 0.6370 -> 0.6389 (+0.0020)
+  PR-AUC: 0.0213 -> 0.0208 (+-0.0004)
+  Recall: 0.2824 -> 0.2803 (+-0.0021)
+  Event sensitivity: 3/6 -> 3/6
+  Alert-level event sensitivity: 1/6 -> 1/6
+  Alert-level false alerts/hour: 0.95 -> 0.94
+  False alarms/hour: 7.56 -> 7.63
+  Raw accuracy is diagnostic only under severe class imbalance; see all_normal_baseline_accuracy in results.json.
+
+Matched false-alarm operating point:
+  Validation alarm budget: 10.00 false alarms/hour
+  Test recall: 0.2824 -> 0.2803
+  Test false alarms/hour: 7.56 -> 7.63
+
+Fixed validation alarm-budget grid:
+  1 fa/h budget | recall 0.1231 -> 0.1125; test fa/h 1.42 -> 1.38; balanced acc 0.5606 -> 0.5553; events 3/6 -> 3/6
+  5 fa/h budget | recall 0.2378 -> 0.2357; test fa/h 4.79 -> 4.72; balanced acc 0.6156 -> 0.6146; events 3/6 -> 3/6
+  10 fa/h budget | recall 0.2824 -> 0.2803; test fa/h 7.56 -> 7.63; balanced acc 0.6359 -> 0.6348; events 3/6 -> 3/6
+  15 fa/h budget | recall 0.3015 -> 0.3036; test fa/h 13.10 -> 12.99; balanced acc 0.6416 -> 0.6428; events 4/6 -> 4/6
+  25 fa/h budget | recall 0.3418 -> 0.3355; test fa/h 32.05 -> 31.71; balanced acc 0.6486 -> 0.6457; events 5/6 -> 4/6
+  50 fa/h budget | recall 0.3779 -> 0.3779; test fa/h 70.08 -> 65.58; balanced acc 0.6402 -> 0.6434; events 5/6 -> 5/6
+  100 fa/h budget | recall 0.4862 -> 0.4777; test fa/h 116.06 -> 114.09; balanced acc 0.6624 -> 0.6595; events 5/6 -> 5/6
+  base_acc_eda_temp__addon_ppg: test recall 0.2824 -> 0.2803
+
+Selected product allocation: base_acc_eda_temp__addon_ppg
+  Base has ACC plus EDA and TEMP; Pro keeps those base signals and adds PPG.
+  Selected Standard variant: standard_acc_eda_temp
+  Selected Pro variant: pro_full_bvp_hr_eda_temp
+  Enabled Standard features: ['EDA', 'TEMP']
+  Enabled Pro features: ['BVP', 'HR', 'EDA', 'TEMP']
+
+======================================================================
+PHASE 4: Validation
+======================================================================
+
+Results saved to: C:\I2I\seizure_detection\outputs\results.json
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmpw8wg5ujs'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  1697572093200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551238544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713254928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713244752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551237200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551237584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713255312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713252048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551238352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551237776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551240272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551240080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551239120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551238928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551241232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551241040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551241616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551239888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713249360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713250704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713255120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713256080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713257616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713254736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713256848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713258192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551241808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551242000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551242576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551242384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551242192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551237968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551243536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551243344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551243920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551239504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713257424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713255888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713256272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713256656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713255504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572093008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572093392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572093584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572093776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572092240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572092624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572092816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572092048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572091856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697572091664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551238736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551244112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551244304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551244880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551244688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551244496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551239696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551245840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551245648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551246224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551240464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551243152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551241424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551243728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551245456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551247568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551247376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551246416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551242768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551248528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551248336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551248144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551245072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551249488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551249296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551249104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551247760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551250448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551250256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551250832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551250640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551251216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551240848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551251600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551246800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551251984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551247184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551246608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551249680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551251792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551250064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551252560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551253328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551252368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1697551252176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+C:\I2I\.venv\Lib\site-packages\tensorflow\lite\python\convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+Exported TFLite model: C:\I2I\seizure_detection\outputs\seizure_model.tflite (282.1 KB)
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmpjkk3zvl_'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  1696731111568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731110992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675642064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675639568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731108688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731109072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675636688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675634768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731110608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731108880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731113104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731112912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731111952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731111760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731114064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731113872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731114448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731112720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675629584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675642256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675640720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675640528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675634000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675641680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675641488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675641872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731114640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731114832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731115408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731115216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731115024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731108304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731116368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731116176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731116752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731112336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675642448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675639376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675636880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675640912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675640336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696675635344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731109456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731109264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731109648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731108496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731110416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731110224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731110032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731109840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731111376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731111184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731116944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731117136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731117712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731117520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731117328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731112528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731118672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731118480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731119056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731119248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731114256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731118288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731113680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731115984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731113296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731117904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696731119440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713245712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713246096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713246288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713245136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713244944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713247440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713247248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713247056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713245328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713249168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713246480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713249552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713245520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713249936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713246672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713245904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713247632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713249744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713250512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713251088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713251472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1696713248976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+C:\I2I\.venv\Lib\site-packages\tensorflow\lite\python\convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+Exported TFLite model: C:\I2I\seizure_detection\outputs\seizure_model_standard.tflite (282.1 KB)
+
+======================================================================
+PIPELINE COMPLETE
+======================================================================
+
+Analyzing standard: standard_acc_eda_temp
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmptzdydet6'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  2977409724304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409724880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406968336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406967760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409727952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409721616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409725264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409724112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409727184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409725072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409728144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409728336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406968912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412332240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412332624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412333008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412333200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406967568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406970832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406972176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406972560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmp6yrpvrv3'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  2977409724304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409724880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406968336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406967760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409727952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409721616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409725264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409724112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409727184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409726032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409725072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409728144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409728336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412320144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412319760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412324560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412322064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412321872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412318224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406968912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977409723344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412326672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412327248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412323984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412329168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412317456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412330128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412331664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412332240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412325712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412332624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412328208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412333008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977412333200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406969104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406967568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406970832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406972176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406972560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977406971216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+C:\I2I\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+  float32: 663.1 KB, ops=145, tensor_proxy=988.1 KB, p50=0.3784 ms
+  dynamic_range: 245.6 KB, ops=145, tensor_proxy=539.8 KB, p50=1.5558 ms
+  calibrated_existing: 282.1 KB, ops=150, tensor_proxy=262.9 KB, p50=7.7986 ms
+
+Analyzing pro: pro_full_bvp_hr_eda_temp
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmpppudw30v'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  2977572396240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483468304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483467728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483468880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432314000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432313808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432313424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572395856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at 'C:\Users\Test-PC\AppData\Local\Temp\tmp9pf99tjy'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(None, 160, 3), dtype=tf.float32, name='primary_input'), TensorSpec(shape=(None, 160, 4), dtype=tf.float32, name='secondary_input')]
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  2977572396240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483468304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483467728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977483468880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572401040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437767568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437763152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437765456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437766224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437771792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437764880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437770448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437769104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437775056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437762960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437776016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437774672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432314000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432313808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977432313424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437772752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437768144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437777168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977437773712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572398544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572396624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572397584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572399888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572400272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2977572395856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+C:\I2I\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+  float32: 663.4 KB, ops=145, tensor_proxy=988.1 KB, p50=0.3940 ms
+  dynamic_range: 245.8 KB, ops=145, tensor_proxy=539.8 KB, p50=1.5111 ms
+  calibrated_existing: 282.1 KB, ops=150, tensor_proxy=262.9 KB, p50=8.1201 ms
+
+Saved edge feasibility report: C:\I2I\seizure_detection\outputs\edge_feasibility\edge_feasibility_report.json
+Saved edge feasibility summary: C:\I2I\seizure_detection\outputs\edge_feasibility\EDGE_FEASIBILITY_SUMMARY.md
+C:\I2I\seizure_detection\outputs\tsmixer_experiments\TSMIXER_EXPERIMENT_SUMMARY.md

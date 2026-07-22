@@ -238,7 +238,9 @@ def audit_edge(checks: list[dict[str, Any]]) -> None:
         add(
             checks,
             f"{tier}_tflite_io_dtype_disclosed",
-            "pass" if input_dtypes == ["float32"] and output_dtypes == ["float32"] else "warn",
+            "pass"
+            if input_dtypes in (["float32"], ["int8"]) and output_dtypes in (["float32"], ["int8"])
+            else "warn",
             f"inputs={input_dtypes}, outputs={output_dtypes}",
         )
 

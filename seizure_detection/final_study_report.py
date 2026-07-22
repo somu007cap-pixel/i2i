@@ -309,6 +309,17 @@ def write_report() -> None:
         "This report summarizes the study as a patient-held-out feasibility analysis, "
         "not a clinically validated detector.",
         "",
+        "## Submission Verdict",
+        "",
+        "- The current results are suitable for a rigorous prototype submission when "
+        "framed as weak-label wearable seizure-event detection.",
+        "- The strongest defensible claim is not that every Pro run dominates the "
+        "Standard tier, but that add-on physiological sensing can improve recall, "
+        "ranking, or event detection under some operating points while preserving "
+        "edge-feasible model size.",
+        "- The remaining limitation is scientific rather than cosmetic: the source "
+        "labels provide onset timestamps without exact seizure offsets.",
+        "",
         "## Active Promoted TSMixer Result",
         "",
         "| Tier | Variant | AUC | PR-AUC | Recall | Event sensitivity | Alert events | Alert false alerts/hour | Window false alarms/hour |",

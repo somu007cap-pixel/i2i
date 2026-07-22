@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-07-22T15:01:30.521081",
+  "claim": "The study evaluates modern lightweight time-series approaches that are appropriate for Empatica wearable data and weak onset-only seizure labels.",
+  "methods": [
+    {
+      "family": "Patched channel-independent TSMixer / TTM-style mixer",
+      "implemented_as": "Dual-stream TSMixer Standard/Pro models",
+      "result": "Standard AUC 0.4259, events 1/6; Pro AUC 0.5485, events 3/6",
+      "status": "evaluated"
+    },
+    {
+      "family": "Event-level alert post-processing",
+      "implemented_as": "Validation-selected refractory interval over detector scores",
+      "result": "Standard alert FA/hr 0.82; Pro alert FA/hr 0.91",
+      "status": "evaluated"
+    },
+    {
+      "family": "Patient-held-out weak-label robustness",
+      "implemented_as": "Repeated seed and label-duration sensitivity studies",
+      "result": "Aggregated in FINAL_STUDY_REPORT.md",
+      "status": "evaluated"
+    },
+    {
+      "family": "Reconstruction-error anomaly detector",
+      "implemented_as": "autoencoder",
+      "result": "AUC 0.5791, recall 0.0807, events 4/6, alert FA/hr 2.00",
+      "status": "evaluated"
+    },
+    {
+      "family": "CNN-LSTM temporal feature model",
+      "implemented_as": "cnn_lstm",
+      "result": "AUC 0.6064, recall 0.0828, events 5/6, alert FA/hr 1.09",
+      "status": "evaluated"
+    },
+    {
+      "family": "Compact transformer baseline",
+      "implemented_as": "compact_transformer",
+      "result": "AUC 0.5565, recall 0.0425, events 4/6, alert FA/hr 0.66",
+      "status": "evaluated"
+    },
+    {
+      "family": "Recurrent sequence model",
+      "implemented_as": "lstm",
+      "result": "AUC 0.4896, recall 0.0913, events 4/6, alert FA/hr 0.96",
+      "status": "evaluated"
+    }
+  ],
+  "references": {
+    "ttm": {
+      "title": "Tiny Time Mixers, NeurIPS 2024",
+      "url": "https://research.ibm.com/publications/tiny-time-mixers-ttms-fast-pre-trained-models-for-enhanced-zerofew-shot-forecasting-of-multivariate-time-series--1",
+      "relevance": "Supports compact patch-mixer and channel-independent time-series modeling under edge constraints."
+    },
+    "wearable_armband": {
+      "title": "Wearable armband seizure detection with ACC and PPG, 2025",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169260725005048",
+      "relevance": "Supports multimodal wearable detection and two-step candidate screening/reporting with false alarms."
+    },
+    "eegformer": {
+      "title": "Compact transformer false-alarm reduction for wearable seizure detection",
+      "url": "https://thorirmar.com/publication/2024-ieee-tbcas/",
+      "relevance": "Supports compact transformer comparison, while noting that EEG datasets are not directly comparable to Empatica non-EEG weak labels."
+    },
+    "wearable_review": {
+      "title": "Systematic review of non-invasive wearable seizure detection",
+      "url": "https://www.cureepilepsy.org/news/automated-seizure-detection-with-non-invasive-wearable-devices-a-systematic-review-and-meta-analysis/",
+      "relevance": "Supports reporting sensitivity and false-alarm burden instead of raw accuracy."
+    }
+  },
+  "not_directly_comparable": [
+    {
+      "method": "EEG-specific seizure transformers trained on CHB-MIT or wearable EEG",
+      "reason": "Those studies use EEG morphology and often more precise event boundaries; this project uses Empatica ACC/PPG/EDA/TEMP with onset-only labels."
+    },
+    {
+      "method": "Large time-series foundation models",
+      "reason": "Large pretrained models are not aligned with the TinyML/edge memory target and would not solve onset-only label uncertainty."
+    }
+  ]
+}

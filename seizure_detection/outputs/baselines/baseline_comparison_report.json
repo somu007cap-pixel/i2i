@@ -1,0 +1,3869 @@
+{
+  "timestamp": "2026-07-22T11:01:19.924007",
+  "scope": "Final-semester baseline comparison for wearable seizure anomaly detection using the same session-level split as the TSMixer pipeline.",
+  "random_seed": 42,
+  "epochs_requested": 12,
+  "batch_size": 128,
+  "metadata": {
+    "base_path": "C:\\I2I",
+    "max_sessions": 146,
+    "selected_sessions": 146,
+    "session_split_summary": {
+      "train": {
+        "sessions": 121,
+        "seizure_sessions": 91,
+        "seizure_episodes": 127,
+        "patients": {
+          "Mayo_1965": 79,
+          "Mayo_1904": 19,
+          "Mayo_1876": 23
+        }
+      },
+      "val": {
+        "sessions": 11,
+        "seizure_sessions": 6,
+        "seizure_episodes": 7,
+        "patients": {
+          "Mayo_1869": 11
+        }
+      },
+      "test": {
+        "sessions": 14,
+        "seizure_sessions": 5,
+        "seizure_episodes": 6,
+        "patients": {
+          "Mayo_1110": 14
+        }
+      }
+    },
+    "window_size_samples": 160,
+    "window_seconds": 5.0,
+    "stride_samples": 160,
+    "stride_seconds": 5.0,
+    "input_shape": [
+      160,
+      7
+    ]
+  },
+  "baselines": {
+    "lstm": {
+      "model_name": "LSTMBaseline",
+      "parameters": 5937,
+      "training_seconds": 1120.0940981000022,
+      "history": {
+        "auc": [
+          0.5532387495040894,
+          0.5747582912445068,
+          0.5751562118530273,
+          0.5892946720123291,
+          0.5813714265823364,
+          0.5807842016220093
+        ],
+        "loss": [
+          0.6884721517562866,
+          0.6845864653587341,
+          0.6829231381416321,
+          0.6790520548820496,
+          0.6802599430084229,
+          0.6820349097251892
+        ],
+        "pr_auc": [
+          0.19153064489364624,
+          0.20309466123580933,
+          0.20230962336063385,
+          0.208041712641716,
+          0.20347556471824646,
+          0.20644965767860413
+        ],
+        "precision": [
+          0.18688440322875977,
+          0.19570781290531158,
+          0.19223259389400482,
+          0.19913741946220398,
+          0.1931672841310501,
+          0.19629892706871033
+        ],
+        "recall": [
+          0.562355637550354,
+          0.6376699805259705,
+          0.682063102722168,
+          0.6871953010559082,
+          0.7363356351852417,
+          0.638311505317688
+        ],
+        "val_auc": [
+          0.25802379846572876,
+          0.3486391007900238,
+          0.28940677642822266,
+          0.2706461548805237,
+          0.2369624376296997,
+          0.324576199054718
+        ],
+        "val_loss": [
+          0.6952714323997498,
+          0.6704176068305969,
+          0.6866117715835571,
+          0.7109711766242981,
+          0.6602652072906494,
+          0.6651957631111145
+        ],
+        "val_pr_auc": [
+          0.0011345294769853354,
+          0.0013211052864789963,
+          0.0012035127729177475,
+          0.0011359371710568666,
+          0.0010978539939969778,
+          0.001223765080794692
+        ],
+        "val_precision": [
+          0.0008954093209467828,
+          0.0008873411570675671,
+          0.0008163373568095267,
+          0.0010645824950188398,
+          0.00041278789285570383,
+          0.0007936114561744034
+        ],
+        "val_recall": [
+          0.3044496476650238,
+          0.2482435554265976,
+          0.2880561947822571,
+          0.38407495617866516,
+          0.13583138585090637,
+          0.22482435405254364
+        ]
+      },
+      "metrics": {
+        "loss": 0.6372120380401611,
+        "accuracy": 0.9931174323911941,
+        "auc": 0.4895878630060044,
+        "pr_auc": 0.005760249749326398,
+        "precision": 0.01834470989761092,
+        "recall": 0.09129511677282377,
+        "f1": 0.030550621669627,
+        "specificity": 0.9941899514693034,
+        "balanced_accuracy": 0.5427425341210637,
+        "positive_rate": 0.0011878671102043081,
+        "all_normal_baseline_accuracy": 0.9988121328897956,
+        "true_negatives": 393737,
+        "false_positives": 2301,
+        "false_negatives": 428,
+        "true_positives": 43,
+        "false_alarms_per_hour": 4.178265814899536,
+        "decision_threshold": 0.6072058081626892,
+        "event_level": {
+          "event_count": 6,
+          "detected_events": 4,
+          "event_sensitivity": 0.6666666666666666,
+          "event_sensitivity_ci95_low": 0.2999883213415286,
+          "event_sensitivity_ci95_high": 0.903230667440783,
+          "event_sensitivity_ci95_method": "Wilson score interval",
+          "positive_windows": 2344,
+          "positive_seizure_windows": 43,
+          "false_positive_windows": 2301,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "start": 1610360368.0,
+              "end": 1610360668.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.4725438952445984
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "start": 1598704011.0,
+              "end": 1598704613.0,
+              "overlap_windows": 121,
+              "detected": true,
+              "max_score": 0.7152739763259888
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "start": 1617538609.0,
+              "end": 1617538909.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.5669337511062622
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "start": 1601544713.0,
+              "end": 1601545194.0,
+              "overlap_windows": 97,
+              "detected": true,
+              "max_score": 0.649467408657074
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "start": 1604574602.0,
+              "end": 1604574946.0,
+              "overlap_windows": 70,
+              "detected": true,
+              "max_score": 0.7047848105430603
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "start": 1604585557.0,
+              "end": 1604585857.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 0.6902382373809814
+            }
+          ]
+        },
+        "event_alert_level": {
+          "post_processing": "first alert per refractory interval",
+          "refractory_minutes": 15.0,
+          "refractory_windows": 180,
+          "event_count": 6,
+          "detected_events": 1,
+          "event_sensitivity": 0.16666666666666666,
+          "alert_count": 532,
+          "false_alert_count": 531,
+          "false_alerts_per_hour": 0.9642151880537391,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.4725438952445984
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.7152739763259888
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.5669337511062622
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.649467408657074
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.7047848105430603
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.6902382373809814
+            }
+          ]
+        },
+        "fixed_validation_alarm_budgets": {
+          "1.0": {
+            "loss": 0.6372120380401611,
+            "accuracy": 0.9982345924052165,
+            "auc": 0.4895878630060044,
+            "pr_auc": 0.005760249749326398,
+            "precision": 0.0326530612244898,
+            "recall": 0.016985138004246284,
+            "f1": 0.022346368715083803,
+            "specificity": 0.999401572576369,
+            "balanced_accuracy": 0.5081933552903076,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 395801,
+            "false_positives": 237,
+            "false_negatives": 463,
+            "true_positives": 8,
+            "false_alarms_per_hour": 0.43035593139121686,
+            "decision_threshold": 0.6935591101646423,
+            "validation_false_alarm_budget_per_hour": 1.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "event_sensitivity_ci95_low": 0.09676933255921684,
+              "event_sensitivity_ci95_high": 0.7000116786584712,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 245,
+              "positive_seizure_windows": 8,
+              "false_positive_windows": 237,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 0,
+              "event_sensitivity": 0.0,
+              "alert_count": 101,
+              "false_alert_count": 101,
+              "false_alerts_per_hour": 0.18340062898950593,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            }
+          },
+          "5.0": {
+            "loss": 0.6372120380401611,
+            "accuracy": 0.9960959272046789,
+            "auc": 0.4895878630060044,
+            "pr_auc": 0.005760249749326398,
+            "precision": 0.023029229406554472,
+            "recall": 0.055201698513800426,
+            "f1": 0.0325,
+            "specificity": 0.9972149137204006,
+            "balanced_accuracy": 0.5262083061171006,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 394935,
+            "false_positives": 1103,
+            "false_negatives": 445,
+            "true_positives": 26,
+            "false_alarms_per_hour": 2.002880136390347,
+            "decision_threshold": 0.6500054001808167,
+            "validation_false_alarm_budget_per_hour": 5.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "event_sensitivity_ci95_low": 0.1876128068994087,
+              "event_sensitivity_ci95_high": 0.8123871931005913,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 1129,
+              "positive_seizure_windows": 26,
+              "false_positive_windows": 1103,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 0,
+              "event_sensitivity": 0.0,
+              "alert_count": 329,
+              "false_alert_count": 329,
+              "false_alerts_per_hour": 0.5974139300747272,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            }
+          },
+          "10.0": {
+            "loss": 0.6372120380401611,
+            "accuracy": 0.9931174323911941,
+            "auc": 0.4895878630060044,
+            "pr_auc": 0.005760249749326398,
+            "precision": 0.01834470989761092,
+            "recall": 0.09129511677282377,
+            "f1": 0.030550621669627,
+            "specificity": 0.9941899514693034,
+            "balanced_accuracy": 0.5427425341210637,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 393737,
+            "false_positives": 2301,
+            "false_negatives": 428,
+            "true_positives": 43,
+            "false_alarms_per_hour": 4.178265814899536,
+            "decision_threshold": 0.6072058081626892,
+            "validation_false_alarm_budget_per_hour": 10.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 2344,
+              "positive_seizure_windows": 43,
+              "false_positive_windows": 2301,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 532,
+              "false_alert_count": 531,
+              "false_alerts_per_hour": 0.9642151880537391,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            }
+          },
+          "25.0": {
+            "loss": 0.6372120380401611,
+            "accuracy": 0.9666363184694421,
+            "auc": 0.4895878630060044,
+            "pr_auc": 0.005760249749326398,
+            "precision": 0.006651198762567672,
+            "recall": 0.18259023354564755,
+            "f1": 0.012834863069920157,
+            "specificity": 0.967568768653513,
+            "balanced_accuracy": 0.5750795010995803,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 383194,
+            "false_positives": 12844,
+            "false_negatives": 385,
+            "true_positives": 86,
+            "false_alarms_per_hour": 23.322749294467467,
+            "decision_threshold": 0.5638926029205322,
+            "validation_false_alarm_budget_per_hour": 25.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 12930,
+              "positive_seizure_windows": 86,
+              "false_positive_windows": 12844,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 1073,
+              "false_alert_count": 1072,
+              "false_alerts_per_hour": 1.946588854225251,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            }
+          },
+          "50.0": {
+            "loss": 0.6372120380401611,
+            "accuracy": 0.9165214408752387,
+            "auc": 0.4895878630060044,
+            "pr_auc": 0.005760249749326398,
+            "precision": 0.00277346012008168,
+            "recall": 0.1932059447983015,
+            "f1": 0.005468421368908119,
+            "specificity": 0.9173816653957448,
+            "balanced_accuracy": 0.5552938050970232,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 363318,
+            "false_positives": 32720,
+            "false_negatives": 380,
+            "true_positives": 91,
+            "false_alarms_per_hour": 59.41454040135281,
+            "decision_threshold": 0.5545197129249573,
+            "validation_false_alarm_budget_per_hour": 50.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 32811,
+              "positive_seizure_windows": 91,
+              "false_positive_windows": 32720,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 1281,
+              "false_alert_count": 1280,
+              "false_alerts_per_hour": 2.3242851990749265,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.4725438952445984
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7152739763259888
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5669337511062622
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.649467408657074
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7047848105430603
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6902382373809814
+                }
+              ]
+            }
+          }
+        },
+        "threshold_policy": "validation false-alarm budget <= 10/hour",
+        "post_processing": {
+          "alert_refractory_minutes": 15.0,
+          "selected_on": "validation split"
+        }
+      }
+    },
+    "cnn_lstm": {
+      "model_name": "CNNLSTMBaseline",
+      "parameters": 13521,
+      "training_seconds": 1115.3710438999988,
+      "history": {
+        "auc": [
+          0.5698875784873962,
+          0.6116856336593628,
+          0.6336888074874878,
+          0.6397005319595337,
+          0.6044913530349731,
+          0.6400209665298462,
+          0.6587631106376648,
+          0.6769366264343262,
+          0.6870635151863098,
+          0.6935589909553528,
+          0.7054483294487,
+          0.7138373851776123
+        ],
+        "loss": [
+          0.6828287243843079,
+          0.6685731410980225,
+          0.6574480533599854,
+          0.655562698841095,
+          0.6736651659011841,
+          0.6553527116775513,
+          0.6461393237113953,
+          0.634384274482727,
+          0.6271178722381592,
+          0.6221020221710205,
+          0.6142358183860779,
+          0.6077417731285095
+        ],
+        "pr_auc": [
+          0.19822967052459717,
+          0.22710368037223816,
+          0.242145836353302,
+          0.2482999563217163,
+          0.21941983699798584,
+          0.24042293429374695,
+          0.2614889442920685,
+          0.2744483947753906,
+          0.2855355441570282,
+          0.2895691394805908,
+          0.30460649728775024,
+          0.31242090463638306
+        ],
+        "precision": [
+          0.19089573621749878,
+          0.2090798020362854,
+          0.22126689553260803,
+          0.22056050598621368,
+          0.2070232629776001,
+          0.21742358803749084,
+          0.22738482058048248,
+          0.23394590616226196,
+          0.23832976818084717,
+          0.24368758499622345,
+          0.24970309436321259,
+          0.2534637749195099
+        ],
+        "recall": [
+          0.6505003571510315,
+          0.6588401198387146,
+          0.6471644639968872,
+          0.6452399492263794,
+          0.6361303329467773,
+          0.7137541770935059,
+          0.6743649244308472,
+          0.7202976942062378,
+          0.7140107750892639,
+          0.7169617414474487,
+          0.7283807992935181,
+          0.7346677184104919
+        ],
+        "val_auc": [
+          0.32416725158691406,
+          0.32046449184417725,
+          0.3739852011203766,
+          0.36995917558670044,
+          0.41689398884773254,
+          0.44876164197921753,
+          0.3283897936344147,
+          0.49968308210372925,
+          0.35788291692733765,
+          0.4554084539413452,
+          0.3538907766342163,
+          0.38765841722488403
+        ],
+        "val_loss": [
+          0.6886031031608582,
+          0.6904022693634033,
+          0.6242772936820984,
+          0.6233293414115906,
+          0.6338115930557251,
+          0.6277729868888855,
+          0.6496792435646057,
+          0.6028906106948853,
+          0.5936974883079529,
+          0.5714898109436035,
+          0.5209080576896667,
+          0.5802301168441772
+        ],
+        "val_pr_auc": [
+          0.001232697512023151,
+          0.0012419604463502765,
+          0.0013382190372794867,
+          0.0014009099686518312,
+          0.0014908353332430124,
+          0.0016238430980592966,
+          0.001244021812453866,
+          0.002066729124635458,
+          0.001304266625083983,
+          0.001650112448260188,
+          0.0012880120193585753,
+          0.001431175391189754
+        ],
+        "val_precision": [
+          0.0006980884936638176,
+          0.000751774525269866,
+          0.0006935119745321572,
+          0.0012484596809372306,
+          0.0015820781700313091,
+          0.001677940832450986,
+          0.0008896280778571963,
+          0.0019833503756672144,
+          0.0008106355671770871,
+          0.0017637211130931973,
+          0.0007629575557075441,
+          0.0011818083003163338
+        ],
+        "val_recall": [
+          0.2084309160709381,
+          0.20140515267848969,
+          0.11007025837898254,
+          0.1803278625011444,
+          0.4098360538482666,
+          0.3723653256893158,
+          0.21545667946338654,
+          0.35597190260887146,
+          0.1522248238325119,
+          0.2763465940952301,
+          0.1053864136338234,
+          0.20374707877635956
+        ]
+      },
+      "metrics": {
+        "loss": 0.5552060008049011,
+        "accuracy": 0.9857758588077445,
+        "auc": 0.606390172042617,
+        "pr_auc": 0.002973740544063595,
+        "precision": 0.007432818753573471,
+        "recall": 0.08280254777070063,
+        "f1": 0.013641133263378805,
+        "specificity": 0.9868497467414743,
+        "balanced_accuracy": 0.5348261472560875,
+        "positive_rate": 0.0011878671102043081,
+        "all_normal_baseline_accuracy": 0.9988121328897956,
+        "true_negatives": 390830,
+        "false_positives": 5208,
+        "false_negatives": 432,
+        "true_positives": 39,
+        "false_alarms_per_hour": 9.456935403736107,
+        "decision_threshold": 0.7147079110145569,
+        "event_level": {
+          "event_count": 6,
+          "detected_events": 5,
+          "event_sensitivity": 0.8333333333333334,
+          "event_sensitivity_ci95_low": 0.4364905634363539,
+          "event_sensitivity_ci95_high": 0.9699474141282696,
+          "event_sensitivity_ci95_method": "Wilson score interval",
+          "positive_windows": 5247,
+          "positive_seizure_windows": 39,
+          "false_positive_windows": 5208,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "start": 1610360368.0,
+              "end": 1610360668.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.38464686274528503
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "start": 1598704011.0,
+              "end": 1598704613.0,
+              "overlap_windows": 121,
+              "detected": true,
+              "max_score": 0.8213594555854797
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "start": 1617538609.0,
+              "end": 1617538909.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 0.7704082727432251
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "start": 1601544713.0,
+              "end": 1601545194.0,
+              "overlap_windows": 97,
+              "detected": true,
+              "max_score": 0.7244338393211365
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "start": 1604574602.0,
+              "end": 1604574946.0,
+              "overlap_windows": 70,
+              "detected": true,
+              "max_score": 0.8169665336608887
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "start": 1604585557.0,
+              "end": 1604585857.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 0.7832170724868774
+            }
+          ]
+        },
+        "event_alert_level": {
+          "post_processing": "first alert per refractory interval",
+          "refractory_minutes": 15.0,
+          "refractory_windows": 180,
+          "event_count": 6,
+          "detected_events": 2,
+          "event_sensitivity": 0.3333333333333333,
+          "alert_count": 603,
+          "false_alert_count": 601,
+          "false_alerts_per_hour": 1.091324534878149,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.38464686274528503
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.8213594555854797
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.7704082727432251
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.7244338393211365
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.8169665336608887
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.7832170724868774
+            }
+          ]
+        },
+        "fixed_validation_alarm_budgets": {
+          "1.0": {
+            "loss": 0.5552060008049011,
+            "accuracy": 0.9963430842679485,
+            "auc": 0.606390172042617,
+            "pr_auc": 0.002973740544063595,
+            "precision": 0.007049345417925478,
+            "recall": 0.014861995753715499,
+            "f1": 0.009562841530054645,
+            "specificity": 0.9975103399168767,
+            "balanced_accuracy": 0.5061861678352961,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 395052,
+            "false_positives": 986,
+            "false_negatives": 464,
+            "true_positives": 7,
+            "false_alarms_per_hour": 1.7904259424124045,
+            "decision_threshold": 0.7826692461967468,
+            "validation_false_alarm_budget_per_hour": 1.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "event_sensitivity_ci95_low": 0.1876128068994087,
+              "event_sensitivity_ci95_high": 0.8123871931005913,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 993,
+              "positive_seizure_windows": 7,
+              "false_positive_windows": 986,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "alert_count": 232,
+              "false_alert_count": 229,
+              "false_alerts_per_hour": 0.4158291488969986,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            }
+          },
+          "5.0": {
+            "loss": 0.5552060008049011,
+            "accuracy": 0.9905702014330066,
+            "auc": 0.606390172042617,
+            "pr_auc": 0.002973740544063595,
+            "precision": 0.007237635705669481,
+            "recall": 0.050955414012738856,
+            "f1": 0.012674940586216002,
+            "specificity": 0.9916876663350487,
+            "balanced_accuracy": 0.5213215401738938,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 392746,
+            "false_positives": 3292,
+            "false_negatives": 447,
+            "true_positives": 24,
+            "false_alarms_per_hour": 5.977770996370827,
+            "decision_threshold": 0.7419245839118958,
+            "validation_false_alarm_budget_per_hour": 5.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 3316,
+              "positive_seizure_windows": 24,
+              "false_positive_windows": 3292,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 454,
+              "false_alert_count": 453,
+              "false_alerts_per_hour": 0.8225790587351107,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            }
+          },
+          "10.0": {
+            "loss": 0.5552060008049011,
+            "accuracy": 0.9857758588077445,
+            "auc": 0.606390172042617,
+            "pr_auc": 0.002973740544063595,
+            "precision": 0.007432818753573471,
+            "recall": 0.08280254777070063,
+            "f1": 0.013641133263378805,
+            "specificity": 0.9868497467414743,
+            "balanced_accuracy": 0.5348261472560875,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 390830,
+            "false_positives": 5208,
+            "false_negatives": 432,
+            "true_positives": 39,
+            "false_alarms_per_hour": 9.456935403736107,
+            "decision_threshold": 0.7147079110145569,
+            "validation_false_alarm_budget_per_hour": 10.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 5247,
+              "positive_seizure_windows": 39,
+              "false_positive_windows": 5208,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "alert_count": 603,
+              "false_alert_count": 601,
+              "false_alerts_per_hour": 1.091324534878149,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            }
+          },
+          "25.0": {
+            "loss": 0.5552060008049011,
+            "accuracy": 0.971569371691437,
+            "auc": 0.606390172042617,
+            "pr_auc": 0.002973740544063595,
+            "precision": 0.006577745295084963,
+            "recall": 0.15286624203821655,
+            "f1": 0.012612770430060437,
+            "specificity": 0.9725430387993071,
+            "balanced_accuracy": 0.5627046404187619,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 385164,
+            "false_positives": 10874,
+            "false_negatives": 399,
+            "true_positives": 72,
+            "false_alarms_per_hour": 19.74552910526621,
+            "decision_threshold": 0.6646711230278015,
+            "validation_false_alarm_budget_per_hour": 25.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 10946,
+              "positive_seizure_windows": 72,
+              "false_positive_windows": 10874,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "alert_count": 902,
+              "false_alert_count": 900,
+              "false_alerts_per_hour": 1.6342630305995578,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            }
+          },
+          "50.0": {
+            "loss": 0.5552060008049011,
+            "accuracy": 0.94447540913321,
+            "auc": 0.606390172042617,
+            "pr_auc": 0.002973740544063595,
+            "precision": 0.004416432810415421,
+            "recall": 0.20382165605095542,
+            "f1": 0.008645533141210375,
+            "specificity": 0.9453562536928275,
+            "balanced_accuracy": 0.5745889548718914,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 374397,
+            "false_positives": 21641,
+            "false_negatives": 375,
+            "true_positives": 96,
+            "false_alarms_per_hour": 39.29676249467226,
+            "decision_threshold": 0.6258429884910583,
+            "validation_false_alarm_budget_per_hour": 50.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 21737,
+              "positive_seizure_windows": 96,
+              "false_positive_windows": 21641,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 1191,
+              "false_alert_count": 1190,
+              "false_alerts_per_hour": 2.160858896014971,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.38464686274528503
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8213594555854797
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7704082727432251
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7244338393211365
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8169665336608887
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7832170724868774
+                }
+              ]
+            }
+          }
+        },
+        "threshold_policy": "validation false-alarm budget <= 10/hour",
+        "post_processing": {
+          "alert_refractory_minutes": 15.0,
+          "selected_on": "validation split"
+        }
+      }
+    },
+    "compact_transformer": {
+      "model_name": "CompactTransformerBaseline",
+      "parameters": 9617,
+      "training_seconds": 3666.457994199998,
+      "history": {
+        "auc": [
+          0.5836463570594788,
+          0.618399977684021,
+          0.6323159337043762,
+          0.645251452922821,
+          0.6553168296813965,
+          0.6665116548538208,
+          0.6765870451927185,
+          0.6837228536605835,
+          0.6923550963401794
+        ],
+        "loss": [
+          0.682349443435669,
+          0.6658338904380798,
+          0.6585129499435425,
+          0.6530122756958008,
+          0.6461477279663086,
+          0.6386133432388306,
+          0.6331325769424438,
+          0.6277031302452087,
+          0.6224370002746582
+        ],
+        "pr_auc": [
+          0.20653483271598816,
+          0.22640082240104675,
+          0.23983919620513916,
+          0.2507195472717285,
+          0.2560994625091553,
+          0.2661706507205963,
+          0.27459436655044556,
+          0.28494173288345337,
+          0.2915331721305847
+        ],
+        "precision": [
+          0.20084945857524872,
+          0.20922285318374634,
+          0.2140132486820221,
+          0.21674573421478271,
+          0.22089983522891998,
+          0.2247629463672638,
+          0.2280804067850113,
+          0.23188872635364532,
+          0.23612448573112488
+        ],
+        "recall": [
+          0.588529646396637,
+          0.6676930785179138,
+          0.6838594079017639,
+          0.721067488193512,
+          0.7263279557228088,
+          0.7390300035476685,
+          0.7526302337646484,
+          0.7380036115646362,
+          0.7554529309272766
+        ],
+        "val_auc": [
+          0.28717249631881714,
+          0.3155660629272461,
+          0.29523658752441406,
+          0.3353515863418579,
+          0.38037219643592834,
+          0.35770276188850403,
+          0.34557992219924927,
+          0.3450474441051483,
+          0.3664929270744324
+        ],
+        "val_loss": [
+          0.7095245718955994,
+          0.7309014201164246,
+          0.6941537261009216,
+          0.7063777446746826,
+          0.6948973536491394,
+          0.6626905798912048,
+          0.6679878234863281,
+          0.6338858008384705,
+          0.6231028437614441
+        ],
+        "val_pr_auc": [
+          0.0012087707873433828,
+          0.0012945085763931274,
+          0.001198658486828208,
+          0.001338825561106205,
+          0.0014897699002176523,
+          0.0014182361774146557,
+          0.0014667944051325321,
+          0.00134243443608284,
+          0.0014198471326380968
+        ],
+        "val_precision": [
+          0.0006570544792339206,
+          0.0008332349243573844,
+          0.000723301141988486,
+          0.0008392361924052238,
+          0.0010438949102535844,
+          0.0009468202479183674,
+          0.0009233231539838016,
+          0.0009325930150225759,
+          0.0009934884728863835
+        ],
+        "val_recall": [
+          0.2084309160709381,
+          0.2974238991737366,
+          0.23419204354286194,
+          0.255269318819046,
+          0.2857142984867096,
+          0.2107728272676468,
+          0.2107728272676468,
+          0.20140515267848969,
+          0.19437938928604126
+        ]
+      },
+      "metrics": {
+        "loss": 0.5981738567352295,
+        "accuracy": 0.9920808859319713,
+        "auc": 0.5565278220905456,
+        "pr_auc": 0.002579022662806625,
+        "precision": 0.007382798080472499,
+        "recall": 0.04246284501061571,
+        "f1": 0.012578616352201259,
+        "specificity": 0.9932102475015023,
+        "balanced_accuracy": 0.517836546256059,
+        "positive_rate": 0.0011878671102043081,
+        "all_normal_baseline_accuracy": 0.9988121328897956,
+        "true_negatives": 393349,
+        "false_positives": 2689,
+        "false_negatives": 451,
+        "true_positives": 20,
+        "false_alarms_per_hour": 4.882814765869123,
+        "decision_threshold": 0.731654703617096,
+        "event_level": {
+          "event_count": 6,
+          "detected_events": 4,
+          "event_sensitivity": 0.6666666666666666,
+          "event_sensitivity_ci95_low": 0.2999883213415286,
+          "event_sensitivity_ci95_high": 0.903230667440783,
+          "event_sensitivity_ci95_method": "Wilson score interval",
+          "positive_windows": 2709,
+          "positive_seizure_windows": 20,
+          "false_positive_windows": 2689,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "start": 1610360368.0,
+              "end": 1610360668.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.5788429975509644
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "start": 1598704011.0,
+              "end": 1598704613.0,
+              "overlap_windows": 121,
+              "detected": true,
+              "max_score": 0.8455283045768738
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "start": 1617538609.0,
+              "end": 1617538909.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.6108191013336182
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "start": 1601544713.0,
+              "end": 1601545194.0,
+              "overlap_windows": 97,
+              "detected": true,
+              "max_score": 0.7863414287567139
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "start": 1604574602.0,
+              "end": 1604574946.0,
+              "overlap_windows": 70,
+              "detected": true,
+              "max_score": 0.759558916091919
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "start": 1604585557.0,
+              "end": 1604585857.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 0.8402243852615356
+            }
+          ]
+        },
+        "event_alert_level": {
+          "post_processing": "first alert per refractory interval",
+          "refractory_minutes": 15.0,
+          "refractory_windows": 180,
+          "event_count": 6,
+          "detected_events": 2,
+          "event_sensitivity": 0.3333333333333333,
+          "alert_count": 367,
+          "false_alert_count": 365,
+          "false_alerts_per_hour": 0.6627844512987096,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.5788429975509644
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.8455283045768738
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.6108191013336182
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.7863414287567139
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.759558916091919
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.8402243852615356
+            }
+          ]
+        },
+        "fixed_validation_alarm_budgets": {
+          "1.0": {
+            "loss": 0.5981738567352295,
+            "accuracy": 0.9980857937650848,
+            "auc": 0.5565278220905456,
+            "pr_auc": 0.002579022662806625,
+            "precision": 0.02,
+            "recall": 0.012738853503184714,
+            "f1": 0.015564202334630352,
+            "specificity": 0.9992576469934703,
+            "balanced_accuracy": 0.5059982502483276,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 395744,
+            "false_positives": 294,
+            "false_negatives": 465,
+            "true_positives": 6,
+            "false_alarms_per_hour": 0.5338592566625222,
+            "decision_threshold": 0.8252335786819458,
+            "validation_false_alarm_budget_per_hour": 1.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "event_sensitivity_ci95_low": 0.09676933255921684,
+              "event_sensitivity_ci95_high": 0.7000116786584712,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 300,
+              "positive_seizure_windows": 6,
+              "false_positive_windows": 294,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": false,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 101,
+              "false_alert_count": 100,
+              "false_alerts_per_hour": 0.18158478117772864,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            }
+          },
+          "5.0": {
+            "loss": 0.5981738567352295,
+            "accuracy": 0.9952964497653269,
+            "auc": 0.5565278220905456,
+            "pr_auc": 0.002579022662806625,
+            "precision": 0.009845288326300985,
+            "recall": 0.029723991507430998,
+            "f1": 0.01479133650290544,
+            "specificity": 0.9964447856013817,
+            "balanced_accuracy": 0.5130843885544064,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 394630,
+            "false_positives": 1408,
+            "false_negatives": 457,
+            "true_positives": 14,
+            "false_alarms_per_hour": 2.556713718982419,
+            "decision_threshold": 0.7628122568130493,
+            "validation_false_alarm_budget_per_hour": 5.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "event_sensitivity_ci95_low": 0.1876128068994087,
+              "event_sensitivity_ci95_high": 0.8123871931005913,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 1422,
+              "positive_seizure_windows": 14,
+              "false_positive_windows": 1408,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": false,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "alert_count": 273,
+              "false_alert_count": 271,
+              "false_alerts_per_hour": 0.4920947569916446,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            }
+          },
+          "10.0": {
+            "loss": 0.5981738567352295,
+            "accuracy": 0.9920808859319713,
+            "auc": 0.5565278220905456,
+            "pr_auc": 0.002579022662806625,
+            "precision": 0.007382798080472499,
+            "recall": 0.04246284501061571,
+            "f1": 0.012578616352201259,
+            "specificity": 0.9932102475015023,
+            "balanced_accuracy": 0.517836546256059,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 393349,
+            "false_positives": 2689,
+            "false_negatives": 451,
+            "true_positives": 20,
+            "false_alarms_per_hour": 4.882814765869123,
+            "decision_threshold": 0.731654703617096,
+            "validation_false_alarm_budget_per_hour": 10.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 2709,
+              "positive_seizure_windows": 20,
+              "false_positive_windows": 2689,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "alert_count": 367,
+              "false_alert_count": 365,
+              "false_alerts_per_hour": 0.6627844512987096,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            }
+          },
+          "25.0": {
+            "loss": 0.5981738567352295,
+            "accuracy": 0.9845425955022459,
+            "auc": 0.5565278220905456,
+            "pr_auc": 0.002579022662806625,
+            "precision": 0.005073477956613016,
+            "recall": 0.06157112526539278,
+            "f1": 0.00937449490867949,
+            "specificity": 0.9856402668430807,
+            "balanced_accuracy": 0.5236056960542368,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 390351,
+            "false_positives": 5687,
+            "false_negatives": 442,
+            "true_positives": 29,
+            "false_alarms_per_hour": 10.326726505577428,
+            "decision_threshold": 0.6892306804656982,
+            "validation_false_alarm_budget_per_hour": 25.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 5716,
+              "positive_seizure_windows": 29,
+              "false_positive_windows": 5687,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 1,
+              "event_sensitivity": 0.16666666666666666,
+              "alert_count": 553,
+              "false_alert_count": 552,
+              "false_alerts_per_hour": 1.002347992101062,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            }
+          },
+          "50.0": {
+            "loss": 0.5981738567352295,
+            "accuracy": 0.9727345407039941,
+            "auc": 0.5565278220905456,
+            "pr_auc": 0.002579022662806625,
+            "precision": 0.0045994633959371405,
+            "recall": 0.10191082802547771,
+            "f1": 0.008801686990006418,
+            "specificity": 0.9737701937692848,
+            "balanced_accuracy": 0.5378405108973813,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 385650,
+            "false_positives": 10388,
+            "false_negatives": 423,
+            "true_positives": 48,
+            "false_alarms_per_hour": 18.86302706874245,
+            "decision_threshold": 0.6494185924530029,
+            "validation_false_alarm_budget_per_hour": 50.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 10436,
+              "positive_seizure_windows": 48,
+              "false_positive_windows": 10388,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 15.0,
+              "refractory_windows": 180,
+              "event_count": 6,
+              "detected_events": 0,
+              "event_sensitivity": 0.0,
+              "alert_count": 740,
+              "false_alert_count": 740,
+              "false_alerts_per_hour": 1.343727380715192,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.5788429975509644
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8455283045768738
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.6108191013336182
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.7863414287567139
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.759558916091919
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.8402243852615356
+                }
+              ]
+            }
+          }
+        },
+        "threshold_policy": "validation false-alarm budget <= 10/hour",
+        "post_processing": {
+          "alert_refractory_minutes": 15.0,
+          "selected_on": "validation split"
+        }
+      }
+    },
+    "autoencoder": {
+      "model_name": "SequenceAutoencoderBaseline",
+      "parameters": 3583,
+      "training_seconds": 1283.5014295,
+      "history": {
+        "loss": [
+          0.10114563256502151,
+          0.044044625014066696,
+          0.03617420420050621,
+          0.03188279643654823,
+          0.02895112708210945,
+          0.02691853605210781,
+          0.02539960667490959,
+          0.024363646283745766,
+          0.023566721007227898,
+          0.02287818118929863,
+          0.02227291278541088,
+          0.021684376522898674
+        ],
+        "val_loss": [
+          0.06110361963510513,
+          0.04738311097025871,
+          0.041410889476537704,
+          0.03679133951663971,
+          0.034098848700523376,
+          0.032396651804447174,
+          0.03139873594045639,
+          0.03033728152513504,
+          0.02922326698899269,
+          0.028911005705595016,
+          0.027638202533125877,
+          0.02733425982296467
+        ]
+      },
+      "metrics": {
+        "loss": 0.04476376622915268,
+        "accuracy": 0.9921994204419068,
+        "auc": 0.5790981272476277,
+        "pr_auc": 0.005026043319351489,
+        "precision": 0.014084507042253521,
+        "recall": 0.08067940552016985,
+        "f1": 0.023982328810350267,
+        "specificity": 0.9932834727980648,
+        "balanced_accuracy": 0.5369814391591173,
+        "positive_rate": 0.0011878671102043081,
+        "all_normal_baseline_accuracy": 0.9988121328897956,
+        "true_negatives": 393378,
+        "false_positives": 2660,
+        "false_negatives": 433,
+        "true_positives": 38,
+        "false_alarms_per_hour": 4.830155179327582,
+        "decision_threshold": 0.4050498902797699,
+        "event_level": {
+          "event_count": 6,
+          "detected_events": 4,
+          "event_sensitivity": 0.6666666666666666,
+          "event_sensitivity_ci95_low": 0.2999883213415286,
+          "event_sensitivity_ci95_high": 0.903230667440783,
+          "event_sensitivity_ci95_method": "Wilson score interval",
+          "positive_windows": 2698,
+          "positive_seizure_windows": 38,
+          "false_positive_windows": 2660,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "start": 1610360368.0,
+              "end": 1610360668.0,
+              "overlap_windows": 61,
+              "detected": false,
+              "max_score": 0.0035366727970540524
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "start": 1598704011.0,
+              "end": 1598704613.0,
+              "overlap_windows": 121,
+              "detected": true,
+              "max_score": 3.0161123275756836
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "start": 1617538609.0,
+              "end": 1617538909.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 0.9199897646903992
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "start": 1601544713.0,
+              "end": 1601545194.0,
+              "overlap_windows": 97,
+              "detected": false,
+              "max_score": 0.17798066139221191
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "start": 1604574602.0,
+              "end": 1604574946.0,
+              "overlap_windows": 70,
+              "detected": true,
+              "max_score": 0.758464515209198
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "start": 1604585557.0,
+              "end": 1604585857.0,
+              "overlap_windows": 61,
+              "detected": true,
+              "max_score": 1.1492162942886353
+            }
+          ]
+        },
+        "event_alert_level": {
+          "post_processing": "first alert per refractory interval",
+          "refractory_minutes": 2.0,
+          "refractory_windows": 24,
+          "event_count": 6,
+          "detected_events": 3,
+          "event_sensitivity": 0.5,
+          "alert_count": 1105,
+          "false_alert_count": 1100,
+          "false_alerts_per_hour": 1.9974325929550152,
+          "events": [
+            {
+              "session_id": "1610296047_A01EEC",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.0035366727970540524
+            },
+            {
+              "session_id": "1598624269_A01EE3",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 3,
+              "max_score": 3.0161123275756836
+            },
+            {
+              "session_id": "1617460460_A01EEC",
+              "event_index": 0,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 0.9199897646903992
+            },
+            {
+              "session_id": "1601509460_A02294",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.17798066139221191
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 0,
+              "detected": false,
+              "alert_count": 0,
+              "max_score": 0.758464515209198
+            },
+            {
+              "session_id": "1604525961_A02294",
+              "event_index": 1,
+              "detected": true,
+              "alert_count": 1,
+              "max_score": 1.1492162942886353
+            }
+          ]
+        },
+        "fixed_validation_alarm_budgets": {
+          "1.0": {
+            "loss": 0.04476376622915268,
+            "accuracy": 0.9983405168609035,
+            "auc": 0.5790981272476277,
+            "pr_auc": 0.005026043319351489,
+            "precision": 0.03482587064676617,
+            "recall": 0.014861995753715499,
+            "f1": 0.02083333333333333,
+            "specificity": 0.9995101480160995,
+            "balanced_accuracy": 0.5071860718849075,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 395844,
+            "false_positives": 194,
+            "false_negatives": 464,
+            "true_positives": 7,
+            "false_alarms_per_hour": 0.35227447548479357,
+            "decision_threshold": 1.1077444553375244,
+            "validation_false_alarm_budget_per_hour": 1.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "event_sensitivity_ci95_low": 0.09676933255921684,
+              "event_sensitivity_ci95_high": 0.7000116786584712,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 201,
+              "positive_seizure_windows": 7,
+              "false_positive_windows": 194,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": false,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 2.0,
+              "refractory_windows": 24,
+              "event_count": 6,
+              "detected_events": 2,
+              "event_sensitivity": 0.3333333333333333,
+              "alert_count": 123,
+              "false_alert_count": 120,
+              "false_alerts_per_hour": 0.21790173741327437,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 2,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            }
+          },
+          "5.0": {
+            "loss": 0.04476376622915268,
+            "accuracy": 0.9962674239424578,
+            "auc": 0.5790981272476277,
+            "pr_auc": 0.005026043319351489,
+            "precision": 0.024505183788878417,
+            "recall": 0.055201698513800426,
+            "f1": 0.03394255874673629,
+            "specificity": 0.9973866144157884,
+            "balanced_accuracy": 0.5262941564647944,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 395003,
+            "false_positives": 1035,
+            "false_negatives": 445,
+            "true_positives": 26,
+            "false_alarms_per_hour": 1.8794024851894915,
+            "decision_threshold": 0.5955740809440613,
+            "validation_false_alarm_budget_per_hour": 5.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 1061,
+              "positive_seizure_windows": 26,
+              "false_positive_windows": 1035,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 2.0,
+              "refractory_windows": 24,
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "alert_count": 529,
+              "false_alert_count": 523,
+              "false_alerts_per_hour": 0.9496884055595208,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 3,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 2,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            }
+          },
+          "10.0": {
+            "loss": 0.04476376622915268,
+            "accuracy": 0.9921994204419068,
+            "auc": 0.5790981272476277,
+            "pr_auc": 0.005026043319351489,
+            "precision": 0.014084507042253521,
+            "recall": 0.08067940552016985,
+            "f1": 0.023982328810350267,
+            "specificity": 0.9932834727980648,
+            "balanced_accuracy": 0.5369814391591173,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 393378,
+            "false_positives": 2660,
+            "false_negatives": 433,
+            "true_positives": 38,
+            "false_alarms_per_hour": 4.830155179327582,
+            "decision_threshold": 0.4050498902797699,
+            "validation_false_alarm_budget_per_hour": 10.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 2698,
+              "positive_seizure_windows": 38,
+              "false_positive_windows": 2660,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 2.0,
+              "refractory_windows": 24,
+              "event_count": 6,
+              "detected_events": 3,
+              "event_sensitivity": 0.5,
+              "alert_count": 1105,
+              "false_alert_count": 1100,
+              "false_alerts_per_hour": 1.9974325929550152,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 3,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            }
+          },
+          "25.0": {
+            "loss": 0.04476376622915268,
+            "accuracy": 0.9681091728056614,
+            "auc": 0.5790981272476277,
+            "pr_auc": 0.005026043319351489,
+            "precision": 0.006326034063260341,
+            "recall": 0.16560509554140126,
+            "f1": 0.012186547925943285,
+            "specificity": 0.9690635747074776,
+            "balanced_accuracy": 0.5673343351244394,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 383786,
+            "false_positives": 12252,
+            "false_negatives": 393,
+            "true_positives": 78,
+            "false_alarms_per_hour": 22.247767389895312,
+            "decision_threshold": 0.17925842106342316,
+            "validation_false_alarm_budget_per_hour": 25.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "event_sensitivity_ci95_low": 0.2999883213415286,
+              "event_sensitivity_ci95_high": 0.903230667440783,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 12330,
+              "positive_seizure_windows": 78,
+              "false_positive_windows": 12252,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": false,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 2.0,
+              "refractory_windows": 24,
+              "event_count": 6,
+              "detected_events": 4,
+              "event_sensitivity": 0.6666666666666666,
+              "alert_count": 3026,
+              "false_alert_count": 3019,
+              "false_alerts_per_hour": 5.482044543755628,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 4,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            }
+          },
+          "50.0": {
+            "loss": 0.04476376622915268,
+            "accuracy": 0.9161179191392881,
+            "auc": 0.5790981272476277,
+            "pr_auc": 0.005026043319351489,
+            "precision": 0.00315180167894051,
+            "recall": 0.2208067940552017,
+            "f1": 0.006214891836978607,
+            "specificity": 0.9169448386265965,
+            "balanced_accuracy": 0.5688758163408991,
+            "positive_rate": 0.0011878671102043081,
+            "all_normal_baseline_accuracy": 0.9988121328897956,
+            "true_negatives": 363145,
+            "false_positives": 32893,
+            "false_negatives": 367,
+            "true_positives": 104,
+            "false_alarms_per_hour": 59.728682072790285,
+            "decision_threshold": 0.08105925470590591,
+            "validation_false_alarm_budget_per_hour": 50.0,
+            "event_level": {
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "event_sensitivity_ci95_low": 0.4364905634363539,
+              "event_sensitivity_ci95_high": 0.9699474141282696,
+              "event_sensitivity_ci95_method": "Wilson score interval",
+              "positive_windows": 32997,
+              "positive_seizure_windows": 104,
+              "false_positive_windows": 32893,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "start": 1610360368.0,
+                  "end": 1610360668.0,
+                  "overlap_windows": 61,
+                  "detected": false,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "start": 1598704011.0,
+                  "end": 1598704613.0,
+                  "overlap_windows": 121,
+                  "detected": true,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "start": 1617538609.0,
+                  "end": 1617538909.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "start": 1601544713.0,
+                  "end": 1601545194.0,
+                  "overlap_windows": 97,
+                  "detected": true,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "start": 1604574602.0,
+                  "end": 1604574946.0,
+                  "overlap_windows": 70,
+                  "detected": true,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "start": 1604585557.0,
+                  "end": 1604585857.0,
+                  "overlap_windows": 61,
+                  "detected": true,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            },
+            "event_alert_level": {
+              "post_processing": "first alert per refractory interval",
+              "refractory_minutes": 2.0,
+              "refractory_windows": 24,
+              "event_count": 6,
+              "detected_events": 5,
+              "event_sensitivity": 0.8333333333333334,
+              "alert_count": 5269,
+              "false_alert_count": 5260,
+              "false_alerts_per_hour": 9.551359489948526,
+              "events": [
+                {
+                  "session_id": "1610296047_A01EEC",
+                  "event_index": 0,
+                  "detected": false,
+                  "alert_count": 0,
+                  "max_score": 0.0035366727970540524
+                },
+                {
+                  "session_id": "1598624269_A01EE3",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 4,
+                  "max_score": 3.0161123275756836
+                },
+                {
+                  "session_id": "1617460460_A01EEC",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 2,
+                  "max_score": 0.9199897646903992
+                },
+                {
+                  "session_id": "1601509460_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.17798066139221191
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 0,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 0.758464515209198
+                },
+                {
+                  "session_id": "1604525961_A02294",
+                  "event_index": 1,
+                  "detected": true,
+                  "alert_count": 1,
+                  "max_score": 1.1492162942886353
+                }
+              ]
+            }
+          }
+        },
+        "threshold_policy": "validation false-alarm budget <= 10/hour",
+        "post_processing": {
+          "alert_refractory_minutes": 2.0,
+          "selected_on": "validation split"
+        }
+      },
+      "score_note": "Reconstruction error is used as the anomaly score."
+    }
+  }
+}

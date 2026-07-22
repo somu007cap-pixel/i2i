@@ -1,0 +1,23 @@
+{
+  "pipeline_version": "edge_safe_patched_dual_stream_tsmixer_v15_dsp_session_norm",
+  "detection_exit_code": 0,
+  "status": "completed",
+  "edge_exit_code": 0,
+  "edge_status": "completed",
+  "name": "robust_seed123_patch8_base_temp_boost_ppg_eda",
+  "description": "Robustness replicate seed=123: ACC+TEMP baseline with BVP+HR+EDA add-on.",
+  "env": {
+    "DETECTION_PATCH_SIZE": "8",
+    "DETECTION_PATCH_EMBED_DIM": "8",
+    "DETECTION_TSMIXER_BLOCKS": "3",
+    "DETECTION_TSMIXER_HIDDEN_DIM": "48",
+    "DETECTION_BASELINE_SECONDARY_FEATURES": "TEMP",
+    "DETECTION_BOOSTER_SECONDARY_FEATURES": "BVP,HR,EDA",
+    "DETECTION_LOSS": "focal",
+    "DETECTION_NEGATIVE_RATIO": "5",
+    "DETECTION_RANDOM_SEED": "123",
+    "SEIZURE_DURATION_SECONDS": "300",
+    "PHASE1_CACHE": "0"
+  },
+  "archived_at": "2026-07-21T18:16:28"
+}

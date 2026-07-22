@@ -371,7 +371,7 @@ def plot_event_failure_analysis(results: dict[str, Any]) -> Path | None:
 def write_figure_index(paths: list[Path]) -> Path:
     descriptions = {
         "01_class_imbalance_log_scale.png": "Use in Data Preparation / Dataset Characteristics. Shows severe class imbalance and why raw accuracy is misleading.",
-        "02_standard_vs_pro_metrics.png": "Use in Results. Shows Standard vs Pro metric trade-offs and event improvement.",
+        "02_standard_vs_pro_metrics.png": "Use in Results. Shows Standard vs Pro metric trade-offs at the selected operating point.",
         "03_confusion_matrices.png": "Use in Results or Appendix. Shows actual error counts under the selected operating point.",
         "04_alarm_budget_sweep.png": "Use in Evaluation Methodology. Shows sensitivity to false-alarm operating budget.",
         "05_baseline_comparison.png": "Use in Baseline Comparison. Shows where TSMixer wins or remains competitive.",

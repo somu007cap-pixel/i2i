@@ -1,0 +1,25 @@
+{
+  "pipeline_version": "edge_safe_patched_dual_stream_tsmixer_v15_dsp_session_norm",
+  "detection_exit_code": 0,
+  "status": "completed",
+  "edge_exit_code": 0,
+  "edge_status": "completed",
+  "name": "robust_label120s_booster_tuned_patch8_base_eda_boost_ppg_temp",
+  "description": "Label-policy sensitivity duration=120s: ACC+EDA baseline with BVP+HR+TEMP add-on.",
+  "env": {
+    "DETECTION_PATCH_SIZE": "8",
+    "DETECTION_PATCH_EMBED_DIM": "8",
+    "DETECTION_TSMIXER_BLOCKS": "3",
+    "DETECTION_TSMIXER_HIDDEN_DIM": "48",
+    "DETECTION_BASELINE_SECONDARY_FEATURES": "EDA",
+    "DETECTION_BOOSTER_SECONDARY_FEATURES": "BVP,HR,TEMP",
+    "DETECTION_LOSS": "focal",
+    "DETECTION_NEGATIVE_RATIO": "4",
+    "DETECTION_PRO_FUSION_WEIGHTS": "0.03,0.05,0.08,0.10,0.15,0.20,0.25,0.35,0.50",
+    "DETECTION_ALARM_BUDGETS_PER_HOUR": "1,5,10,15,25,50,100",
+    "DETECTION_RANDOM_SEED": "42",
+    "SEIZURE_DURATION_SECONDS": "120",
+    "PHASE1_CACHE": "0"
+  },
+  "archived_at": "2026-07-20T17:39:09"
+}
