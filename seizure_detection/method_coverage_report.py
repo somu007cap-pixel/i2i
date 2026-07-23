@@ -110,6 +110,12 @@ def method_rows() -> list[dict[str, Any]]:
             "result": "Aggregated in FINAL_STUDY_REPORT.md",
             "status": "evaluated" if (OUTPUT_DIR / "final_study_report.json").exists() else "pending",
         },
+        {
+            "family": "Firmware-facing TinyML deployment package",
+            "implemented_as": "INT8 model header, static TFLite Micro harness, and streaming DSP ring buffer",
+            "result": "Prepared under seizure_detection/firmware_c; board latency not yet claimed",
+            "status": "prepared",
+        },
     ]
     for name, item in sorted((baselines.get("baselines") or {}).items()):
         metrics = item.get("metrics", {})
@@ -188,6 +194,7 @@ def run() -> dict[str, Any]:
         "- The run includes label-policy sensitivity because exact offsets are not available.",
         "- The detector is compared with LSTM, CNN-LSTM, compact Transformer, and Autoencoder baselines under the same split.",
         "- Event sensitivity and false alarms/hour are primary; raw accuracy is not used as the success claim.",
+        "- Firmware-facing artifacts are included for PSoC Edge E84 / Cortex-M-class evaluation without claiming unmeasured board deployment.",
         "",
         "## Methods Not Treated as Direct Comparisons",
         "",

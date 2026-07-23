@@ -9,6 +9,7 @@ The study evaluates modern lightweight time-series approaches that are appropria
 | Patched channel-independent TSMixer / TTM-style mixer | Dual-stream TSMixer Standard/Pro models | evaluated | Standard AUC 0.4259, events 1/6; Pro AUC 0.5485, events 3/6 |
 | Event-level alert post-processing | Validation-selected refractory interval over detector scores | evaluated | Standard alert FA/hr 0.82; Pro alert FA/hr 0.91 |
 | Patient-held-out weak-label robustness | Repeated seed and label-duration sensitivity studies | evaluated | Aggregated in FINAL_STUDY_REPORT.md |
+| Firmware-facing TinyML deployment package | INT8 model header, static TFLite Micro harness, and streaming DSP ring buffer | prepared | Prepared under seizure_detection/firmware_c; board latency not yet claimed |
 | Reconstruction-error anomaly detector | autoencoder | evaluated | AUC 0.5791, recall 0.0807, events 4/6, alert FA/hr 2.00 |
 | CNN-LSTM temporal feature model | cnn_lstm | evaluated | AUC 0.6064, recall 0.0828, events 5/6, alert FA/hr 1.09 |
 | Compact transformer baseline | compact_transformer | evaluated | AUC 0.5565, recall 0.0425, events 4/6, alert FA/hr 0.66 |
@@ -20,6 +21,7 @@ The study evaluates modern lightweight time-series approaches that are appropria
 - The run includes label-policy sensitivity because exact offsets are not available.
 - The detector is compared with LSTM, CNN-LSTM, compact Transformer, and Autoencoder baselines under the same split.
 - Event sensitivity and false alarms/hour are primary; raw accuracy is not used as the success claim.
+- Firmware-facing artifacts are included for PSoC Edge E84 / Cortex-M-class evaluation without claiming unmeasured board deployment.
 
 ## Methods Not Treated as Direct Comparisons
 

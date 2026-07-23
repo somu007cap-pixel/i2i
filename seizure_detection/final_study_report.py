@@ -476,6 +476,18 @@ def write_report() -> None:
         "- Treat this as a feasibility study under weak labels.",
         "- Compare event sensitivity and false alarms/hour before raw accuracy.",
         "- Report TFLite results as software feasibility, not physical MCU deployment.",
+        "- Firmware-facing PSoC Edge E84 artifacts are prepared under "
+        "`seizure_detection/firmware_c/`; measured board latency should be added "
+        "only after a successful hardware run.",
+        "",
+        "## Firmware Deployment Package",
+        "",
+        "- INT8 TFLite model header: `seizure_detection/firmware_c/model_data.h`.",
+        "- Static-memory TFLite Micro harness: `seizure_detection/firmware_c/main.cpp`.",
+        "- Streaming DSP ring buffer and online normalization helpers: "
+        "`seizure_detection/firmware_c/sensor_dsp.c` and `.h`.",
+        "- Target profile and PSoC Edge E84 porting plan: "
+        "`seizure_detection/firmware_c/edge_target_profile.md`.",
         "",
         "## Figure Package",
         "",

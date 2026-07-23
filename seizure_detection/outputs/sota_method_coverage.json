@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-22T15:01:30.521081",
+  "timestamp": "2026-07-22T16:35:55.591999",
   "claim": "The study evaluates modern lightweight time-series approaches that are appropriate for Empatica wearable data and weak onset-only seizure labels.",
   "methods": [
     {
@@ -19,6 +19,12 @@
       "implemented_as": "Repeated seed and label-duration sensitivity studies",
       "result": "Aggregated in FINAL_STUDY_REPORT.md",
       "status": "evaluated"
+    },
+    {
+      "family": "Firmware-facing TinyML deployment package",
+      "implemented_as": "INT8 model header, static TFLite Micro harness, and streaming DSP ring buffer",
+      "result": "Prepared under seizure_detection/firmware_c; board latency not yet claimed",
+      "status": "prepared"
     },
     {
       "family": "Reconstruction-error anomaly detector",

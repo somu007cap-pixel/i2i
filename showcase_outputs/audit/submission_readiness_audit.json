@@ -94,7 +94,7 @@
     {
       "name": "midsem_detection_scope",
       "status": "pass",
-      "detail": "no forbidden future-work or generated-text wording in pdf"
+      "detail": "no forbidden future-work or generated-text wording in docx"
     },
     {
       "name": "midsem_tflite_caveat",

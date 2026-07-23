@@ -11,7 +11,7 @@ Overall status: **PASS**
 | evaluation_scope | pass | patient-level generalization; held-out patients are reserved for validation/test while train patients remain unseen in those splits |
 | event_level_disclosed | pass | standard=1/6, pro=3/6 |
 | label_policy_documented | pass | status=pass |
-| midsem_detection_scope | pass | no forbidden future-work or generated-text wording in pdf |
+| midsem_detection_scope | pass | no forbidden future-work or generated-text wording in docx |
 | midsem_tflite_caveat | pass | TFLite limitation caveat present |
 | operating_point_documented | pass | status=pass |
 | pro_event_sensitivity_gain | pass | standard_event_sensitivity=0.1667, pro_event_sensitivity=0.5000, gain=0.3333 |
