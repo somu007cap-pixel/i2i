@@ -1,0 +1,7 @@
+{
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.preview",
+        "file:/**/*.pdf": "pdf.preview"
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system"
+}

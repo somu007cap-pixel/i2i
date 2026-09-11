@@ -1,0 +1,179 @@
+{
+  "300": {
+    "auc": 0.7190362238640784,
+    "precision": 0.0,
+    "recall": 0.0,
+    "confusion_matrix": [
+      [
+        33431,
+        0
+      ],
+      [
+        50,
+        0
+      ]
+    ],
+    "fixed_threshold": 0.5,
+    "calibrated_threshold_metrics": {
+      "threshold": 0.09198077768087387,
+      "precision": 0.00508521165475536,
+      "recall": 0.74,
+      "f1": 0.01010100996544158,
+      "confusion_matrix": [
+        [
+          26192,
+          7239
+        ],
+        [
+          13,
+          37
+        ]
+      ],
+      "note": "threshold selected on validation for calibrated operating-point reporting"
+    },
+    "top_risk_metrics": {
+      "top_1pct": {
+        "selected": 335,
+        "positives_captured": 0,
+        "recall": 0.0,
+        "precision": 0.0
+      },
+      "top_5pct": {
+        "selected": 1674,
+        "positives_captured": 3,
+        "recall": 0.06,
+        "precision": 0.0017921146953405018
+      },
+      "top_10pct": {
+        "selected": 3348,
+        "positives_captured": 5,
+        "recall": 0.1,
+        "precision": 0.0014934289127837516
+      }
+    },
+    "n_train": 30000,
+    "n_val": 33481,
+    "train_positives": 180,
+    "val_positives": 50,
+    "evaluation_split": "full_validation",
+    "evaluation_note": "AUC computed on held-out sessions"
+  },
+  "900": {
+    "auc": 0.7385214671344613,
+    "precision": 0.0,
+    "recall": 0.0,
+    "confusion_matrix": [
+      [
+        33338,
+        0
+      ],
+      [
+        143,
+        0
+      ]
+    ],
+    "fixed_threshold": 0.5,
+    "calibrated_threshold_metrics": {
+      "threshold": 0.2225518524646759,
+      "precision": 0.01299566811062979,
+      "recall": 0.2727272727272727,
+      "f1": 0.024809159437049234,
+      "confusion_matrix": [
+        [
+          30376,
+          2962
+        ],
+        [
+          104,
+          39
+        ]
+      ],
+      "note": "threshold selected on validation for calibrated operating-point reporting"
+    },
+    "top_risk_metrics": {
+      "top_1pct": {
+        "selected": 335,
+        "positives_captured": 2,
+        "recall": 0.013986013986013986,
+        "precision": 0.005970149253731343
+      },
+      "top_5pct": {
+        "selected": 1674,
+        "positives_captured": 15,
+        "recall": 0.1048951048951049,
+        "precision": 0.008960573476702509
+      },
+      "top_10pct": {
+        "selected": 3348,
+        "positives_captured": 42,
+        "recall": 0.2937062937062937,
+        "precision": 0.012544802867383513
+      }
+    },
+    "n_train": 30000,
+    "n_val": 33481,
+    "train_positives": 540,
+    "val_positives": 143,
+    "evaluation_split": "full_validation",
+    "evaluation_note": "AUC computed on held-out sessions"
+  },
+  "1800": {
+    "auc": 0.7665188281491985,
+    "precision": 0.0,
+    "recall": 0.0,
+    "confusion_matrix": [
+      [
+        33218,
+        0
+      ],
+      [
+        263,
+        0
+      ]
+    ],
+    "fixed_threshold": 0.5,
+    "calibrated_threshold_metrics": {
+      "threshold": 0.3037424385547638,
+      "precision": 0.02574102964118565,
+      "recall": 0.2509505703422053,
+      "f1": 0.04669260531635861,
+      "confusion_matrix": [
+        [
+          30720,
+          2498
+        ],
+        [
+          197,
+          66
+        ]
+      ],
+      "note": "threshold selected on validation for calibrated operating-point reporting"
+    },
+    "top_risk_metrics": {
+      "top_1pct": {
+        "selected": 335,
+        "positives_captured": 1,
+        "recall": 0.0038022813688212928,
+        "precision": 0.0029850746268656717
+      },
+      "top_5pct": {
+        "selected": 1674,
+        "positives_captured": 34,
+        "recall": 0.12927756653992395,
+        "precision": 0.02031063321385902
+      },
+      "top_10pct": {
+        "selected": 3348,
+        "positives_captured": 81,
+        "recall": 0.30798479087452474,
+        "precision": 0.024193548387096774
+      }
+    },
+    "n_train": 30000,
+    "n_val": 33481,
+    "train_positives": 1066,
+    "val_positives": 263,
+    "evaluation_split": "full_validation",
+    "evaluation_note": "AUC computed on held-out sessions"
+  }
+}

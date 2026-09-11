@@ -1,0 +1,3723 @@
+{
+  "status": "completed",
+  "dataset_root": "C:\\I2I\\public_benchmark_data",
+  "edf_file_count": 8152,
+  "unique_subject_count": 125,
+  "modality_counts": {
+    "ecg": 2800,
+    "emg": 2801,
+    "mov": 2551
+  },
+  "sampling_frequencies": {
+    "256": 5601,
+    "25": 2551
+  },
+  "total_duration_hours": 33649.161,
+  "unique_channel_layouts": 9,
+  "recordings": [
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 65319.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-02_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 19816.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-03_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 64979.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-04_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 21209.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-05_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 62511.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-06_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 20192.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-07_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 29518.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-08_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 51478.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\ecg\\sub-001_ses-01_task-szMonitoring_run-09_ecg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 48657.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 65319.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-02_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 19816.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-03_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 64979.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-04_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 21209.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-05_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 62511.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-06_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 20192.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-07_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 29518.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-08_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 51478.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\emg\\sub-001_ses-01_task-szMonitoring_run-09_emg.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 48657.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 65319.0,
+      "sampling_scheme": "preview_rms=0.043068"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-02_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 19816.0,
+      "sampling_scheme": "preview_rms=0.041911"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-03_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 64979.0,
+      "sampling_scheme": "preview_rms=0.040653"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-04_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 21209.0,
+      "sampling_scheme": "preview_rms=0.038855"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-05_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 62511.0,
+      "sampling_scheme": "preview_rms=0.044277"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-06_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 20192.0,
+      "sampling_scheme": "preview_rms=0.041782"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-07_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 29518.0,
+      "sampling_scheme": "preview_rms=0.044079"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-08_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 51478.0,
+      "sampling_scheme": "preview_rms=0.042522"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-001\\ses-01\\mov\\sub-001_ses-01_task-szMonitoring_run-09_mov.edf",
+      "subject": "001",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 48657.0,
+      "sampling_scheme": "preview_rms=0.045991"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 11380.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-02_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 23994.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-03_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 39084.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-04_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 5417.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-05_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 77959.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-06_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 80849.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-07_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 4316.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-08_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 47557.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-09_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 28732.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-10_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6216.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-11_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 15761.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\ecg\\sub-002_ses-01_task-szMonitoring_run-12_ecg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 15796.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 11380.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-02_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 23994.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-03_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 39084.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-04_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 5417.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-05_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 77959.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-06_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 80849.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-07_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 4316.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-08_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 47557.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-09_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 28732.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-10_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6216.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-11_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 15761.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\emg\\sub-002_ses-01_task-szMonitoring_run-12_emg.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 15796.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 11380.0,
+      "sampling_scheme": "preview_rms=0.050054"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-02_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 23994.0,
+      "sampling_scheme": "preview_rms=0.054108"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-03_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 39084.0,
+      "sampling_scheme": "preview_rms=0.036331"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-04_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 5417.0,
+      "sampling_scheme": "preview_rms=0.034027"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-05_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 77959.0,
+      "sampling_scheme": "preview_rms=0.049916"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-06_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 80849.0,
+      "sampling_scheme": "preview_rms=0.040292"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-07_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 4316.0,
+      "sampling_scheme": "preview_rms=0.041648"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-08_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 47557.0,
+      "sampling_scheme": "preview_rms=0.042722"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-09_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 28732.0,
+      "sampling_scheme": "preview_rms=0.043990"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-10_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6216.0,
+      "sampling_scheme": "preview_rms=0.044653"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-11_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 15761.0,
+      "sampling_scheme": "preview_rms=0.050031"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-002\\ses-01\\mov\\sub-002_ses-01_task-szMonitoring_run-12_mov.edf",
+      "subject": "002",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 15796.0,
+      "sampling_scheme": "preview_rms=0.050027"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 64414.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-02_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 7918.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-03_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 8907.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-04_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 75768.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-05_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 8283.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-06_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 77064.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-07_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 7113.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-08_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 79100.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-09_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6902.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\ecg\\sub-003_ses-01_task-szMonitoring_run-10_ecg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 78219.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 64414.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-02_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 7918.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-03_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 8907.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-04_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 75768.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-05_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 8283.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-06_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 77064.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-07_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 7113.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-08_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 79100.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-09_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6902.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\emg\\sub-003_ses-01_task-szMonitoring_run-10_emg.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 78219.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 64414.0,
+      "sampling_scheme": "preview_rms=0.046777"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-02_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 7918.0,
+      "sampling_scheme": "preview_rms=0.050062"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-03_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 8907.0,
+      "sampling_scheme": "preview_rms=0.044465"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-04_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 75768.0,
+      "sampling_scheme": "preview_rms=0.044251"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-05_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 8283.0,
+      "sampling_scheme": "preview_rms=0.045421"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-06_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 77064.0,
+      "sampling_scheme": "preview_rms=0.045504"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-07_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 7113.0,
+      "sampling_scheme": "preview_rms=0.045740"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-08_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 79100.0,
+      "sampling_scheme": "preview_rms=0.041947"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-09_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6902.0,
+      "sampling_scheme": "preview_rms=0.045717"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-003\\ses-01\\mov\\sub-003_ses-01_task-szMonitoring_run-10_mov.edf",
+      "subject": "003",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 78219.0,
+      "sampling_scheme": "preview_rms=0.044501"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-004\\ses-01\\ecg\\sub-004_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "004",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 66600.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-004\\ses-01\\emg\\sub-004_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "004",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 66600.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-004\\ses-01\\mov\\sub-004_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "004",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 66600.0,
+      "sampling_scheme": "preview_rms=0.045142"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 61279.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-02_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 3049.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-03_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 9904.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-04_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 5788.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-05_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 17542.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-06_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 9038.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-07_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 8290.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-08_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 19459.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-09_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6484.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-10_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6771.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-11_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 23385.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-12_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 52167.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-13_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "13",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 3899.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-14_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "14",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 1667.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-15_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "15",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 1514.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-16_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "16",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 2386.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-17_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "17",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6674.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-18_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "18",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 69417.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-19_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "19",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 47795.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-20_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "20",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 4312.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-21_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "21",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 4656.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-22_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "22",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 6865.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-23_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "23",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 36176.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-24_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "24",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 5031.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-25_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "25",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 1262.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\ecg\\sub-005_ses-01_task-szMonitoring_run-26_ecg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "26",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 21560.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 61279.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-02_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 3049.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-03_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 9904.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-04_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 5788.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-05_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 17542.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-06_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 9038.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-07_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 8290.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-08_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 19459.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-09_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6484.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-10_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6771.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-11_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 23385.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-12_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 52167.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-13_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "13",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 3899.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-14_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "14",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 1667.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-15_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "15",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 1514.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-16_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "16",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 2386.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-17_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "17",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6674.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-18_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "18",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 69417.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-19_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "19",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 47795.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-20_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "20",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 4312.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-21_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "21",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 4656.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-22_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "22",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 6865.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-23_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "23",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 36176.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-24_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "24",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 5031.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-25_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "25",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 1262.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\emg\\sub-005_ses-01_task-szMonitoring_run-26_emg.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "26",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 21560.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 61279.0,
+      "sampling_scheme": "preview_rms=0.046757"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-02_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 3049.0,
+      "sampling_scheme": "preview_rms=0.038747"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-03_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 9904.0,
+      "sampling_scheme": "preview_rms=0.046041"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-04_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 5788.0,
+      "sampling_scheme": "preview_rms=0.044544"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-05_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 17542.0,
+      "sampling_scheme": "preview_rms=0.042697"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-06_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 9038.0,
+      "sampling_scheme": "preview_rms=0.042296"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-07_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 8290.0,
+      "sampling_scheme": "preview_rms=0.043332"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-08_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 19459.0,
+      "sampling_scheme": "preview_rms=0.041550"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-09_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6484.0,
+      "sampling_scheme": "preview_rms=0.042158"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-10_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6771.0,
+      "sampling_scheme": "preview_rms=0.041412"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-11_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "11",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 23385.0,
+      "sampling_scheme": "preview_rms=0.041693"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-12_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "12",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 52167.0,
+      "sampling_scheme": "preview_rms=0.041324"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-13_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "13",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 3899.0,
+      "sampling_scheme": "preview_rms=0.041676"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-14_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "14",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 1667.0,
+      "sampling_scheme": "preview_rms=0.041345"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-15_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "15",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 1514.0,
+      "sampling_scheme": "preview_rms=0.049372"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-16_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "16",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 2386.0,
+      "sampling_scheme": "preview_rms=0.043380"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-17_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "17",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6674.0,
+      "sampling_scheme": "preview_rms=0.042465"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-18_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "18",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 69417.0,
+      "sampling_scheme": "preview_rms=0.048335"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-19_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "19",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 47795.0,
+      "sampling_scheme": "preview_rms=0.045522"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-20_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "20",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 4312.0,
+      "sampling_scheme": "preview_rms=0.039665"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-21_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "21",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 4656.0,
+      "sampling_scheme": "preview_rms=0.039842"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-22_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "22",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 6865.0,
+      "sampling_scheme": "preview_rms=0.042594"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-23_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "23",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 36176.0,
+      "sampling_scheme": "preview_rms=0.042019"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-24_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "24",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 5031.0,
+      "sampling_scheme": "preview_rms=0.041996"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-25_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "25",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 1262.0,
+      "sampling_scheme": "preview_rms=0.043585"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-005\\ses-01\\mov\\sub-005_ses-01_task-szMonitoring_run-26_mov.edf",
+      "subject": "005",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "26",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 21560.0,
+      "sampling_scheme": "preview_rms=0.041325"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-01_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 26159.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-02_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 31919.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-03_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 20029.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-04_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 64871.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-05_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 17009.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-06_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 65427.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-07_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 18078.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-08_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 66661.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-09_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 18314.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\ecg\\sub-006_ses-01_task-szMonitoring_run-10_ecg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "ecg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "ECG SD"
+      ],
+      "duration_seconds": 65913.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-01_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 26159.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-02_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 31919.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-03_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 20029.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-04_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 64871.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-05_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 17009.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-06_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 65427.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-07_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "07",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 18078.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-08_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "08",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 66661.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-09_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "09",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 18314.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\emg\\sub-006_ses-01_task-szMonitoring_run-10_emg.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "10",
+      "modality": "emg",
+      "sfreq": 256.0,
+      "n_channels": 1,
+      "channel_names": [
+        "EMG SD"
+      ],
+      "duration_seconds": 65913.0,
+      "sampling_scheme": "preview_rms=0.000000"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-01_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "01",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 26159.0,
+      "sampling_scheme": "preview_rms=0.042200"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-02_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "02",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 31919.0,
+      "sampling_scheme": "preview_rms=0.043032"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-03_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "03",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 20029.0,
+      "sampling_scheme": "preview_rms=0.043013"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-04_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "04",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 64871.0,
+      "sampling_scheme": "preview_rms=0.044590"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-05_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "05",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 17009.0,
+      "sampling_scheme": "preview_rms=0.043864"
+    },
+    {
+      "path": "C:\\I2I\\public_benchmark_data\\sub-006\\ses-01\\mov\\sub-006_ses-01_task-szMonitoring_run-06_mov.edf",
+      "subject": "006",
+      "session": "01",
+      "task": "szMonitoring",
+      "run": "06",
+      "modality": "mov",
+      "sfreq": 25.0,
+      "n_channels": 12,
+      "channel_names": [
+        "EEG SD ACC X",
+        "EEG SD ACC Y",
+        "EEG SD ACC Z",
+        "EEG SD GYR A",
+        "EEG SD GYR B",
+        "EEG SD GYR C",
+        "ECGEMG SD ACC X",
+        "ECGEMG SD ACC Y",
+        "ECGEMG SD ACC Z",
+        "ECGEMG SD GYR A",
+        "ECGEMG SD GYR B",
+        "ECGEMG SD GYR C"
+      ],
+      "duration_seconds": 65427.0,
+      "sampling_scheme": "preview_rms=0.044277"
+    }
+  ]
+}

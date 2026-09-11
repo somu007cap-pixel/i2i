@@ -1,0 +1,21 @@
+# Core code only – ignore large/generated assets
+outputs/
+Bits_Submission/
+public_benchmark_data/
+*.tflite
+*.keras
+*.ckpt
+*.h5
+*.log
+*.txt
+*.zip
+*.dat
+*.csv
+size_before.txt
+.gitignore.backup
+.git/
+Mayo_*
+git_backup_/
+seizure_detection/outputs/
+\nseizure_detection/outputs/
+\npublic_benchmark_*/
