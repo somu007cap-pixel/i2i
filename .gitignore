@@ -19,3 +19,4 @@ git_backup_/
 seizure_detection/outputs/
 \nseizure_detection/outputs/
 \npublic_benchmark_*/
+\n__pycache__/\n*.pyc
